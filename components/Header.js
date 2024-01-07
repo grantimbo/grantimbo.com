@@ -1,11 +1,12 @@
+"use client";
+
 import Link from "next/link";
-// import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import ReactGA from "react-ga4";
 
-const Header = ({ hidemenu, fixed }) => {
-  // const router = useRouter();
-
+const Header = ({ hidemenu = false, fixed = false }) => {
+  const path = usePathname();
   // ReactGA.initialize("UA-47603859-1");
 
   // useEffect(() => {
@@ -26,7 +27,7 @@ const Header = ({ hidemenu, fixed }) => {
       <div className="menu-logo">
         {!hidemenu && (
           <div className="menu" onClick={() => toggleSidebar()}>
-            <span class="material-symbols-rounded">menu</span>
+            <span className="material-symbols-rounded">menu</span>
           </div>
         )}
         <Link href="/">
@@ -34,27 +35,21 @@ const Header = ({ hidemenu, fixed }) => {
         </Link>
       </div>
       <nav className="main">
-        {/* <Link
+        <Link
           href="/projects?tag=all"
-          className={router.query.slug == "/projects" ? "active" : ""}
+          className={path == "/projects" ? "active" : ""}
         >
-          <span class="material-symbols-rounded icon">perm_media</span>
+          <span className="material-symbols-rounded icon">perm_media</span>
           <span>Projects</span>
         </Link>
-        <Link
-          href="/services"
-          className={router.query.slug == "/services" ? "active" : ""}
-        >
-          <span class="material-symbols-rounded icon">handyman</span>
+        <Link href="/services" className={path == "/services" ? "active" : ""}>
+          <span className="material-symbols-rounded icon">handyman</span>
           <span>Services</span>
         </Link>
-        <Link
-          href="/about"
-          className={router.query.slug == "/about" ? "active" : ""}
-        >
-          <span class="material-symbols-rounded icon">contact_support</span>
+        <Link href="/about" className={path == "/about" ? "active" : ""}>
+          <span className="material-symbols-rounded icon">contact_support</span>
           <span>About</span>
-        </Link> */}
+        </Link>
       </nav>
     </header>
   );

@@ -1,22 +1,16 @@
-import Header from "@/components/Header";
+"use client";
+
 import SocialIcons from "@/components/SocialIcons";
 import aboutBg from "@/public/imgs/about-head-lg.png";
 import { shimmer, toBase64 } from "@/utils/BlurData";
 import { motion } from "framer-motion";
-import Head from "next/head";
 import Image from "next/image";
 
-export default function About() {
+export default function AboutContents() {
   const dropIninitial = { opacity: 0, y: -20 },
     dropInanimate = { opacity: 1, y: 0 };
   return (
     <>
-      <Head>
-        <title>{"Grant Imbo — About"}</title>
-      </Head>
-
-      <Header hidemenu={true} fixed={false} />
-
       <section className="head">
         <motion.figure
           animate={{ opacity: 1, scale: 1 }}
