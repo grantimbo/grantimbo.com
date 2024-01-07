@@ -13,7 +13,7 @@ export default function ProjectGrid() {
 
   return (
     <section className="projects-list">
-      {ctx.project.map((prj, i) => (
+      {ctx?.project.map((prj: any, i: number) => (
         <article key={prj.slug} title={prj.title}>
           <Link href={`/projects/${prj.slug}`}>
             <motion.figure

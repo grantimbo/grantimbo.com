@@ -1,3 +1,5 @@
+"use client";
+
 import SortButton from "./SortButton";
 
 const ProjectSort = () => {

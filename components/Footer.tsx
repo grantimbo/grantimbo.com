@@ -1,5 +1,5 @@
 import Link from "next/link";
-import SocialIcons from "../components/SocialIcons";
+import SocialIcons from "./SocialIcons";
 const Footer = () => {
   return (
     <>

@@ -3,9 +3,16 @@
 import { projects } from "@/public/_projects";
 import { createContext, useState } from "react";
 
-export const ProjectContext = createContext({});
+interface ProjectContextType {
+  project: object[];
+  setProject: (val: any) => void;
+  cat: string;
+  setCat: (val: string) => void;
+}
 
-export default function ProjectContextProvider({ children }) {
+export const ProjectContext = createContext<ProjectContextType | null>(null);
+
+export default function ProjectContextProvider({ children }: any) {
   const [project, setProject] = useState(projects);
   const [projectCat, setProjectCat] = useState("all");
 

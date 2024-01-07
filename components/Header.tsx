@@ -5,7 +5,12 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import ReactGA from "react-ga4";
 
-const Header = ({ hidemenu = false, fixed = false }) => {
+type HeaderProps = {
+  hidemenu?: boolean;
+  fixed?: boolean;
+};
+
+const Header = ({ hidemenu = false, fixed = false }: HeaderProps) => {
   const path = usePathname();
   // ReactGA.initialize("UA-47603859-1");
 
@@ -19,13 +24,20 @@ const Header = ({ hidemenu = false, fixed = false }) => {
   // }, [router?.pathname]);
 
   const toggleSidebar = () => {
-    document.querySelector("aside.sidebar").classList.toggle("active");
+    const sidebar = document.querySelector(
+      "aside.sidebar",
+    ) as HTMLInputElement | null;
+
+    if (sidebar != null) {
+      console.log(sidebar.value); // 👉️ "Initial value"
+      sidebar.classList.toggle("active");
+    }
   };
 
   return (
-    <header className={fixed && `fixed`}>
+    <header className={fixed == true ? `fixed` : ""}>
       <div className="menu-logo">
-        {!hidemenu && (
+        {hidemenu && (
           <div className="menu" onClick={() => toggleSidebar()}>
             <span className="material-symbols-rounded">menu</span>
           </div>
@@ -35,10 +47,7 @@ const Header = ({ hidemenu = false, fixed = false }) => {
         </Link>
       </div>
       <nav className="main">
-        <Link
-          href="/projects?tag=all"
-          className={path == "/projects" ? "active" : ""}
-        >
+        <Link href="/projects" className={path == "/projects" ? "active" : ""}>
           <span className="material-symbols-rounded icon">perm_media</span>
           <span>Projects</span>
         </Link>

@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -48,9 +50,7 @@ export default function FeaturedProjects() {
 
                   <p>{x?.description}</p>
                   <div className="tags">
-                    {x?.tags?.map((tag) => (
-                      <span key={tag}>{tag}</span>
-                    ))}
+                    {x?.tags?.map((tag) => <span key={tag}>{tag}</span>)}
                   </div>
                 </div>
               </article>
