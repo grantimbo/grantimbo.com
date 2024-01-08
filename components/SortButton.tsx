@@ -5,7 +5,7 @@ import { ProjectContext } from "@/utils/projectContext";
 import { useContext } from "react";
 
 type SortButtonType = {
-  icon: string;
+  icon: JSX.Element;
   name: string;
   title: string;
 };
@@ -30,7 +30,7 @@ const SortButton = (props: SortButtonType) => {
       className={ctx?.cat === props.name ? "menu active" : "menu"}
       onClick={setPrjCat}
     >
-      <span className="material-symbols-rounded">{props.icon}</span>
+      {props.icon}
       {props.title}
     </button>
   );

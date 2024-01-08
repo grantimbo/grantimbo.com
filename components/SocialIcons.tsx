@@ -1,5 +1,6 @@
 "use client";
 
+import { icons } from "@/utils/icons";
 import Link from "next/link";
 
 export default function SocialIcons() {
@@ -11,56 +12,63 @@ export default function SocialIcons() {
           target="_blank"
           rel="noreferrer"
         >
-          <i className="icon-youtube"></i>
+          {icons.youtube}
         </Link>
         <Link
           href="https://facebook.com/grntx"
           target="_blank"
           rel="noreferrer"
         >
-          <i className="icon-facebook"></i>
+          {icons.facebook}
         </Link>
         <Link
           href="https://instagram.com/grntx"
           target="_blank"
           rel="noreferrer"
         >
-          <i className="icon-instagram"></i>
+          {icons.instagram}
         </Link>
         <Link
           href="https://twitter.com/grantimbo"
           target="_blank"
           rel="noreferrer"
         >
-          <i className="icon-twitter"></i>
+          {icons.twitter}
         </Link>
         <Link
           href="https://github.com/grantimbo"
           target="_blank"
           rel="noreferrer"
         >
-          <i className="icon-github"></i>
+          {icons.github}
         </Link>
         <Link
           href="https://codepen.io/grantimbo"
           target="_blank"
           rel="noreferrer"
         >
-          <i className="icon-codepen"></i>
+          {icons.codepen}
         </Link>
         <Link
           href="https://artstation.com/grantimbo"
           target="_blank"
           rel="noreferrer"
         >
-          <i className="icon-artstation"></i>
+          {icons.artStation}
         </Link>
         <Link
           href="https://behance.net/grantimbo"
           target="_blank"
           rel="noreferrer"
         >
-          <i className="icon-behance"></i>
+          {icons.behance}
+        </Link>
+        <Link
+          href="https://behance.net/grantimbo"
+          target="_blank"
+          rel="noreferrer"
+        >
+          {icons.linkedIn}
         </Link>
       </div>
     </>

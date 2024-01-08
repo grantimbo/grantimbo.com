@@ -1,5 +1,6 @@
 "use client";
 
+import { icons } from "@/utils/icons";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -37,7 +38,7 @@ const Header = ({ hidemenu = false, fixed = false }: HeaderProps) => {
   return (
     <header className={fixed == true ? `fixed` : ""}>
       <div className="menu-logo">
-        {hidemenu && (
+        {!hidemenu && (
           <div className="menu" onClick={() => toggleSidebar()}>
             <span className="material-symbols-rounded">menu</span>
           </div>
@@ -48,15 +49,15 @@ const Header = ({ hidemenu = false, fixed = false }: HeaderProps) => {
       </div>
       <nav className="main">
         <Link href="/projects" className={path == "/projects" ? "active" : ""}>
-          <span className="material-symbols-rounded icon">perm_media</span>
+          {icons.projects}
           <span>Projects</span>
         </Link>
         <Link href="/services" className={path == "/services" ? "active" : ""}>
-          <span className="material-symbols-rounded icon">handyman</span>
+          {icons.services}
           <span>Services</span>
         </Link>
         <Link href="/about" className={path == "/about" ? "active" : ""}>
-          <span className="material-symbols-rounded icon">contact_support</span>
+          {icons.about}
           <span>About</span>
         </Link>
       </nav>
