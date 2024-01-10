@@ -4,49 +4,13 @@ import { projects } from "@/public/_projects";
 import { icons } from "@/utils/icons";
 import { ProjectContext } from "@/utils/projectContext";
 import parse from "html-react-parser";
-import type { Metadata, ResolvingMetadata } from "next";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
-import ReactGA from "react-ga4";
-
-// interface ParamsType {
-//   params: {
-//     slug: string;
-//   };
-// }
-
-// interface ProjectType {
-//   title: string;
-//   slug: string;
-//   date: string;
-//   tags: string[];
-//   thumbnail: string;
-//   content: string;
-// }
-
-// export async function generateMetadata(
-//   { params }: ParamsType,
-//   parent: ResolvingMetadata,
-// ): Promise<Metadata> {
-//   const project: ProjectType[] = projects;
-//   const filteredProject: ProjectType | undefined = project.find(
-//     (e) => e.slug === params.slug,
-//   );
-
-//   return {
-//     title: filteredProject?.title,
-//     // openGraph: {
-//     //   images: ["/some-specific-page-image.jpg", ...previousImages],
-//     // },
-//   };
-// }
 
 export default function ModalContents({ slug }: any) {
   const [loading, setloading] = useState(true);
   const ctx = useContext(ProjectContext);
-  const data = projects?.filter((e) => e.slug === slug);
-  const router = useRouter();
 
   const navigate = (slug: string, direction: "next" | "previous") => {
     const modal = document.querySelector(".modal") as HTMLInputElement | null;
@@ -70,26 +34,22 @@ export default function ModalContents({ slug }: any) {
       setloading(false);
     }, 500);
   };
+  const data = projects?.filter((e) => e.slug === slug);
+  const router = useRouter();
 
   useEffect(() => {
-    if (data?.length === 0) {
-      router.push(`/not-found`);
-    } else {
-      //add fake load
-      setTimeout(() => {
-        setloading(false);
-      }, 400);
+    if (router && data !== null) {
+      if (data?.length === 0) {
+        router.push(`/not-found`);
+      } else {
+        //add fake load
+        setTimeout(() => {
+          setloading(false);
+        }, 400);
+      }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  // useEffect(() => {
-  //   // Send pageview with a custom path
-  //   ReactGA.send({
-  //     hitType: "pageview",
-  //     page: window.location.pathname,
-  //     title: `Grant Imbo — Projects // ${data?.[0]?.title}`,
-  //   });
-  // }, [slug]);
 
   return (
     <>

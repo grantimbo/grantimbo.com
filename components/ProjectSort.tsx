@@ -23,6 +23,7 @@ const ProjectSort = () => {
         ctx?.setProject(projects?.filter((p) => p.tags.includes(tag)));
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
