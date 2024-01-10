@@ -28,19 +28,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <Script
+        {/* eslint-disable */}
+        <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-40N9DDPQQT"
         />
-        <Script id="google-analytics">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-  
-            gtag('config', 'G-40N9DDPQQT');
-          `}
-        </Script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || []; function gtag()
+          {dataLayer.push(arguments)}
+          gtag('js', new Date()); gtag('config', 'G-40N9DDPQQT');`,
+          }}
+        />
+        {/* eslint-enable */}
       </head>
       <body>
         <ProjectContextProvider>{children}</ProjectContextProvider>
