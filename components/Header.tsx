@@ -1,9 +1,11 @@
 "use client";
 
+import HeaderLinks from "@/components/HeaderLinks";
 import { icons } from "@/utils/icons";
+import { MenuContext } from "@/utils/menuContext";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ReactGA from "react-ga4";
 
 type HeaderProps = {
@@ -12,7 +14,8 @@ type HeaderProps = {
 };
 
 const Header = ({ hidemenu = false, fixed = false }: HeaderProps) => {
-  const path = usePathname();
+  const ctxMenu = useContext(MenuContext);
+
   // ReactGA.initialize("UA-47603859-1");
 
   // useEffect(() => {
@@ -24,43 +27,38 @@ const Header = ({ hidemenu = false, fixed = false }: HeaderProps) => {
   //   });
   // }, [router?.pathname]);
 
-  const toggleSidebar = () => {
-    const sidebar = document.querySelector(
-      "aside.sidebar",
-    ) as HTMLInputElement | null;
-
-    if (sidebar != null) {
-      console.log(sidebar.value); // 👉️ "Initial value"
-      sidebar.classList.toggle("active");
+  const renderIcon = () => {
+    if (!ctxMenu?.projectLinksMenu) {
+      return icons.menu;
+    } else {
+      return icons.close;
     }
   };
 
   return (
-    <header className={fixed == true ? `fixed` : ""}>
-      <div className="menu-logo">
+    <header
+      className={`${
+        fixed == true ? `fixed left-0 right-0 top-0 z-10` : "relative"
+      }  flex h-[60px] justify-between border-b-2 border-eggblue/10 bg-blue px-5 md:pr-10`}
+    >
+      <div className="flex items-center gap-1">
         {!hidemenu && (
-          <div className="menu" onClick={() => toggleSidebar()}>
-            <span className="material-symbols-rounded">menu</span>
+          <div
+            className="cursor-pointer select-none md:hidden"
+            onClick={() =>
+              ctxMenu?.setProjectLinksMenu(!ctxMenu?.projectLinksMenu)
+            }
+          >
+            {renderIcon()}
           </div>
         )}
         <Link href="/">
-          <div className="logo">Grant Imbo</div>
+          <div className=" pl-2 text-2xl font-semibold text-white hover:text-eggblue sm:block">
+            Grant Imbo
+          </div>
         </Link>
       </div>
-      <nav className="main">
-        <Link href="/projects" className={path == "/projects" ? "active" : ""}>
-          {icons.projects}
-          <span>Projects</span>
-        </Link>
-        <Link href="/services" className={path == "/services" ? "active" : ""}>
-          {icons.services}
-          <span>Services</span>
-        </Link>
-        <Link href="/about" className={path == "/about" ? "active" : ""}>
-          {icons.about}
-          <span>About</span>
-        </Link>
-      </nav>
+      <HeaderLinks />
     </header>
   );
 };

@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import ServicesContents from "@/components/ServicesConents";
+import ServicesContents from "@/components/ServicesContents";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

@@ -11,7 +11,7 @@ export default function AboutContents() {
     dropInanimate = { opacity: 1, y: 0 };
   return (
     <>
-      <section className="head">
+      <section className="mx-auto max-w-[1066px]">
         <motion.figure
           animate={{ opacity: 1, scale: 1 }}
           initial={{ opacity: 0, scale: 0.95 }}
@@ -33,15 +33,16 @@ export default function AboutContents() {
         </motion.figure>
       </section>
 
-      <section className="about">
-        <article>
-          <motion.h2
+      <section className="mx-auto mb-36 mt-10 max-w-xl">
+        <article className="p-1 text-sm leading-tight text-softgray lg:text-base lg:leading-tight">
+          <motion.h3
+            className="mb-2 text-lg text-eggblue md:text-2xl"
             animate={dropInanimate}
             initial={dropIninitial}
             transition={{
               delay: 0.1,
             }}
-          >{`Here's a glimpse into my journey.`}</motion.h2>
+          >{`Here's a glimpse into my journey.`}</motion.h3>
 
           <motion.p
             animate={dropInanimate}

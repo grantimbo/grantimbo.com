@@ -1,8 +1,7 @@
 "use client";
 
-import { ProjectContext } from "@/utils/projectContext";
-
 import { shimmer, toBase64 } from "@/utils/BlurData";
+import { ProjectContext } from "@/utils/projectContext";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,16 +11,23 @@ export default function ProjectGrid() {
   const ctx = useContext(ProjectContext);
 
   return (
-    <section className="projects-list">
+    <section className="grid grid-cols-2 gap-4 p-5 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7">
       {ctx?.project.map((prj: any, i: number) => (
-        <article key={prj.slug} title={prj.title}>
-          <Link href={`/projects/${prj.slug}`}>
-            <motion.figure
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              initial={{ opacity: 0, y: -20, scale: 0.5 }}
-              transition={{ delay: i * 0.04 }}
-            >
+        <motion.article
+          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: -20 }}
+          transition={{ delay: i * 0.04 }}
+          key={prj.slug}
+          title={prj.title}
+          className="cover relative overflow-hidden rounded-lg border-2 border-eggblue border-eggblue/10 bg-blue before:mt-[100%] before:block before:content-[''] hover:border-eggblue "
+        >
+          <Link
+            href={`/projects/${prj.slug}`}
+            className="absolute bottom-0 left-0 right-0 top-0 block "
+          >
+            <figure className="relative h-full">
               <Image
+                className="relative block h-auto w-full"
                 alt={prj?.title}
                 src={prj?.thumbnail}
                 placeholder="blur"
@@ -32,12 +38,12 @@ export default function ProjectGrid() {
                 width={300}
                 height={300}
               />
-              <div className="details">
-                <p>{prj.title}</p>
+              <div className="absolute bottom-0 flex w-full items-center justify-between bg-gradient-to-t from-[#07102c] to-transparent px-4 pt-[2rem] text-white">
+                <p className="text-[0.8rem] font-light">{prj.title}</p>
               </div>
-            </motion.figure>
+            </figure>
           </Link>
-        </article>
+        </motion.article>
       ))}
     </section>
   );

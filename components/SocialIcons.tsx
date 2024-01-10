@@ -3,73 +3,67 @@
 import { icons } from "@/utils/icons";
 import Link from "next/link";
 
+interface LinkType {
+  href: string;
+  icon: JSX.Element;
+}
+
+const socialLinks: LinkType[] = [
+  {
+    href: "https://youtube.com/grantimbo",
+    icon: icons.youtube,
+  },
+  {
+    href: "https://facebook.com/grntx",
+    icon: icons.facebook,
+  },
+  {
+    href: "https://instagram.com/grntx",
+    icon: icons.instagram,
+  },
+  {
+    href: "https://twitter.com/grantimbo",
+    icon: icons.twitter,
+  },
+  {
+    href: "https://github.com/grantimbo",
+    icon: icons.github,
+  },
+  {
+    href: "https://codepen.io/grantimbo",
+    icon: icons.codepen,
+  },
+  {
+    href: "https://artstation.com/grantimbo",
+    icon: icons.artStation,
+  },
+  {
+    href: "https://behance.net/grantimbo",
+    icon: icons.behance,
+  },
+  {
+    href: "https://www.linkedin.com/in/grantimbo/",
+    icon: icons.linkedIn,
+  },
+];
+
 export default function SocialIcons() {
   return (
     <>
-      <div className="social-icons">
-        <Link
-          href="https://youtube.com/grantimbo"
-          target="_blank"
-          rel="noreferrer"
-        >
-          {icons.youtube}
-        </Link>
-        <Link
-          href="https://facebook.com/grntx"
-          target="_blank"
-          rel="noreferrer"
-        >
-          {icons.facebook}
-        </Link>
-        <Link
-          href="https://instagram.com/grntx"
-          target="_blank"
-          rel="noreferrer"
-        >
-          {icons.instagram}
-        </Link>
-        <Link
-          href="https://twitter.com/grantimbo"
-          target="_blank"
-          rel="noreferrer"
-        >
-          {icons.twitter}
-        </Link>
-        <Link
-          href="https://github.com/grantimbo"
-          target="_blank"
-          rel="noreferrer"
-        >
-          {icons.github}
-        </Link>
-        <Link
-          href="https://codepen.io/grantimbo"
-          target="_blank"
-          rel="noreferrer"
-        >
-          {icons.codepen}
-        </Link>
-        <Link
-          href="https://artstation.com/grantimbo"
-          target="_blank"
-          rel="noreferrer"
-        >
-          {icons.artStation}
-        </Link>
-        <Link
-          href="https://behance.net/grantimbo"
-          target="_blank"
-          rel="noreferrer"
-        >
-          {icons.behance}
-        </Link>
-        <Link
-          href="https://behance.net/grantimbo"
-          target="_blank"
-          rel="noreferrer"
-        >
-          {icons.linkedIn}
-        </Link>
+      <div className="my-10 flex gap-4">
+        {socialLinks.map((link: LinkType) => {
+          return (
+            <Link
+              key={link.href}
+              href={link.href}
+              target="_blank"
+              rel="noreferrer"
+              className="[&_path]:fill-eggblue [&_path]:hover:fill-white"
+            >
+              {link.icon}
+            </Link>
+          );
+        })}
       </div>
     </>
   );

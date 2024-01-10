@@ -3,11 +3,20 @@
 import { projects } from "@/public/_projects";
 import { createContext, useState } from "react";
 
+interface ProjectType {
+  title: string;
+  slug: string;
+  date: string;
+  tags: string[];
+  thumbnail: string;
+  content: string;
+}
+
 interface ProjectContextType {
   project: object[];
-  setProject: (val: any) => void;
+  setProject: React.Dispatch<React.SetStateAction<ProjectType[]>>;
   cat: string;
-  setCat: (val: string) => void;
+  setCat: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const ProjectContext = createContext<ProjectContextType | null>(null);

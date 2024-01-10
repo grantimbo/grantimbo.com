@@ -2,12 +2,13 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import homeBg from "../public/imgs/home-bg-lg.png";
 import { shimmer, toBase64 } from "../utils/BlurData";
 
 export default function HomeIntro() {
   return (
-    <section className="home">
+    <section className="home mx-auto max-w-7xl items-center md:grid md:grid-cols-[1.5fr_1fr]">
       <motion.figure
         animate={{ opacity: 1, scale: 1 }}
         initial={{ opacity: 0, scale: 0.95 }}
@@ -27,9 +28,10 @@ export default function HomeIntro() {
           height={930}
         />
       </motion.figure>
-      <section>
-        <article>
+      <section className="md:flex md:items-center">
+        <article className="m-0 mx-auto max-w-[450px] p-[.6rem] text-center text-[0.9rem] text-softgray md:text-left lg:text-[1rem]">
           <motion.h2
+            className="text-xl font-semibold text-white lg:text-2xl"
             animate={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: -20 }}
             transition={{ delay: 0.2 }}
@@ -60,6 +62,16 @@ export default function HomeIntro() {
             {`I am always up for learning new things and never get satisfied with
             an average output, always striving for something better and fresh.`}
           </motion.p>
+
+          <motion.div
+            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: -20 }}
+            transition={{ delay: 0.6 }}
+          >
+            <Link href="/about" className="button">
+              👉 Read More
+            </Link>
+          </motion.div>
         </article>
       </section>
     </section>

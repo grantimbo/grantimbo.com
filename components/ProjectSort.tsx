@@ -1,12 +1,33 @@
 "use client";
 
+import { projects } from "@/public/_projects";
 import { icons } from "@/utils/icons";
+import { ProjectContext } from "@/utils/projectContext";
+import { useSearchParams } from "next/navigation";
+import { useContext, useEffect } from "react";
 import SortButton from "./SortButton";
 
 const ProjectSort = () => {
+  const ctx: any = useContext(ProjectContext);
+  const searchParams = useSearchParams();
+
+  const tag: string | null = searchParams.get("tag");
+
+  useEffect(() => {
+    if (tag) {
+      ctx.setCat(tag);
+
+      if (tag == "all") {
+        ctx.setProject(projects);
+      } else {
+        ctx.setProject(projects?.filter((p) => p.tags.includes(tag)));
+      }
+    }
+  }, [tag]);
+
   return (
     <>
-      <div className="project-sort">
+      <div className="flex flex-col gap-[0.4rem] p-2">
         <SortButton icon={icons.allProjects} name="all" title="All" />
         <SortButton icon={icons.cars} name="cars" title="Cars" />
         <SortButton icon={icons.motion} name="motion" title="Motion" />

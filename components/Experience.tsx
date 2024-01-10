@@ -1,5 +1,6 @@
 "use client";
 
+import ProjectContextProvider from "@/utils/projectContext";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,65 +10,88 @@ import { shimmer, toBase64 } from "../utils/BlurData";
 
 export default function Experience() {
   return (
-    <section className="experience">
-      <motion.figure
-        animate={{ opacity: 1, scale: 1 }}
-        initial={{ opacity: 0, scale: 0.95 }}
-        transition={{
-          duration: 0.4,
-        }}
-      >
-        <Image
-          alt="Experience"
-          src={experienceType}
-          placeholder="blur"
-          blurDataURL={`data:image/svg+xml;base64,${toBase64(
-            shimmer(100, 100),
-          )}`}
-          quality={100}
-          width={753}
-          height={305}
-        />
-      </motion.figure>
-      <section>
-        <section>
-          {experiences?.map((x) => (
-            <article key={x?.title} className="experience-card">
-              <div className="xThumb">
-                <figure>
-                  <Image
-                    alt="Experience"
-                    src={x?.thumbnail}
-                    placeholder="blur"
-                    blurDataURL={`data:image/svg+xml;base64,${toBase64(
-                      shimmer(100, 100),
-                    )}`}
-                    quality={100}
-                    width={600}
-                    height={358}
-                  />
-                </figure>
-                <p>{x?.date}</p>
-              </div>
-              <div className="xDetails">
-                <h2>{x?.title}</h2>
-                <div className="comp">
-                  <h3>{x?.company}</h3>
-                  {x?.partime && <span>(Part-time)</span>}
+    <ProjectContextProvider>
+      <section className="experience">
+        <motion.figure
+          className="w-full max-w-[700px]"
+          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          transition={{
+            duration: 0.4,
+          }}
+        >
+          <Image
+            alt="Experience"
+            src={experienceType}
+            placeholder="blur"
+            blurDataURL={`data:image/svg+xml;base64,${toBase64(
+              shimmer(100, 100),
+            )}`}
+            quality={100}
+            width={753}
+            height={305}
+          />
+        </motion.figure>
+        <section className="relative mb-12">
+          <section className="max-h-[650px] max-w-[700px] overflow-hidden overflow-y-auto p-4 pb-16 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[10rem] after:bg-gradient-to-t after:from-[#0d1a43] after:to-transparent after:content-['']">
+            {experiences?.map((x) => (
+              <article
+                key={x?.title}
+                className="mb-4 flex flex-col rounded-xl border-2 border-eggblue/30 bg-darkblue px-4 py-[1.6rem] hover:border-eggblue hover:bg-darkblue/50 md:flex-row md:gap-4"
+              >
+                <div className="flex min-w-[130px] flex-col justify-center gap-[0.4rem] md:items-center">
+                  <figure className="flex h-[70px] w-[74px] items-center justify-center rounded-md bg-eggblue/30 p-[0.2rem]">
+                    <Image
+                      alt="Experience"
+                      src={x?.thumbnail}
+                      placeholder="blur"
+                      blurDataURL={`data:image/svg+xml;base64,${toBase64(
+                        shimmer(100, 100),
+                      )}`}
+                      quality={100}
+                      width={600}
+                      height={358}
+                    />
+                  </figure>
+                  <p className="text-[0.7rem] text-softgray">{x?.date}</p>
                 </div>
+                <div>
+                  <h2 className="mb-[0.3rem] text-[1.2rem] font-semibold">
+                    {x?.title}
+                  </h2>
+                  <div className="mb-[0.2rem] flex items-center gap-[0.5rem]">
+                    <h3 className="m-0 text-[0.9rem] font-medium text-eggblue">
+                      {x?.company}
+                    </h3>
+                    {x?.partime && (
+                      <span className="text-[0.7rem] text-blue">
+                        (Part-time)
+                      </span>
+                    )}
+                  </div>
 
-                <p>{x?.description}</p>
-                <div className="tags">
-                  {x?.tags?.map((tag) => <span key={tag}>{tag}</span>)}
+                  <p className="text-[0.9rem] leading-tight text-softgray">
+                    {x?.description}
+                  </p>
+                  <div>
+                    {x?.tags?.map((tag) => (
+                      <span
+                        key={tag}
+                        className="mb-[0.3rem] mr-[0.3rem] inline-block rounded-full bg-eggblue/20 px-4 py-[0.3rem] text-[0.7rem] text-eggblue"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            ))}
+          </section>
         </section>
+        <Link href={"/résumé_2023.pdf"} target="_blank" className="button">
+          👉 Full Résumé
+        </Link>
       </section>
-      <Link href={"/résumé_2023.pdf"} target="_blank" className="btn">
-        View Full Résumé
-      </Link>
-    </section>
+    </ProjectContextProvider>
   );
 }
