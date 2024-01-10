@@ -69,7 +69,7 @@ export default function HomeIntro() {
             transition={{ delay: 0.6 }}
           >
             <Link href="/about" className="button">
-              👉 Read More
+              👇 Read More
             </Link>
           </motion.div>
         </article>
