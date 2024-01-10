@@ -8,22 +8,22 @@ import { useContext, useEffect } from "react";
 import SortButton from "./SortButton";
 
 const ProjectSort = () => {
-  const ctx: any = useContext(ProjectContext);
+  const ctx = useContext(ProjectContext);
   const searchParams = useSearchParams();
 
   const tag: string | null = searchParams.get("tag");
 
   useEffect(() => {
     if (tag) {
-      ctx.setCat(tag);
+      ctx?.setCat(tag);
 
       if (tag == "all") {
-        ctx.setProject(projects);
+        ctx?.setProject(projects);
       } else {
-        ctx.setProject(projects?.filter((p) => p.tags.includes(tag)));
+        ctx?.setProject(projects?.filter((p) => p.tags.includes(tag)));
       }
     }
-  }, [tag]);
+  }, []);
 
   return (
     <>

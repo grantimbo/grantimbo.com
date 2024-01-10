@@ -1,4 +1,4 @@
-import HeaderContextProviderWrap from "@/utils/menuContext";
+import ProjectContextProvider from "@/utils/projectContext";
 import type { Metadata } from "next";
 import "../styles/global.css";
 
@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <HeaderContextProviderWrap>{children}</HeaderContextProviderWrap>
+        <ProjectContextProvider>{children}</ProjectContextProvider>
       </body>
     </html>
   );

@@ -5,18 +5,15 @@ import FeaturedProjects from "@/components/FeaturedProjects";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import HomeIntro from "@/components/HomeIntro";
-import HeaderContextProvider from "@/utils/menuContext";
 
 export default function Home() {
   return (
     <>
-      <HeaderContextProvider>
-        <Header hidemenu={true} />
-        <HomeIntro />
-        <Experience />
-        <FeaturedProjects />
-        <Footer />
-      </HeaderContextProvider>
+      <Header hidemenu={true} />
+      <HomeIntro />
+      <Experience />
+      <FeaturedProjects />
+      <Footer />
     </>
   );
 }

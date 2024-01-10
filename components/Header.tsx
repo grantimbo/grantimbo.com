@@ -2,7 +2,7 @@
 
 import HeaderLinks from "@/components/HeaderLinks";
 import { icons } from "@/utils/icons";
-import { MenuContext } from "@/utils/menuContext";
+import { ProjectContext } from "@/utils/projectContext";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
@@ -14,7 +14,7 @@ type HeaderProps = {
 };
 
 const Header = ({ hidemenu = false, fixed = false }: HeaderProps) => {
-  const ctxMenu = useContext(MenuContext);
+  const ctx = useContext(ProjectContext);
 
   // ReactGA.initialize("UA-47603859-1");
 
@@ -28,7 +28,7 @@ const Header = ({ hidemenu = false, fixed = false }: HeaderProps) => {
   // }, [router?.pathname]);
 
   const renderIcon = () => {
-    if (!ctxMenu?.projectLinksMenu) {
+    if (!ctx?.projectLinksMenu) {
       return icons.menu;
     } else {
       return icons.close;
@@ -45,9 +45,7 @@ const Header = ({ hidemenu = false, fixed = false }: HeaderProps) => {
         {!hidemenu && (
           <div
             className="cursor-pointer select-none md:hidden"
-            onClick={() =>
-              ctxMenu?.setProjectLinksMenu(!ctxMenu?.projectLinksMenu)
-            }
+            onClick={() => ctx?.setProjectLinksMenu(!ctx?.projectLinksMenu)}
           >
             {renderIcon()}
           </div>

@@ -12,9 +12,7 @@ export default function Projects() {
   return (
     <>
       <Header fixed={true} />
-      <ProjectContextProvider>
-        <ProjectWrap />
-      </ProjectContextProvider>
+      <ProjectWrap />
     </>
   );
 }

@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import ModalContents from "@/components/ModalContents";
 import ProjectWrap from "@/components/ProjectWrap";
 import { projects } from "@/public/_projects";
+import ProjectContextProvider from "@/utils/projectContext";
 import { Metadata, ResolvingMetadata } from "next";
 
 interface ParamsType {
