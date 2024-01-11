@@ -4,6 +4,7 @@ import { projects } from "@/public/_projects";
 import { ProjectContext } from "@/utils/projectContext";
 import { SortProjBtnType } from "@/utils/types";
 import { useContext } from "react";
+import ReactGA from "react-ga4";
 
 const SortButton = (props: SortProjBtnType) => {
   const ctx = useContext(ProjectContext);
@@ -17,6 +18,16 @@ const SortButton = (props: SortProjBtnType) => {
       } else {
         ctx.setProject(projects?.filter((p) => p.tags.includes(props.name)));
       }
+
+      ReactGA.initialize("G-40N9DDPQQT");
+      ReactGA.event({
+        category: "test category",
+        action: "test action",
+        label: "test label", // optional
+        value: 99, // optional, must be a number
+        nonInteraction: true, // optional, true/false
+        transport: "xhr", // optional, beacon/xhr/image
+      });
     }
   };
 

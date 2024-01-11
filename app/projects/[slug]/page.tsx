@@ -4,8 +4,8 @@ import ModalContents from "@/components/ModalContents";
 import NotFound from "@/components/NotFound";
 import ProjectWrap from "@/components/ProjectWrap";
 import { projects } from "@/public/_projects";
-import { ParamsType } from "@/utils/types";
-import { redirect } from "next/navigation";
+import { ParamsType, ProjectType } from "@/utils/types";
+import { Metadata, ResolvingMetadata } from "next";
 
 async function getData({ params }: ParamsType) {
   const data = projects.filter((e) => e.slug === params.slug);
@@ -17,14 +17,41 @@ async function getData({ params }: ParamsType) {
   return data[0];
 }
 
+const pageData = {
+  title: "Projects",
+};
+
+export const metadata: Metadata = {
+  title: pageData.title,
+};
+
 export default async function Projects({ params }: ParamsType) {
   const data = await getData({ params });
+
+  async function generateMetadata(
+    data: ProjectType,
+    parent?: ResolvingMetadata,
+  ): Promise<Metadata> {
+    // optionally access and extend (rather than replace) parent metadata
+    const previousImages = (await parent)?.openGraph?.images || [];
+
+    return {
+      title: data.title,
+      openGraph: {
+        images: [data.thumbnail, ...previousImages],
+      },
+    };
+  }
+
+  if (data) {
+    generateMetadata(data);
+  }
 
   return (
     <>
       {data && (
         <>
-          <Analytics title={data.title} />
+          <Analytics title={`${data.title}`} />
           <Header fixed={true} />
           <ProjectWrap />
           <ModalContents data={data} />

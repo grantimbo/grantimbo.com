@@ -20,7 +20,7 @@ export default function Analytics({ page, title }: AnalyticsType) {
     console.log("send page view");
 
     return () => {};
-  }, [title]);
+  }, [page, title, pathname]);
 
   return <></>;
 }
