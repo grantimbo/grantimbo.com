@@ -1,18 +1,8 @@
 "use client";
 
 import { projects } from "@/public/_projects";
+import { ProjectType, Theme } from "@/utils/types";
 import { createContext, useState } from "react";
-
-type Theme = "light" | "dark";
-
-export type ProjectType = {
-  title: string;
-  slug: string;
-  date: string;
-  tags: string[];
-  thumbnail: string;
-  content: string;
-};
 
 export type ProjectContextType = {
   project: object[];

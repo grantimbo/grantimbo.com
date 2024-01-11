@@ -3,29 +3,12 @@
 import HeaderLinks from "@/components/HeaderLinks";
 import { icons } from "@/utils/icons";
 import { ProjectContext } from "@/utils/projectContext";
+import { HeaderProps } from "@/utils/types";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useContext, useEffect, useState } from "react";
-import ReactGA from "react-ga4";
-
-type HeaderProps = {
-  hidemenu?: boolean;
-  fixed?: boolean;
-};
+import { useContext } from "react";
 
 const Header = ({ hidemenu = false, fixed = false }: HeaderProps) => {
   const ctx = useContext(ProjectContext);
-
-  // ReactGA.initialize("UA-47603859-1");
-
-  // useEffect(() => {
-  //   // Send pageview with a custom path
-  //   ReactGA.send({
-  //     hitType: "pageview",
-  //     page: window.location.pathname,
-  //     title: `Grant Imbo`,
-  //   });
-  // }, [router?.pathname]);
 
   const renderIcon = () => {
     if (!ctx?.projectLinksMenu) {

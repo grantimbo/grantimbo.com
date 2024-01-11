@@ -1,14 +1,16 @@
 import Analytics from "@/components/Analytics";
 import Header from "@/components/Header";
-import ProjectWrap from "@/components/ProjectWrap";
+import NotFound from "@/components/NotFound";
 import type { Metadata } from "next";
 
 const pageData = {
-  title: "Projects",
+  title: "404 Not Found",
 };
 
 export const metadata: Metadata = {
   title: pageData.title,
+  description:
+    "The page you are looking for might have been moved or no longer exists.",
 };
 
 export default function Projects() {
@@ -16,7 +18,7 @@ export default function Projects() {
     <>
       <Analytics title={pageData.title} />
       <Header fixed={true} />
-      <ProjectWrap />
+      <NotFound />
     </>
   );
 }

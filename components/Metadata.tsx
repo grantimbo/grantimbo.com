@@ -1,4 +1,5 @@
 "use client";
+
 import { ProjectType } from "@/utils/types";
 import { Metadata, ResolvingMetadata } from "next";
 

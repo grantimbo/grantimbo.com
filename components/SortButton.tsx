@@ -2,15 +2,10 @@
 
 import { projects } from "@/public/_projects";
 import { ProjectContext } from "@/utils/projectContext";
+import { SortProjBtnType } from "@/utils/types";
 import { useContext } from "react";
 
-type SortButtonType = {
-  icon: JSX.Element;
-  name: string;
-  title: string;
-};
-
-const SortButton = (props: SortButtonType) => {
+const SortButton = (props: SortProjBtnType) => {
   const ctx = useContext(ProjectContext);
 
   const setPrjCat = () => {

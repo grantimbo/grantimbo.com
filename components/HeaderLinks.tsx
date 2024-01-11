@@ -1,16 +1,11 @@
 "use client";
 
 import { icons } from "@/utils/icons";
+import { HeaderLinkType } from "@/utils/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-interface LinkType {
-  pageName: string;
-  link: string;
-  icon: JSX.Element;
-}
-
-const navLinks: LinkType[] = [
+const navLinks: HeaderLinkType[] = [
   {
     pageName: "Projects",
     link: "/projects",
@@ -33,7 +28,7 @@ export default function HeaderLinks() {
 
   return (
     <nav className="flex items-center gap-6 md:gap-10 ">
-      {navLinks.map((nav: LinkType) => {
+      {navLinks.map((nav: HeaderLinkType) => {
         return (
           <Link
             key={nav.link}

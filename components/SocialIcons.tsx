@@ -1,14 +1,10 @@
 "use client";
 
 import { icons } from "@/utils/icons";
+import { SocialLinkType } from "@/utils/types";
 import Link from "next/link";
 
-interface LinkType {
-  href: string;
-  icon: JSX.Element;
-}
-
-const socialLinks: LinkType[] = [
+const socialLinks: SocialLinkType[] = [
   {
     href: "https://youtube.com/grantimbo",
     icon: icons.youtube,
@@ -51,7 +47,7 @@ export default function SocialIcons() {
   return (
     <>
       <div className="my-10 flex gap-4">
-        {socialLinks.map((link: LinkType) => {
+        {socialLinks.map((link: SocialLinkType) => {
           return (
             <Link
               key={link.href}

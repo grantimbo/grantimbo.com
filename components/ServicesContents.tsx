@@ -1,6 +1,5 @@
 "use client";
 
-import Header from "@/components/Header";
 import serviceBg from "@/public/imgs/services-head-lg.png";
 import margetingImg from "@/public/imgs/services/email-marketing-lg.png";
 import designImg from "@/public/imgs/services/graphic-design-lg.png";
@@ -8,15 +7,9 @@ import prodRenImg from "@/public/imgs/services/product-renders-lg.png";
 import vidProdImg from "@/public/imgs/services/video-production-lg.png";
 import webAppsImg from "@/public/imgs/services/website-apps-lg.png";
 import { shimmer, toBase64 } from "@/utils/BlurData";
+import { ServiceType } from "@/utils/types";
 import { motion } from "framer-motion";
 import Image from "next/image";
-
-interface ServiceType {
-  image: any;
-  delay: number;
-  title: string;
-  description: string;
-}
 
 const fadeIninitial = { opacity: 0, scale: 0.95 };
 const fadeInanimate = { opacity: 1, scale: 1 };
@@ -89,7 +82,7 @@ export default function ServicesContents() {
         <div className="flex items-center">
           <div>
             <motion.h3
-              className="text-eggblue text-base font-medium md:text-2xl"
+              className="text-base font-medium text-eggblue md:text-2xl"
               animate={dropInanimate}
               initial={dropIninitial}
               transition={{
@@ -99,7 +92,7 @@ export default function ServicesContents() {
               {service.title}
             </motion.h3>
             <motion.p
-              className="text-softgray text-sm md:text-base md:leading-tight"
+              className="text-sm text-softgray md:text-base md:leading-tight"
               animate={dropInanimate}
               initial={dropIninitial}
               transition={{
@@ -120,7 +113,7 @@ export default function ServicesContents() {
         <div className="flex items-center">
           <div>
             <motion.h3
-              className="text-eggblue text-base font-medium md:text-2xl"
+              className="text-base font-medium text-eggblue md:text-2xl"
               animate={dropInanimate}
               initial={dropIninitial}
               transition={{
@@ -130,7 +123,7 @@ export default function ServicesContents() {
               {service.title}
             </motion.h3>
             <motion.p
-              className="text-softgray text-sm md:text-base md:leading-tight"
+              className="text-sm text-softgray md:text-base md:leading-tight"
               animate={dropInanimate}
               initial={dropIninitial}
               transition={{

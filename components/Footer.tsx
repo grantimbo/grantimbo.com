@@ -1,3 +1,5 @@
+"use client";
+
 import SocialIcons from "@/components/SocialIcons";
 import Link from "next/link";
 
