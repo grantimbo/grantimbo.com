@@ -17,7 +17,6 @@ export default function Analytics({ page, title }: AnalyticsType) {
       page: page || pathname,
       title: title,
     });
-    console.log("send page view");
 
     return () => {};
   }, [page, title, pathname]);

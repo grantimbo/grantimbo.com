@@ -3,12 +3,23 @@
 import ProjectContextProvider from "@/utils/projectContext";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
+import ReactGA from "react-ga4";
 import { experiences } from "../public/_experience";
 import experienceType from "../public/imgs/experience.png";
 import { shimmer, toBase64 } from "../utils/BlurData";
 
 export default function Experience() {
+  const downloadResume = () => {
+    ReactGA.initialize("G-40N9DDPQQT");
+
+    ReactGA.event({
+      category: `Button Clicks`,
+      action: `Download Resume`,
+    });
+
+    window.open("/résumé_2023.pdf", "_ blank");
+  };
+
   return (
     <ProjectContextProvider>
       <section className="experience">
@@ -88,9 +99,9 @@ export default function Experience() {
             ))}
           </section>
         </section>
-        <Link href={"/résumé_2023.pdf"} target="_blank" className="button">
+        <button onClick={downloadResume} className="button">
           👉 Full Résumé
-        </Link>
+        </button>
       </section>
     </ProjectContextProvider>
   );

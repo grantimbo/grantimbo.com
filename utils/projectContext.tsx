@@ -5,7 +5,7 @@ import { ProjectType, Theme } from "@/utils/types";
 import { createContext, useState } from "react";
 
 export type ProjectContextType = {
-  project: object[];
+  project: ProjectType[];
   setProject: React.Dispatch<React.SetStateAction<ProjectType[]>>;
   cat: string;
   setCat: React.Dispatch<React.SetStateAction<string>>;

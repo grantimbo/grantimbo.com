@@ -5,6 +5,7 @@ import { icons } from "@/utils/icons";
 import { ProjectContext } from "@/utils/projectContext";
 import { useSearchParams } from "next/navigation";
 import { useContext, useEffect } from "react";
+import ReactGA from "react-ga4";
 import SortButton from "./SortButton";
 
 const ProjectSort = () => {
@@ -14,13 +15,25 @@ const ProjectSort = () => {
   const tag: string | null = searchParams.get("tag");
 
   useEffect(() => {
+    ReactGA.initialize("G-40N9DDPQQT");
+
     if (tag) {
       ctx?.setCat(tag);
 
       if (tag == "all") {
         ctx?.setProject(projects);
+        ReactGA.send({
+          hitType: "pageview",
+          page: `/projects`,
+          title: `Projects`,
+        });
       } else {
         ctx?.setProject(projects?.filter((p) => p.tags.includes(tag)));
+        ReactGA.send({
+          hitType: "pageview",
+          page: `/projects?tag=${tag}`,
+          title: `Projects (${tag})`,
+        });
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

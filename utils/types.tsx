@@ -48,3 +48,5 @@ export type SortProjBtnType = {
   name: string;
   title: string;
 };
+
+export type ModalNavType = "next" | "previous";

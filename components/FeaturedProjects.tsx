@@ -3,11 +3,25 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import ReactGA from "react-ga4";
 import { featured_projects } from "../public/_featured_projects";
 import projectsType from "../public/imgs/projects.png";
 import { shimmer, toBase64 } from "../utils/BlurData";
 
 export default function FeaturedProjects() {
+  const router = useRouter();
+  const viewProjectArchive = () => {
+    ReactGA.initialize("G-40N9DDPQQT");
+
+    ReactGA.event({
+      category: `Button Clicks`,
+      action: `Download Resume`,
+    });
+
+    router.push("/projects?tag=all");
+  };
+
   return (
     <section className="relative flex flex-col items-center px-20 py-4">
       <motion.figure
@@ -73,9 +87,9 @@ export default function FeaturedProjects() {
           </div>
         ))}
       </section>
-      <Link href="/projects?tag=all" className="button">
+      <button onClick={viewProjectArchive} className="button">
         👉 Project Archive
-      </Link>
+      </button>
     </section>
   );
 }
