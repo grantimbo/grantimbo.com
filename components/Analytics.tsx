@@ -15,9 +15,7 @@ export default function Analytics({ data }: any) {
       title: data.title,
     });
     console.log("send page view");
-
-    return () => {};
-  }, [data]);
+  }, []);
 
   return <></>;
 }
