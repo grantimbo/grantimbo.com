@@ -11,8 +11,8 @@ export default function Analytics({ data }: any) {
     // Send pageview with a custom path
     ReactGA.send({
       hitType: "pageview",
-      page: `test.com/${data.slug}`,
-      title: data.title,
+      page: `test.com/${data?.slug}`,
+      title: data?.title,
     });
     console.log("send page view");
   }, []);
