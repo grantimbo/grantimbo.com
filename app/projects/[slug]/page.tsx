@@ -19,19 +19,19 @@ async function getData({ params }: ParamsType) {
   return data[0];
 }
 
-export async function generateMetadata(
-  { params }: ParamsType,
-  parent?: ResolvingMetadata,
-): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: ParamsType): Promise<Metadata> {
   const data = await getData({ params });
 
   // optionally access and extend (rather than replace) parent metadata
-  const previousImages = (await parent)?.openGraph?.images || [];
+  // const previousImages = (await parent)?.openGraph?.images || [];
 
   return {
     title: `${data?.title}`,
+    description: `${data?.title} — a project by Grant Imbo`,
     openGraph: {
-      images: [`${data?.thumbnail}`, ...previousImages],
+      images: [{ url: `${data?.thumbnail}` }],
     },
   };
 }
