@@ -1,7 +1,6 @@
 import "@/styles/global.css";
 import ProjectContextProvider from "@/utils/projectContext";
 import type { Metadata } from "next";
-import Script from "next/script";
 
 export const metadata: Metadata = {
   title: {
@@ -27,21 +26,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        {/* eslint-disable */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-40N9DDPQQT"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer = window.dataLayer || []; function gtag()
-          {dataLayer.push(arguments)}
-          gtag('js', new Date()); gtag('config', 'G-40N9DDPQQT');`,
-          }}
-        />
-        {/* eslint-enable */}
-      </head>
       <body>
         <ProjectContextProvider>{children}</ProjectContextProvider>
       </body>

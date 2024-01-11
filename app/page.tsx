@@ -1,5 +1,4 @@
-"use client";
-
+import Analytics from "@/components/Analytics";
 import Experience from "@/components/Experience";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import Footer from "@/components/Footer";
@@ -9,6 +8,7 @@ import HomeIntro from "@/components/HomeIntro";
 export default function Home() {
   return (
     <>
+      <Analytics title={"test"} page="/test" />
       <Header hidemenu={true} />
       <HomeIntro />
       <Experience />

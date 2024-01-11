@@ -1,3 +1,4 @@
+import Analytics from "@/components/Analytics";
 import Header from "@/components/Header";
 import ProjectWrap from "@/components/ProjectWrap";
 import ProjectContextProvider from "@/utils/projectContext";
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 export default function Projects() {
   return (
     <>
+      <Analytics />
       <Header fixed={true} />
       <ProjectWrap />
     </>
