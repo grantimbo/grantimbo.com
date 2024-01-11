@@ -8,7 +8,7 @@ import HomeIntro from "@/components/HomeIntro";
 export default function Home() {
   return (
     <>
-      <Analytics title={"Grant Imbo — Designer / Developer"} />
+      <Analytics title={"Home"} />
       <Header hidemenu={true} />
       <HomeIntro />
       <Experience />

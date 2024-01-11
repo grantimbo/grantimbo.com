@@ -57,7 +57,10 @@ const serviceList: ServiceType[] = [
 export default function ServicesContents() {
   const renderLeftContentImage = (service: ServiceType) => {
     return (
-      <article className="mb-8 grid grid-cols-[1fr_1.5fr] gap-4">
+      <article
+        key={service.title}
+        className="mb-8 grid grid-cols-[1fr_1.5fr] gap-4"
+      >
         <motion.div
           className="max-w-[323px]"
           animate={fadeInanimate}
@@ -109,7 +112,10 @@ export default function ServicesContents() {
 
   const renderRightContentImage = (service: ServiceType) => {
     return (
-      <article className="mb-8 grid grid-cols-[1.5fr_1fr] gap-4 text-right">
+      <article
+        key={service.title}
+        className="mb-8 grid grid-cols-[1.5fr_1fr] gap-4 text-right"
+      >
         <div className="flex items-center">
           <div>
             <motion.h3

@@ -3,18 +3,14 @@ import Header from "@/components/Header";
 import ServicesContents from "@/components/ServicesContents";
 import type { Metadata } from "next";
 
-const pageData = {
-  title: "Services",
-};
-
 export const metadata: Metadata = {
-  title: pageData.title,
+  title: "Services",
 };
 
 export default function Services() {
   return (
     <>
-      <Analytics title={pageData.title} />
+      <Analytics title="Services" />
       <Header hidemenu={true} />
       <ServicesContents />
     </>

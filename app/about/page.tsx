@@ -3,11 +3,6 @@ import Analytics from "@/components/Analytics";
 import Header from "@/components/Header";
 import type { Metadata } from "next";
 
-const pageData = {
-  title: "Projects",
-  path: "/projects",
-};
-
 export const metadata: Metadata = {
   title: "About",
   description:
@@ -17,7 +12,7 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <>
-      <Analytics title={pageData.title} />;
+      <Analytics title="About" />
       <Header hidemenu={true} />
       <AboutContents />
     </>

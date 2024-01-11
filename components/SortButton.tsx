@@ -20,13 +20,10 @@ const SortButton = (props: SortProjBtnType) => {
       }
 
       ReactGA.initialize("G-40N9DDPQQT");
-      ReactGA.event({
-        category: "test category",
-        action: "test action",
-        label: "test label", // optional
-        value: 99, // optional, must be a number
-        nonInteraction: true, // optional, true/false
-        transport: "xhr", // optional, beacon/xhr/image
+      ReactGA.send({
+        hitType: "pageview",
+        page: `/projects?tag=${props.name}`,
+        title: `Project (${props.name})`,
       });
     }
   };

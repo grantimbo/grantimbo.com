@@ -3,18 +3,14 @@ import Header from "@/components/Header";
 import ProjectWrap from "@/components/ProjectWrap";
 import type { Metadata } from "next";
 
-const pageData = {
-  title: "Projects",
-};
-
 export const metadata: Metadata = {
-  title: pageData.title,
+  title: "Projects",
 };
 
 export default function Projects() {
   return (
     <>
-      <Analytics title={pageData.title} />
+      <Analytics title="Projects" />
       <Header fixed={true} />
       <ProjectWrap />
     </>

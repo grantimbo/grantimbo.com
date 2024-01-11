@@ -26,8 +26,11 @@ export default function ModalContents({ data }: any) {
         }
       });
 
-      const tae: any = ctx?.project[index];
-      router.push(`/projects/${tae.slug}`);
+      // [{slug: }]
+
+      // const tae = ctx?.project[index];
+      console.log(ctx?.project[index]);
+      // router.push(`/projects/${tae.slug}`);
     }
 
     // add fake load
@@ -49,7 +52,7 @@ export default function ModalContents({ data }: any) {
       <div className="modal fixed bottom-0 left-0 right-0 top-0 z-50 cursor-context-menu overflow-auto bg-darkblue md:bg-[rgba(8,14,36,.839)]">
         <div className=" mx-auto min-h-[90vh] rounded-lg border-eggblue/10 bg-darkblue outline-none md:relative md:my-12 md:max-w-[720px] md:border-2 md:bg-darkblue lg:max-w-[900px]">
           <>
-            {!loading && ctx?.project != data && (
+            {!loading && ctx?.project?.[0] != data && (
               <div
                 className="fixed left-4 top-[46vh] z-10 flex h-14 w-14 cursor-pointer items-center justify-center rounded-lg border-2 border-eggblue/30 bg-eggblue/30 hover:border-eggblue hover:bg-eggblue/50"
                 onClick={() => navigate(data?.slug, "previous")}

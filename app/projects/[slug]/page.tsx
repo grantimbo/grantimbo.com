@@ -10,6 +10,8 @@ import { Metadata, ResolvingMetadata } from "next";
 async function getData({ params }: ParamsType) {
   const data = projects.filter((e) => e.slug === params.slug);
 
+  console.log(data);
+
   if (data.length === 0) {
     return undefined;
   }
@@ -17,41 +19,30 @@ async function getData({ params }: ParamsType) {
   return data[0];
 }
 
-const pageData = {
-  title: "Projects",
-};
+export async function generateMetadata(
+  { params }: ParamsType,
+  parent?: ResolvingMetadata,
+): Promise<Metadata> {
+  const data = await getData({ params });
 
-export const metadata: Metadata = {
-  title: pageData.title,
-};
+  // optionally access and extend (rather than replace) parent metadata
+  const previousImages = (await parent)?.openGraph?.images || [];
+
+  return {
+    title: `${data?.title}`,
+    openGraph: {
+      images: [`${data?.thumbnail}`, ...previousImages],
+    },
+  };
+}
 
 export default async function Projects({ params }: ParamsType) {
   const data = await getData({ params });
-
-  async function generateMetadata(
-    data: ProjectType,
-    parent?: ResolvingMetadata,
-  ): Promise<Metadata> {
-    // optionally access and extend (rather than replace) parent metadata
-    const previousImages = (await parent)?.openGraph?.images || [];
-
-    return {
-      title: data.title,
-      openGraph: {
-        images: [data.thumbnail, ...previousImages],
-      },
-    };
-  }
-
-  if (data) {
-    generateMetadata(data);
-  }
-
   return (
     <>
       {data && (
         <>
-          <Analytics title={`${data.title}`} />
+          <Analytics title={data.title} />
           <Header fixed={true} />
           <ProjectWrap />
           <ModalContents data={data} />
