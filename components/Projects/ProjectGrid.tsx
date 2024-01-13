@@ -20,6 +20,13 @@ export default function ProjectGrid() {
 
   return (
     <section className="block w-full pb-[100px] pt-[60px] md:pl-[250px]">
+      {ctx?.project.length === 0 && (
+        <div className="inline-flex justify-center gap-2 p-10">
+          <div className="loader sm" />
+          <div className="text-white">Loading...</div>
+        </div>
+      )}
+
       <section className="grid grid-cols-2 gap-4 p-5 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7">
         {filtereDProjects()?.map((prj: any, i: number) => (
           <motion.article
