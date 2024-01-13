@@ -1,4 +1,5 @@
 "use client";
+import { siteConfig } from "@/utils/siteConfig";
 import { AnalyticsType } from "@/utils/types";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
@@ -8,15 +9,17 @@ export default function Analytics({ page, title }: AnalyticsType) {
   const pathname = usePathname();
 
   useEffect(() => {
-    // Multiple products (previously known as trackers)
-    ReactGA.initialize("G-40N9DDPQQT");
+    if (siteConfig.enableAnalytics) {
+      // Multiple products (previously known as trackers)
+      ReactGA.initialize("G-40N9DDPQQT");
 
-    // Send pageview with a custom path
-    ReactGA.send({
-      hitType: "pageview",
-      page: page || pathname,
-      title: title,
-    });
+      // Send pageview with a custom path
+      ReactGA.send({
+        hitType: "pageview",
+        page: page || pathname,
+        title: title,
+      });
+    }
 
     return () => {};
   }, [page, title, pathname]);

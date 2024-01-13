@@ -1,3 +1,5 @@
+// import { PortableText } from "@portabletext/react";
+
 export type ParamsType = {
   params: {
     slug: string;
@@ -6,11 +8,13 @@ export type ParamsType = {
 
 export type ProjectType = {
   title: string;
-  slug: string;
-  date: string;
+  slug: {
+    current: string;
+  };
+  releaseDate: string;
   tags: string[];
-  thumbnail: string;
-  content: string;
+  thumbnail: object;
+  content?: object[];
 };
 
 export type Theme = "light" | "dark";
@@ -50,3 +54,16 @@ export type SortProjBtnType = {
 };
 
 export type ModalNavType = "next" | "previous";
+
+export type ProjectContextType = {
+  project: ProjectType[];
+  setProject: React.Dispatch<React.SetStateAction<ProjectType[]>>;
+  cat: string;
+  setCat: React.Dispatch<React.SetStateAction<string>>;
+  projectLinksMenu: boolean;
+  setProjectLinksMenu: React.Dispatch<React.SetStateAction<boolean>>;
+  theme: Theme;
+  setTheme: React.Dispatch<React.SetStateAction<Theme>>;
+  loading: boolean;
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+};

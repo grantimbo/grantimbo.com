@@ -19,35 +19,35 @@ const dropInanimate = { opacity: 1, y: 0 };
 const serviceList: ServiceType[] = [
   {
     image: designImg,
-    delay: 0,
+    delay: 0.2,
     title: "Graphic Design",
     description:
       "Product labels, posters, banners, logos, brochures, ebooks or any visual expressions.",
   },
   {
     image: webAppsImg,
-    delay: 1,
+    delay: 0.8,
     title: "Website & Apps",
     description:
       "API driven websites and apps using the latest technologies and frameworks.",
   },
   {
     image: prodRenImg,
-    delay: 2,
+    delay: 1.5,
     title: "Product Renders",
     description:
       "High quality realistic product 3D renderings that will increase your sales on Amazon.",
   },
   {
     image: vidProdImg,
-    delay: 3,
+    delay: 2.1,
     title: "Video Production",
     description:
       "Logo intro reveal, Explainer videos, Motion design in 2D/3D or a simple VFX animation.",
   },
   {
     image: margetingImg,
-    delay: 4,
+    delay: 2.8,
     title: "Marketing",
     description:
       "Generate leads, Run a webinar, Sell your products and leverage the power of social media marketing.",
@@ -99,7 +99,7 @@ export default function ServicesContents() {
               animate={dropInanimate}
               initial={dropIninitial}
               transition={{
-                delay: service.delay + 0.4,
+                delay: service.delay + 0.2,
               }}
             >
               {service.description}
@@ -133,7 +133,7 @@ export default function ServicesContents() {
               animate={dropInanimate}
               initial={dropIninitial}
               transition={{
-                delay: service.delay + 0.4,
+                delay: service.delay + 0.2,
               }}
             >
               {service.description}

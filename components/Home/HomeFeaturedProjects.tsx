@@ -1,23 +1,26 @@
 "use client";
 
+import { featured_projects } from "@/public/_featured_projects";
+import projectsType from "@/public/imgs/projects.png";
+import { shimmer, toBase64 } from "@/utils/BlurData";
+import { siteConfig } from "@/utils/siteConfig";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import ReactGA from "react-ga4";
-import { featured_projects } from "../public/_featured_projects";
-import projectsType from "../public/imgs/projects.png";
-import { shimmer, toBase64 } from "../utils/BlurData";
 
-export default function FeaturedProjects() {
+export default function HomeFeaturedProjects() {
   const router = useRouter();
   const viewProjectArchive = () => {
-    ReactGA.initialize("G-40N9DDPQQT");
+    if (siteConfig.enableAnalytics) {
+      ReactGA.initialize("G-40N9DDPQQT");
 
-    ReactGA.event({
-      category: `Button Clicks`,
-      action: `Download Resume`,
-    });
+      ReactGA.event({
+        category: `Button Clicks`,
+        action: `Download Resume`,
+      });
+    }
 
     router.push("/projects?tag=all");
   };

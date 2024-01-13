@@ -1,10 +1,9 @@
 "use client";
 
+import homeBg from "@/public/imgs/home-bg-lg.png";
+import { shimmer, toBase64 } from "@/utils/BlurData";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
-import homeBg from "../public/imgs/home-bg-lg.png";
-import { shimmer, toBase64 } from "../utils/BlurData";
 
 export default function HomeIntro() {
   return (

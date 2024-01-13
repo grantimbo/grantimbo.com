@@ -40,7 +40,7 @@ export default function AboutContents() {
             animate={dropInanimate}
             initial={dropIninitial}
             transition={{
-              delay: 0.1,
+              delay: 0.3,
             }}
           >{`Here's a glimpse into my journey.`}</motion.h3>
 
@@ -48,7 +48,7 @@ export default function AboutContents() {
             animate={dropInanimate}
             initial={dropIninitial}
             transition={{
-              delay: 0.2,
+              delay: 0.4,
             }}
           >
             {`In the course of more than 11 years, I have been active in the Tech Industry,
@@ -60,7 +60,7 @@ export default function AboutContents() {
             animate={dropInanimate}
             initial={dropIninitial}
             transition={{
-              delay: 0.3,
+              delay: 0.5,
             }}
           >
             {`I have experience as a designer, developer, animator, 3D artist,
@@ -72,7 +72,7 @@ export default function AboutContents() {
             animate={dropInanimate}
             initial={dropIninitial}
             transition={{
-              delay: 0.4,
+              delay: 0.6,
             }}
           >
             {`I believe anything can be overcome through commitment and hard work.
@@ -84,7 +84,7 @@ export default function AboutContents() {
             animate={dropInanimate}
             initial={dropIninitial}
             transition={{
-              delay: 0.5,
+              delay: 0.7,
             }}
           >
             {`Have an idea you'd like to discuss?`} <br />
@@ -96,7 +96,7 @@ export default function AboutContents() {
             animate={dropInanimate}
             initial={dropIninitial}
             transition={{
-              delay: 0.6,
+              delay: 0.8,
             }}
           >
             {`Your can find me online on various platforms `}
