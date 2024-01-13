@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function HomeIntro() {
   return (
-    <section className="home mx-auto max-w-7xl items-center md:grid md:grid-cols-[1.5fr_1fr]">
+    <section className="home mx-auto max-w-7xl items-center md:grid md:grid-cols-[1.2fr_1fr] md:py-20 lg:grid-cols-[1.5fr_1fr]">
       <motion.figure
         animate={{ opacity: 1, scale: 1 }}
         initial={{ opacity: 0, scale: 0.95 }}
@@ -28,7 +28,7 @@ export default function HomeIntro() {
         />
       </motion.figure>
       <section className="md:flex md:items-center">
-        <article className="m-0 mx-auto max-w-[450px] p-[.6rem] text-center text-[0.9rem] text-softgray md:text-left lg:text-[1rem]">
+        <article className="m-0 mx-auto max-w-[450px] px-8 text-center text-[0.9rem] text-softgray md:text-left  lg:text-[1rem]">
           <motion.h2
             className="text-xl font-semibold text-white lg:text-2xl"
             animate={{ opacity: 1, y: 0 }}

@@ -26,7 +26,7 @@ export default function HomeFeaturedProjects() {
   };
 
   return (
-    <section className="relative flex flex-col items-center px-20 py-4">
+    <section className="relative flex flex-col items-center px-8 py-4 md:px-20">
       <motion.figure
         className="w-full max-w-[700px]"
         animate={{ opacity: 1, scale: 1 }}
@@ -47,7 +47,7 @@ export default function HomeFeaturedProjects() {
           height={305}
         />
       </motion.figure>
-      <section className="mb-10 grid max-w-7xl grid-cols-1 gap-4 md:grid-cols-3">
+      <section className="mb-10 grid max-w-7xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {featured_projects?.map((x) => (
           <div key={x?.title}>
             <Link href={x?.link} target={x?.target}>
@@ -56,6 +56,7 @@ export default function HomeFeaturedProjects() {
                 className="overflow-hidden rounded-md border-2 border-eggblue/20 bg-blue hover:border-eggblue hover:bg-blue/60"
               >
                 <Image
+                  className="w-full"
                   alt="Experience"
                   src={x?.thumbnail}
                   placeholder="blur"
@@ -71,7 +72,7 @@ export default function HomeFeaturedProjects() {
                     {x?.title}
                   </h2>
 
-                  <p className="text-[0.8rem] font-light text-softgray">
+                  <p className="mb-2 text-[0.8rem] font-light leading-tight text-softgray">
                     {x?.description}
                   </p>
                   <div className="tags">

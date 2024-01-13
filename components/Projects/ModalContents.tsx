@@ -1,6 +1,7 @@
 "use client";
 
 import ModalClose from "@/components/Projects/ModalClose";
+import ModalDate from "@/components/Projects/ModalDate";
 import ModalNavigation from "@/components/Projects/ModalNavigation";
 import { ProjectContext } from "@/utils/projectContext";
 import { sanityComponents } from "@/utils/sanityComponents";
@@ -30,13 +31,11 @@ export default function ModalContents({ data }: any) {
                 <div className="relative">
                   <ModalClose currentSlug={data?.slug?.current} />
                   <div className="p-[1rem]" id="scrollHere">
-                    <div className="header">
-                      <h3 className="mb-0 text-lg font-semibold md:text-xl">
+                    <div className="mb-10 border-b-2 border-eggblue/10 pb-4">
+                      <h3 className="mb-2 text-lg font-semibold text-eggblue md:text-2xl">
                         {data?.title}
                       </h3>
-                      <p className="text-xs text-eggblue/50 md:text-sm">
-                        {data?.date}
-                      </p>
+                      <ModalDate date={data?.releaseDate} />
                     </div>
                     <PortableText
                       value={data?.content}

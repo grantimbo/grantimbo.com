@@ -7,9 +7,7 @@ html {
   scrollbar-width: thick;
   scrollbar-color: #204483 #090e20;
 }
-/* // body.ReactModal__Body--open {
-//   overflow: hidden;
-// } */
+
 body {
   color: #fff;
   background: #090e20;
@@ -24,64 +22,70 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-*,
-*,
-*:after {
-  box-sizing: inherit;
-}
-figure {
-  margin: 0;
-  position: relative;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ol,
-ul {
-  margin: 0 0 0.8rem 0;
-  padding: 0;
-  font-weight: normal;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: bold;
-}
-h1 {
-  font-size: 2rem;
-}
-ul {
-  padding-left: 1.2rem;
-}
-img {
-  max-width: 100%;
-  height: auto;
-}
 a {
-  color: var(--blue);
-  text-decoration: none;
+  @apply text-eggblue hover:text-white hover:underline;
 }
 
-a:hover {
-  text-decoration: none;
+img {
+  @apply max-w-full h-auto
+}
+
+h1, h2, h3, h4, h5, h6, p, ol, ul {
+  @apply mb-4 p-0;
+}
+
+h1 {
+  @apply text-[1.6rem] font-bold
+}
+
+h2 {
+  @apply text-[1.5rem] font-bold
+}
+
+h3 {
+  @apply text-[1.4rem] font-bold
+}
+
+h4 {
+  @apply text-[1.3rem] font-bold
+}
+
+h5 {
+  @apply text-[1.2rem] font-bold
+}
+
+h6 {
+  @apply text-base font-bold;
+}
+
+code {
+  @apply inline-block rounded-md border border-eggblue/20 bg-eggblue/10 px-2 py-1 text-xs text-eggblue/50 md:text-xs;
+}
+
+b,
+strong {
+  @apply font-semibold
+}
+
+ul {
+  @apply pl-6 list-disc
+}
+
+ol {
+  @apply pl-6 list-decimal
 }
 
 /* 16:9 iframe */
 iframe {
   max-width: 100%;
 }
+
 .iframe-wrap {
   position: relative;
   overflow: hidden;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  padding-top: 56.25%;
+  /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
   background: var(--darkblue);
   margin-bottom: 0.4rem;
 }
@@ -95,15 +99,6 @@ iframe {
   right: 0;
   width: 100%;
   height: 100%;
-}
-
-section.experience {
-  padding: 8rem 1rem;
-  background: #0d1a43;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 section.experience:before {
@@ -170,10 +165,12 @@ section.experience:after {
   background: #090e20;
   padding: 6px;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #204483;
   border-radius: 6px;
 }
+
 ::-webkit-scrollbar-thumb:window-inactive {
   background: #16305e;
   border-radius: 6px;
