@@ -22,21 +22,22 @@ const Header = ({ hidemenu = false, fixed = false }: HeaderProps) => {
     <header
       className={`${
         fixed ? `fixed left-0 right-0 top-0 z-10` : "relative"
-      }  flex h-[60px] justify-between border-b-2 border-eggblue/10 bg-blue px-5 md:pr-10`}
+      }  flex h-[60px] justify-between border-b-2 border-eggblue/10 bg-blue pl-2 pr-4 md:pr-10`}
     >
       <div className="flex items-center gap-1">
         {!hidemenu && (
           <div
-            className="cursor-pointer select-none md:hidden"
+            className="cursor-pointer select-none p-2 md:hidden"
             onClick={() => ctx?.setProjectLinksMenu(!ctx?.projectLinksMenu)}
           >
             {renderIcon()}
           </div>
         )}
-        <Link href="/">
-          <div className=" pl-2 text-base font-medium text-white hover:text-eggblue sm:block sm:text-2xl sm:font-semibold">
-            Grant Imbo
-          </div>
+        <Link
+          href="/"
+          className="pl-2 text-lg font-medium text-white !no-underline hover:text-eggblue  sm:block sm:text-2xl sm:font-semibold"
+        >
+          Grant Imbo
         </Link>
       </div>
       <HeaderLinks />

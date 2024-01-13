@@ -3,12 +3,11 @@
 import SocialIcons from "@/components/SocialIcons";
 import aboutBg from "@/public/imgs/about-head-lg.png";
 import { shimmer, toBase64 } from "@/utils/BlurData";
+import AnimateBlock from "@/utils/animateBlock";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function AboutContents() {
-  const dropIninitial = { opacity: 0, y: -20 },
-    dropInanimate = { opacity: 1, y: 0 };
   return (
     <>
       <section className="mx-auto max-w-[1066px]">
@@ -34,77 +33,44 @@ export default function AboutContents() {
       </section>
 
       <section className="mx-auto mb-36 mt-10 max-w-xl">
-        <article className="p-1 text-sm leading-tight text-softgray lg:text-base lg:leading-tight">
-          <motion.h3
-            className="mb-2 text-lg text-eggblue md:text-2xl"
-            animate={dropInanimate}
-            initial={dropIninitial}
-            transition={{
-              delay: 0.3,
-            }}
-          >{`Here's a glimpse into my journey.`}</motion.h3>
+        <article className="p-8 text-sm leading-tight text-softgray lg:text-base lg:leading-tight">
+          <AnimateBlock delay={0.3}>
+            <h3 className="mb-2 text-lg text-eggblue md:text-2xl">{`Here's a glimpse into my journey.`}</h3>
+          </AnimateBlock>
 
-          <motion.p
-            animate={dropInanimate}
-            initial={dropIninitial}
-            transition={{
-              delay: 0.4,
-            }}
-          >
-            {`In the course of more than 11 years, I have been active in the Tech Industry,
+          <AnimateBlock delay={0.6}>
+            <p>{`In the course of more than 11 years, I have been active in the Tech Industry,
             engaging in various projects that span across both creative and
-            technical domains.`}
-          </motion.p>
-
-          <motion.p
-            animate={dropInanimate}
-            initial={dropIninitial}
-            transition={{
-              delay: 0.5,
-            }}
-          >
-            {`I have experience as a designer, developer, animator, 3D artist,
+            technical domains.`}</p>
+          </AnimateBlock>
+          <AnimateBlock delay={0.8}>
+            <p>{`I have experience as a designer, developer, animator, 3D artist,
             video editor, and other related roles. My skill set is adaptable,
-            and I am capable of adjusting to diverse tasks as needed.`}
-          </motion.p>
-
-          <motion.p
-            animate={dropInanimate}
-            initial={dropIninitial}
-            transition={{
-              delay: 0.6,
-            }}
-          >
-            {`I believe anything can be overcome through commitment and hard work.
+            and I am capable of adjusting to diverse tasks as needed.`}</p>
+          </AnimateBlock>
+          <AnimateBlock delay={1.0}>
+            <p>{`I believe anything can be overcome through commitment and hard work.
             I am always up for learning new things and never gets satisfied with an
-            average output, always striving for something better and fresh.`}
-          </motion.p>
-
-          <motion.p
-            animate={dropInanimate}
-            initial={dropIninitial}
-            transition={{
-              delay: 0.7,
-            }}
-          >
-            {`Have an idea you'd like to discuss?`} <br />
-            {`Feel free to contact me at `}
-            <span>grant.imbo@gmail.com</span>
-          </motion.p>
-
-          <motion.p
-            animate={dropInanimate}
-            initial={dropIninitial}
-            transition={{
-              delay: 0.8,
-            }}
-          >
-            {`Your can find me online on various platforms `}
-            <span>@grantimbo</span> or <span>@grntx</span>{" "}
-            {`or by clicking the
-            links below.`}
-          </motion.p>
-          <SocialIcons />
+            average output, always striving for something better and fresh.`}</p>
+          </AnimateBlock>
+          <AnimateBlock delay={1.2}>
+            <p>
+              {" "}
+              {`Have an idea you'd like to discuss?`} <br />
+              {`Feel free to contact me at `}
+              <span>grant.imbo@gmail.com</span>
+            </p>
+          </AnimateBlock>
+          <AnimateBlock delay={1.4}>
+            <p>
+              {`Your can find me online on various platforms `}
+              <span>@grantimbo</span> or <span>@grntx</span>{" "}
+              {`or by clicking the links below.`}
+            </p>
+          </AnimateBlock>
+          <AnimateBlock delay={1.4}>
+            <SocialIcons />
+          </AnimateBlock>
         </article>
       </section>
     </>

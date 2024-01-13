@@ -21,7 +21,13 @@ export const sanityComponents = {
       );
     },
     youtube: ({ value }: any) => {
-      return value.url && <ReactPlayer url={value.url} />;
+      return (
+        value.url && (
+          <div className="iframe-wrap">
+            <ReactPlayer width="100%" height="100%" url={value.url} />
+          </div>
+        )
+      );
     },
     // Any other custom types you have in your content
     // Examples: mapLocation, contactForm, code, featuredProjects, latestNews, etc.

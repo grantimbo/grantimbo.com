@@ -90,16 +90,18 @@ export default function ServicesContents() {
               initial={dropIninitial}
               transition={{
                 delay: service.delay,
+                duration: 0.4,
               }}
             >
               {service.title}
             </motion.h3>
             <motion.p
-              className="text-sm text-softgray md:text-base md:leading-tight"
+              className="text-[0.8rem] leading-tight text-softgray sm:text-sm md:text-base md:leading-tight"
               animate={dropInanimate}
               initial={dropIninitial}
               transition={{
-                delay: service.delay + 0.2,
+                delay: service.delay + 0.1,
+                duration: 0.4,
               }}
             >
               {service.description}
@@ -129,11 +131,11 @@ export default function ServicesContents() {
               {service.title}
             </motion.h3>
             <motion.p
-              className="text-sm text-softgray md:text-base md:leading-tight"
+              className="text-[0.8rem] text-softgray sm:text-sm md:text-base md:leading-tight"
               animate={dropInanimate}
               initial={dropIninitial}
               transition={{
-                delay: service.delay + 0.2,
+                delay: service.delay + 0.1,
               }}
             >
               {service.description}
@@ -189,7 +191,7 @@ export default function ServicesContents() {
         </motion.figure>
       </section>
 
-      <section className="mx-auto mb-10 mt-0 max-w-[800px] p-4">
+      <section className="mx-auto mb-10 mt-0 max-w-[800px] p-8">
         {serviceList.map((service: ServiceType, index: number) => {
           if (index % 2 == 0) {
             return renderLeftContentImage(service);

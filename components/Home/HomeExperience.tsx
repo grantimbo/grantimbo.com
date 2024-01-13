@@ -25,9 +25,9 @@ export default function HomeExperience() {
 
   return (
     <ProjectContextProvider>
-      <section className="experience">
+      <section className="experience relative flex flex-col items-center bg-blue px-4 py-20">
         <motion.figure
-          className="w-full max-w-[700px]"
+          className="z-10 w-full max-w-[700px]"
           animate={{ opacity: 1, scale: 1 }}
           initial={{ opacity: 0, scale: 0.95 }}
           transition={{
@@ -70,7 +70,7 @@ export default function HomeExperience() {
                   <p className="text-[0.7rem] text-softgray">{x?.date}</p>
                 </div>
                 <div>
-                  <h2 className="mb-[0.3rem] text-[1.2rem] font-semibold">
+                  <h2 className="mb-[0.3rem] text-[1.1rem] font-semibold leading-tight md:text-[1.2rem]">
                     {x?.title}
                   </h2>
                   <div className="mb-[0.2rem] flex items-center gap-[0.5rem]">
@@ -78,13 +78,13 @@ export default function HomeExperience() {
                       {x?.company}
                     </h3>
                     {x?.partime && (
-                      <span className="text-[0.7rem] text-blue">
+                      <span className="text-[0.7rem] text-[#5176d1]/80">
                         (Part-time)
                       </span>
                     )}
                   </div>
 
-                  <p className="text-[0.9rem] leading-tight text-softgray">
+                  <p className="mb-2 text-[0.7rem] leading-tight text-softgray md:text-[0.8rem] ">
                     {x?.description}
                   </p>
                   <div>
@@ -102,7 +102,7 @@ export default function HomeExperience() {
             ))}
           </section>
         </section>
-        <button onClick={downloadResume} className="button">
+        <button onClick={downloadResume} className="button z-10">
           👉 Full Résumé
         </button>
       </section>

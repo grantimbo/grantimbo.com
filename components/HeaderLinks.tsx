@@ -37,7 +37,7 @@ export default function HeaderLinks() {
               path == nav.link
                 ? "text-[#fff] [&_path]:fill-[#fff]"
                 : "text-eggblue [&_path]:fill-eggblue"
-            }  flex flex-col items-center justify-between gap-[0.1rem] text-[.7rem] hover:text-white md:flex-row md:gap-2 md:px-[0.4rem] md:py-[0.3rem] md:text-base [&_path]:hover:fill-white`}
+            }  flex flex-col items-center justify-between gap-[0.1rem] text-[.7rem] !no-underline hover:text-white md:flex-row md:gap-2 md:px-[0.4rem] md:py-[0.3rem] md:text-base [&_path]:hover:fill-white`}
           >
             {nav.icon}
             {nav.pageName}
