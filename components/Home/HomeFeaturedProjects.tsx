@@ -50,7 +50,7 @@ export default function HomeFeaturedProjects() {
       <section className="mb-10 grid max-w-7xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {featured_projects?.map((x) => (
           <div key={x?.title}>
-            <Link href={x?.link} target={x?.target}>
+            <Link href={x?.link} target={x?.target} className="!no-underline">
               <article
                 key={x?.title}
                 className="overflow-hidden rounded-md border-2 border-eggblue/20 bg-blue hover:border-eggblue hover:bg-blue/60"

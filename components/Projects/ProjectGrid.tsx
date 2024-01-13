@@ -2,12 +2,22 @@
 
 import filtereDProjects from "@/utils/filterProjects";
 import { urlFor } from "@/utils/imageBuilder";
+import { ProjectContext } from "@/utils/projectContext";
 import { getImageDimensions } from "@sanity/asset-utils";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useContext } from "react";
 
 export default function ProjectGrid() {
+  const router = useRouter();
+  const ctx = useContext(ProjectContext);
+
+  const openModal = (link: string) => {
+    ctx?.setLoading(true);
+    router.push(link);
+  };
+
   return (
     <section className="block w-full pb-[100px] pt-[60px] md:pl-[250px]">
       <section className="grid grid-cols-2 gap-4 p-5 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7">
@@ -18,10 +28,10 @@ export default function ProjectGrid() {
             transition={{ delay: i * 0.04 }}
             key={prj.slug.current}
             title={prj.title}
-            className="cover relative overflow-hidden rounded-lg border-2 border-eggblue border-eggblue/10 bg-blue before:mt-[100%] before:block before:content-[''] hover:border-eggblue "
+            className=" cover relative cursor-pointer overflow-hidden rounded-lg border-2 border-eggblue border-eggblue/10 bg-blue before:mt-[100%] before:block before:content-[''] hover:border-eggblue "
           >
-            <Link
-              href={`/projects/${prj.slug.current}`}
+            <div
+              onClick={() => openModal(`/projects/${prj.slug.current}`)}
               className="absolute bottom-0 left-0 right-0 top-0 block "
             >
               <figure className="relative h-full">
@@ -42,7 +52,7 @@ export default function ProjectGrid() {
                   <p className="text-[0.8rem] font-light">{prj.title}</p>
                 </div>
               </figure>
-            </Link>
+            </div>
           </motion.article>
         ))}
       </section>
