@@ -1,30 +1,36 @@
+import { shimmer, toBase64 } from "@/utils/BlurData";
+import { urlFor } from "@/utils/imageBuilder";
 import { getImageDimensions } from "@sanity/asset-utils";
 import Image from "next/image";
 import ReactPlayer from "react-player";
-import { urlFor } from "./imageBuilder";
 
 export const sanityComponents = {
   types: {
     image: ({ value }: any) => {
       return (
-        <>
+        <p>
           <Image
             src={urlFor(value).url()}
             width={getImageDimensions(value).width}
             height={getImageDimensions(value).height}
             alt={value.alt || "Grant Imbo"}
-            placeholder="blur"
-            blurDataURL={urlFor(value).width(24).height(24).blur(10).url()}
-            sizes=" (max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
+            quality={95}
+            sizes="(max-width: 500px) 50vw, (max-width: 768px) 80vw, 100vw"
+            placeholder={`data:image/svg+xml;base64,${toBase64(
+              shimmer(
+                getImageDimensions(value).width,
+                getImageDimensions(value).height,
+              ),
+            )}`}
           />
-        </>
+        </p>
       );
     },
     youtube: ({ value }: any) => {
       return (
         value.url && (
           <div className="iframe-wrap">
-            <ReactPlayer width="100%" height="100%" url={value.url} />
+            <ReactPlayer width="100%" height="100%" url={value.url} controls />
           </div>
         )
       );

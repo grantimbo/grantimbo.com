@@ -21,10 +21,10 @@ export default function AboutContents() {
           <Image
             alt="Creator Thinker"
             src={aboutBg}
-            placeholder="blur"
-            blurDataURL={`data:image/svg+xml;base64,${toBase64(
-              shimmer(100, 100),
+            placeholder={`data:image/svg+xml;base64,${toBase64(
+              shimmer(1066, 574, "#090e20", "#0f1429"),
             )}`}
+            sizes="(max-width: 500px) 50vw, (max-width: 768px) 100vw"
             quality={100}
             width={1066}
             height={574}
@@ -33,7 +33,7 @@ export default function AboutContents() {
       </section>
 
       <section className="mx-auto mb-36 mt-10 max-w-xl">
-        <article className="p-8 text-sm leading-tight text-softgray lg:text-base lg:leading-tight">
+        <article className="p-8 text-sm leading-tight lg:text-base lg:leading-tight [&_p]:text-softgray">
           <AnimateBlock delay={0.3}>
             <h3 className="mb-2 text-lg text-eggblue md:text-2xl">{`Here's a glimpse into my journey.`}</h3>
           </AnimateBlock>
@@ -58,13 +58,13 @@ export default function AboutContents() {
               {" "}
               {`Have an idea you'd like to discuss?`} <br />
               {`Feel free to contact me at `}
-              <span>grant.imbo@gmail.com</span>
+              <code>grant.imbo@gmail.com</code>
             </p>
           </AnimateBlock>
           <AnimateBlock delay={1.4}>
             <p>
               {`Your can find me online on various platforms `}
-              <span>@grantimbo</span> or <span>@grntx</span>{" "}
+              <code>@grantimbo</code> or <code>@grntx</code>{" "}
               {`or by clicking the links below.`}
             </p>
           </AnimateBlock>

@@ -72,13 +72,13 @@ export default function ServicesContents() {
         >
           <Image
             alt={service.title}
-            placeholder="blur"
             src={service.image}
             width={323}
             height={323}
             quality={100}
-            blurDataURL={`data:image/svg+xml;base64,${toBase64(
-              shimmer(100, 100),
+            sizes="(max-width: 450px) 50vw, (max-width: 768px) 100vw"
+            placeholder={`data:image/svg+xml;base64,${toBase64(
+              shimmer(323, 323, "#090e20", "#0f1429"),
             )}`}
           />
         </motion.div>
@@ -159,7 +159,7 @@ export default function ServicesContents() {
             height={323}
             quality={100}
             blurDataURL={`data:image/svg+xml;base64,${toBase64(
-              shimmer(100, 100),
+              shimmer(323, 323, "#090e20", "#0f1429"),
             )}`}
           />
         </motion.div>
@@ -183,7 +183,7 @@ export default function ServicesContents() {
             placeholder="blur"
             quality={100}
             blurDataURL={`data:image/svg+xml;base64,${toBase64(
-              shimmer(100, 100),
+              shimmer(1066, 574, "#090e20", "#0f1429"),
             )}`}
             width={1066}
             height={574}

@@ -1,5 +1,6 @@
 "use client";
 
+import { shimmer, toBase64 } from "@/utils/BlurData";
 import filtereDProjects from "@/utils/filterProjects";
 import { urlFor } from "@/utils/imageBuilder";
 import { ProjectContext } from "@/utils/projectContext";
@@ -47,13 +48,10 @@ export default function ProjectGrid() {
                   width={getImageDimensions(prj.thumbnail).width}
                   height={getImageDimensions(prj.thumbnail).height}
                   alt={prj.title}
-                  placeholder="blur"
-                  blurDataURL={urlFor(prj.thumbnail)
-                    .width(24)
-                    .height(24)
-                    .blur(10)
-                    .url()}
-                  sizes=" (max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
+                  placeholder={`data:image/svg+xml;base64,${toBase64(
+                    shimmer(100, 100),
+                  )}`}
+                  sizes="(max-width: 500px) 25vw, (max-width: 768px) 100vw"
                 />
                 <div className="absolute bottom-0 flex w-full items-center justify-between bg-gradient-to-t from-[#07102c] to-transparent px-4 pt-[2rem] text-white">
                   <p className="text-[0.8rem] font-light">{prj.title}</p>

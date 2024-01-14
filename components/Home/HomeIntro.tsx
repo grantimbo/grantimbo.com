@@ -19,9 +19,9 @@ export default function HomeIntro() {
         <Image
           alt="Creator Thinker"
           src={homeBg}
-          placeholder="blur"
-          blurDataURL={`data:image/svg+xml;base64,${toBase64(
-            shimmer(100, 100),
+          sizes="(max-width: 450px) 50vw, (max-width: 768px) 100vw"
+          placeholder={`data:image/svg+xml;base64,${toBase64(
+            shimmer(1104, 930, "#090e20", "#0f1429"),
           )}`}
           quality={100}
           width={1104}
@@ -29,7 +29,7 @@ export default function HomeIntro() {
         />
       </motion.figure>
       <section className="md:flex md:items-center">
-        <article className="m-0 mx-auto max-w-[450px] px-8 text-center text-[0.9rem] text-softgray md:text-left  lg:text-[1rem]">
+        <article className="m-0 mx-auto max-w-[450px] px-8 text-center text-[0.9rem] md:text-left lg:text-[1rem]  [&_p]:text-softgray">
           <AnimateBlock delay={0.3}>
             <h2 className="text-xl font-semibold text-white lg:text-2xl">{`Designer — Developer`}</h2>
           </AnimateBlock>
