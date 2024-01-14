@@ -26,12 +26,16 @@ a {
   @apply text-eggblue hover:text-white hover:underline;
 }
 
+p {
+  @apply font-light text-slate-300 leading-tight;
+}
+
 img {
   @apply max-w-full h-auto
 }
 
 h1, h2, h3, h4, h5, h6, p, ol, ul {
-  @apply mb-4 p-0;
+  @apply mb-4 p-0 text-slate-300;
 }
 
 h1 {
@@ -59,21 +63,22 @@ h6 {
 }
 
 code {
-  @apply inline-block rounded-md border border-eggblue/20 bg-eggblue/10 px-2 py-1 text-xs text-eggblue/50 md:text-xs;
+  @apply inline-block rounded-md border border-eggblue/30 bg-eggblue/20 px-[0.35rem] py-[0.15rem] text-xs text-eggblue/80 md:text-xs;
 }
 
 b,
 strong {
-  @apply font-semibold
+  @apply font-semibold text-slate-300
 }
 
 ul {
-  @apply pl-6 list-disc
+  @apply pl-6 list-disc text-slate-300
 }
 
 ol {
-  @apply pl-6 list-decimal
+  @apply pl-6 list-decimal text-slate-300
 }
+
 
 /* 16:9 iframe */
 iframe {
@@ -87,7 +92,7 @@ iframe {
   padding-top: 56.25%;
   /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
   background: var(--darkblue);
-  margin-bottom: 0.4rem;
+  margin-bottom: 1rem;
 }
 
 /* Then style the iframe to fit in the container div with full height and width */

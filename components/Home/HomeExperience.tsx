@@ -70,7 +70,7 @@ export default function HomeExperience() {
                   <p className="text-[0.7rem] text-softgray">{x?.date}</p>
                 </div>
                 <div>
-                  <h2 className="mb-[0.3rem] text-[1.1rem] font-semibold leading-tight md:text-[1.2rem]">
+                  <h2 className="mb-[0.3rem] text-[1.1rem] font-semibold leading-tight text-white md:text-[1.2rem]">
                     {x?.title}
                   </h2>
                   <div className="mb-[0.2rem] flex items-center gap-[0.5rem]">

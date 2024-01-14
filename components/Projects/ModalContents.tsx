@@ -31,7 +31,7 @@ export default function ModalContents({ data }: any) {
                 <div className="relative">
                   <ModalClose currentSlug={data?.slug?.current} />
                   <div className="p-[1rem]" id="scrollHere">
-                    <div className="mb-10 border-b-2 border-eggblue/10 pb-4">
+                    <div className="mb-4 border-b-2 border-eggblue/10 pb-4">
                       <h3 className="mb-2 text-lg font-semibold text-eggblue md:text-2xl">
                         {data?.title}
                       </h3>
