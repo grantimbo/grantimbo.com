@@ -13,7 +13,7 @@ export default function ProjectContextProvider({
   useEffect(() => {
     const client = createClient(siteConfig.sanityConfig);
     const fetchProjects = async () => {
-      const prj = await client.fetch(`*[_type == "project"]`);
+      const prj = await client.fetch(`*[_type == "project"] | order(order)`);
 
       if (prj.length === 0) {
         return undefined;
