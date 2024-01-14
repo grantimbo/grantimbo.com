@@ -1,8 +1,8 @@
 export const featured_projects = [
   {
     title: "Simple Money Tracker",
-    link: "https://simple-money-tracker.vercel.app/",
-    target: "_blank",
+    link: "/projects/simple-money-tracker",
+    target: "_self",
     thumbnail: "/imgs/featured_projects/expense-tracker.jpg",
     tags: ["Next.js", "Firebase"],
     description: `Sleek and minimal expense tracker tool that enables users to have better control over their finances.`,
@@ -10,8 +10,8 @@ export const featured_projects = [
   },
   {
     title: "2014 Personal Website",
-    link: "https://grantimbo.github.io/slanttex/",
-    target: "_blank",
+    link: "/projects/slanttex/",
+    target: "_self",
     thumbnail: "/imgs/featured_projects/slanttex.jpg",
     tags: ["WordPress", "Photoshop"],
     description: `Personally, one of my favorite rebuilds on my site. It incorporates minimal JS and laverages CSS3 transitions.`,
