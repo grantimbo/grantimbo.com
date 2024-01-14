@@ -6,7 +6,7 @@ import { ProjectContext } from "@/utils/projectContext";
 import { siteConfig } from "@/utils/siteConfig";
 import { HeaderProps } from "@/utils/types";
 import Link from "next/link";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import ReactGA from "react-ga4";
 
 const Header = ({ hidemenu = false, fixed = false }: HeaderProps) => {
@@ -17,6 +17,13 @@ const Header = ({ hidemenu = false, fixed = false }: HeaderProps) => {
   const renderIcon = () => {
     return !ctx?.projectLinksMenu ? icons.menu : icons.close;
   };
+
+  // check width on load
+  useEffect(() => {
+    if (window.innerWidth <= 768) {
+      ctx?.setProjectLinksMenu(false);
+    }
+  }, []);
 
   return (
     <header
