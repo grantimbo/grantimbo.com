@@ -12,6 +12,21 @@ export const categories = [
     title: "Cars",
   },
   {
+    icon: icons.website,
+    name: "website",
+    title: "Website",
+  },
+  {
+    icon: icons.cyberpunk,
+    name: "cyberpunk",
+    title: "Cyberpunk",
+  },
+  {
+    icon: icons.typography,
+    name: "typography",
+    title: "Typography",
+  },
+  {
     icon: icons.motion,
     name: "motion",
     title: "Motion",
@@ -21,11 +36,7 @@ export const categories = [
     name: "visualization",
     title: "Visualization",
   },
-  {
-    icon: icons.website,
-    name: "website",
-    title: "Website",
-  },
+
   {
     icon: icons.abstract,
     name: "abstract",
@@ -35,10 +46,5 @@ export const categories = [
     icon: icons.photoManipulation,
     name: "photomanipulation",
     title: "Photo Manipulation",
-  },
-  {
-    icon: icons.cyberpunk,
-    name: "cyberpunk",
-    title: "Cyberpunk",
   },
 ];
