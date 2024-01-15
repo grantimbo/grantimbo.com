@@ -7,9 +7,7 @@ html {
   scrollbar-width: thick;
   scrollbar-color: #204483 #090e20;
 }
-/* // body.ReactModal__Body--open {
-//   overflow: hidden;
-// } */
+
 body {
   color: #fff;
   background: #090e20;
@@ -24,66 +22,77 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-*,
-*,
-*:after {
-  box-sizing: inherit;
-}
-figure {
-  margin: 0;
-  position: relative;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ol,
-ul {
-  margin: 0 0 0.8rem 0;
-  padding: 0;
-  font-weight: normal;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: bold;
-}
-h1 {
-  font-size: 2rem;
-}
-ul {
-  padding-left: 1.2rem;
-}
-img {
-  max-width: 100%;
-  height: auto;
-}
 a {
-  color: var(--blue);
-  text-decoration: none;
+  @apply text-eggblue hover:text-white hover:underline;
 }
 
-a:hover {
-  text-decoration: none;
+p {
+  @apply font-light text-slate-300 leading-tight;
 }
+
+img {
+  @apply max-w-full h-auto
+}
+
+h1, h2, h3, h4, h5, h6, p, ol, ul {
+  @apply mb-4 p-0 text-slate-300;
+}
+
+h1 {
+  @apply text-[1.6rem] font-bold
+}
+
+h2 {
+  @apply text-[1.5rem] font-bold
+}
+
+h3 {
+  @apply text-[1.4rem] font-bold
+}
+
+h4 {
+  @apply text-[1.3rem] font-bold
+}
+
+h5 {
+  @apply text-[1.2rem] font-bold
+}
+
+h6 {
+  @apply text-base font-bold;
+}
+
+code {
+  @apply inline-block rounded-md border border-eggblue/30 bg-eggblue/20 px-[0.35rem] py-[0.15rem] text-xs text-eggblue/80 md:text-xs;
+}
+
+b,
+strong {
+  @apply font-semibold text-slate-300
+}
+
+ul {
+  @apply pl-6 list-disc text-slate-300
+}
+
+ol {
+  @apply pl-6 list-decimal text-slate-300
+}
+
 
 /* 16:9 iframe */
 iframe {
   max-width: 100%;
 }
+
 .iframe-wrap {
   position: relative;
   overflow: hidden;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  padding-top: 56.25%;
+  /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
   background: var(--darkblue);
-  margin-bottom: 0.4rem;
+  margin-bottom: 1rem;
 }
 
 /* Then style the iframe to fit in the container div with full height and width */
@@ -95,15 +104,6 @@ iframe {
   right: 0;
   width: 100%;
   height: 100%;
-}
-
-section.experience {
-  padding: 8rem 1rem;
-  background: #0d1a43;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 section.experience:before {
@@ -160,6 +160,10 @@ section.experience:after {
   @apply h-14 w-14 animate-spin rounded-full border-[0.6rem] border-[#263253] border-t-[#4e5e88];
 }
 
+.loader.sm {
+  @apply !h-6 !w-6 !border-[0.36rem]
+}
+
 .button {
   @apply inline-flex items-center gap-3 rounded-full border-2 border-eggblue/30 bg-eggblue/10 px-[1.2rem] py-[0.5rem] text-sm text-white hover:border-eggblue hover:bg-eggblue/30 md:px-5 md:py-2 md:text-base [&_path]:fill-[#fff];
 }
@@ -170,10 +174,12 @@ section.experience:after {
   background: #090e20;
   padding: 6px;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #204483;
   border-radius: 6px;
 }
+
 ::-webkit-scrollbar-thumb:window-inactive {
   background: #16305e;
   border-radius: 6px;

@@ -5,13 +5,10 @@ import { useEffect } from "react";
 import ReactGA from "react-ga4";
 
 export default function Analytics({ page, title }: AnalyticsType) {
+  ReactGA.initialize("G-40N9DDPQQT");
   const pathname = usePathname();
 
   useEffect(() => {
-    // Multiple products (previously known as trackers)
-    ReactGA.initialize("G-40N9DDPQQT");
-
-    // Send pageview with a custom path
     ReactGA.send({
       hitType: "pageview",
       page: page || pathname,

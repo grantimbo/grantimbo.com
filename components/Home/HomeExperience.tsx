@@ -1,17 +1,17 @@
 "use client";
 
+import { experiences } from "@/public/_experience";
+import experienceType from "@/public/imgs/experience.png";
+import { shimmer, toBase64 } from "@/utils/BlurData";
 import ProjectContextProvider from "@/utils/projectContext";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import ReactGA from "react-ga4";
-import { experiences } from "../public/_experience";
-import experienceType from "../public/imgs/experience.png";
-import { shimmer, toBase64 } from "../utils/BlurData";
 
-export default function Experience() {
+export default function HomeExperience() {
+  ReactGA.initialize("G-40N9DDPQQT");
+
   const downloadResume = () => {
-    ReactGA.initialize("G-40N9DDPQQT");
-
     ReactGA.event({
       category: `Button Clicks`,
       action: `Download Resume`,
@@ -22,9 +22,9 @@ export default function Experience() {
 
   return (
     <ProjectContextProvider>
-      <section className="experience">
+      <section className="experience relative flex flex-col items-center bg-blue px-4 py-20">
         <motion.figure
-          className="w-full max-w-[700px]"
+          className="z-10 w-full max-w-[700px]"
           animate={{ opacity: 1, scale: 1 }}
           initial={{ opacity: 0, scale: 0.95 }}
           transition={{
@@ -67,7 +67,7 @@ export default function Experience() {
                   <p className="text-[0.7rem] text-softgray">{x?.date}</p>
                 </div>
                 <div>
-                  <h2 className="mb-[0.3rem] text-[1.2rem] font-semibold">
+                  <h2 className="mb-[0.3rem] text-[1.1rem] font-semibold leading-tight text-white md:text-[1.2rem]">
                     {x?.title}
                   </h2>
                   <div className="mb-[0.2rem] flex items-center gap-[0.5rem]">
@@ -75,13 +75,13 @@ export default function Experience() {
                       {x?.company}
                     </h3>
                     {x?.partime && (
-                      <span className="text-[0.7rem] text-blue">
+                      <span className="text-[0.7rem] text-[#5176d1]/80">
                         (Part-time)
                       </span>
                     )}
                   </div>
 
-                  <p className="text-[0.9rem] leading-tight text-softgray">
+                  <p className="mb-2 text-[0.7rem] leading-tight text-softgray md:text-[0.8rem] ">
                     {x?.description}
                   </p>
                   <div>
@@ -99,7 +99,7 @@ export default function Experience() {
             ))}
           </section>
         </section>
-        <button onClick={downloadResume} className="button">
+        <button onClick={downloadResume} className="button z-10">
           👉 Full Résumé
         </button>
       </section>

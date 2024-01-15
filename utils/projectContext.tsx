@@ -1,27 +1,36 @@
 "use client";
 
-import { projects } from "@/public/_projects";
-import { ProjectType, Theme } from "@/utils/types";
-import { createContext, useState } from "react";
-
-export type ProjectContextType = {
-  project: ProjectType[];
-  setProject: React.Dispatch<React.SetStateAction<ProjectType[]>>;
-  cat: string;
-  setCat: React.Dispatch<React.SetStateAction<string>>;
-  projectLinksMenu: boolean;
-  setProjectLinksMenu: React.Dispatch<React.SetStateAction<boolean>>;
-  theme: Theme;
-  setTheme: React.Dispatch<React.SetStateAction<Theme>>;
-};
+import { ProjectContextType, ProjectType, Theme } from "@/utils/types";
+import { createClient } from "next-sanity";
+import { createContext, useEffect, useState } from "react";
+import { siteConfig } from "./siteConfig";
 
 export const ProjectContext = createContext<ProjectContextType | null>(null);
 
-export default function ProjectContextProvider({ children }: any) {
-  const [project, setProject] = useState(projects);
+export default function ProjectContextProvider({
+  children,
+}: React.PropsWithChildren<{}>) {
+  useEffect(() => {
+    const client = createClient(siteConfig.sanityConfig);
+    const fetchProjects = async () => {
+      const prj = await client.fetch(`*[_type == "project"] | order(order)`);
+
+      if (prj.length === 0) {
+        return undefined;
+      }
+
+      setProject(prj);
+      console.log("fetch data from contextProvider");
+    };
+
+    fetchProjects();
+  }, []);
+
+  const [project, setProject] = useState<ProjectType[]>([]);
   const [projectCat, setProjectCat] = useState("all");
   const [projectLinksMenu, setProjectLinksMenu] = useState(true);
   const [theme, setTheme] = useState<Theme>("dark");
+  const [loading, setLoading] = useState<boolean>(false);
 
   return (
     <ProjectContext.Provider
@@ -34,6 +43,8 @@ export default function ProjectContextProvider({ children }: any) {
         setProjectLinksMenu: setProjectLinksMenu,
         theme: theme,
         setTheme: setTheme,
+        loading: loading,
+        setLoading: setLoading,
       }}
     >
       {children}

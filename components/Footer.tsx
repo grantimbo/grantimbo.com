@@ -8,7 +8,7 @@ const Footer = () => {
     <>
       <div className="footer relative flex flex-col items-center bg-blue px-4 pb-[5rem] pt-[10rem] text-center">
         <SocialIcons />
-        <p className="w-full max-w-[470px] text-[0.9rem] text-softgray [&_a]:text-white/80 hover:[&_a]:text-eggblue">
+        <p className="w-full max-w-[470px] px-4 text-[0.8rem] text-softgray md:px-0 md:text-[0.9rem] ">
           Designed in{" "}
           <Link
             href="https://www.adobe.com/ph_en/products/photoshop.html"

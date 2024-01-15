@@ -1,16 +1,23 @@
 import Analytics from "@/components/Analytics";
 import Header from "@/components/Header";
-import ModalContents from "@/components/ModalContents";
 import NotFound from "@/components/NotFound";
-import ProjectWrap from "@/components/ProjectWrap";
+import ModalContents from "@/components/Projects/ModalContents";
+import ProjectWrap from "@/components/Projects/ProjectWrap";
 import { projects } from "@/public/_projects";
+import { siteConfig } from "@/utils/siteConfig";
 import { ParamsType, ProjectType } from "@/utils/types";
 import { Metadata, ResolvingMetadata } from "next";
+import { createClient } from "next-sanity";
+
+const client = createClient(siteConfig.sanityConfig);
 
 async function getData({ params }: ParamsType) {
-  const data = projects.filter((e) => e.slug === params.slug);
+  // const data = projects.filter((e) => e.slug === params.slug);
 
-  console.log(data);
+  const data = await client.fetch(
+    `*[_type == "project" && slug.current == "${params.slug}"]`,
+    { cache: "no-store" },
+  );
 
   if (data.length === 0) {
     return undefined;
@@ -38,6 +45,7 @@ export async function generateMetadata({
 
 export default async function Projects({ params }: ParamsType) {
   const data = await getData({ params });
+
   return (
     <>
       {data && (

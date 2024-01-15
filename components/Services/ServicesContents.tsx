@@ -19,35 +19,35 @@ const dropInanimate = { opacity: 1, y: 0 };
 const serviceList: ServiceType[] = [
   {
     image: designImg,
-    delay: 0,
+    delay: 0.2,
     title: "Graphic Design",
     description:
       "Product labels, posters, banners, logos, brochures, ebooks or any visual expressions.",
   },
   {
     image: webAppsImg,
-    delay: 1,
+    delay: 0.8,
     title: "Website & Apps",
     description:
       "API driven websites and apps using the latest technologies and frameworks.",
   },
   {
     image: prodRenImg,
-    delay: 2,
+    delay: 1.5,
     title: "Product Renders",
     description:
       "High quality realistic product 3D renderings that will increase your sales on Amazon.",
   },
   {
     image: vidProdImg,
-    delay: 3,
+    delay: 2.1,
     title: "Video Production",
     description:
       "Logo intro reveal, Explainer videos, Motion design in 2D/3D or a simple VFX animation.",
   },
   {
     image: margetingImg,
-    delay: 4,
+    delay: 2.8,
     title: "Marketing",
     description:
       "Generate leads, Run a webinar, Sell your products and leverage the power of social media marketing.",
@@ -72,13 +72,13 @@ export default function ServicesContents() {
         >
           <Image
             alt={service.title}
-            placeholder="blur"
             src={service.image}
             width={323}
             height={323}
             quality={100}
-            blurDataURL={`data:image/svg+xml;base64,${toBase64(
-              shimmer(100, 100),
+            sizes="(max-width: 450px) 50vw, (max-width: 768px) 100vw"
+            placeholder={`data:image/svg+xml;base64,${toBase64(
+              shimmer(323, 323, "#090e20", "#0f1429"),
             )}`}
           />
         </motion.div>
@@ -90,16 +90,18 @@ export default function ServicesContents() {
               initial={dropIninitial}
               transition={{
                 delay: service.delay,
+                duration: 0.4,
               }}
             >
               {service.title}
             </motion.h3>
             <motion.p
-              className="text-sm text-softgray md:text-base md:leading-tight"
+              className="text-[0.8rem] leading-tight text-softgray sm:text-sm md:text-base md:leading-tight"
               animate={dropInanimate}
               initial={dropIninitial}
               transition={{
-                delay: service.delay + 0.4,
+                delay: service.delay + 0.1,
+                duration: 0.4,
               }}
             >
               {service.description}
@@ -129,11 +131,11 @@ export default function ServicesContents() {
               {service.title}
             </motion.h3>
             <motion.p
-              className="text-sm text-softgray md:text-base md:leading-tight"
+              className="text-[0.8rem] text-softgray sm:text-sm md:text-base md:leading-tight"
               animate={dropInanimate}
               initial={dropIninitial}
               transition={{
-                delay: service.delay + 0.4,
+                delay: service.delay + 0.1,
               }}
             >
               {service.description}
@@ -157,7 +159,7 @@ export default function ServicesContents() {
             height={323}
             quality={100}
             blurDataURL={`data:image/svg+xml;base64,${toBase64(
-              shimmer(100, 100),
+              shimmer(323, 323, "#090e20", "#0f1429"),
             )}`}
           />
         </motion.div>
@@ -178,10 +180,9 @@ export default function ServicesContents() {
           <Image
             alt="Services Thinker"
             src={serviceBg}
-            placeholder="blur"
             quality={100}
-            blurDataURL={`data:image/svg+xml;base64,${toBase64(
-              shimmer(100, 100),
+            placeholder={`data:image/svg+xml;base64,${toBase64(
+              shimmer(1066, 574, "#090e20", "#0f1429"),
             )}`}
             width={1066}
             height={574}
@@ -189,7 +190,7 @@ export default function ServicesContents() {
         </motion.figure>
       </section>
 
-      <section className="mx-auto mb-10 mt-0 max-w-[800px] p-4">
+      <section className="mx-auto mb-10 mt-0 max-w-[800px] p-8">
         {serviceList.map((service: ServiceType, index: number) => {
           if (index % 2 == 0) {
             return renderLeftContentImage(service);

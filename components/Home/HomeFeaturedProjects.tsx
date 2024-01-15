@@ -1,19 +1,19 @@
 "use client";
 
+import { featured_projects } from "@/public/_featured_projects";
+import projectsType from "@/public/imgs/projects.png";
+import { shimmer, toBase64 } from "@/utils/BlurData";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import ReactGA from "react-ga4";
-import { featured_projects } from "../public/_featured_projects";
-import projectsType from "../public/imgs/projects.png";
-import { shimmer, toBase64 } from "../utils/BlurData";
 
-export default function FeaturedProjects() {
+export default function HomeFeaturedProjects() {
+  ReactGA.initialize("G-40N9DDPQQT");
   const router = useRouter();
-  const viewProjectArchive = () => {
-    ReactGA.initialize("G-40N9DDPQQT");
 
+  const viewProjectArchive = () => {
     ReactGA.event({
       category: `Button Clicks`,
       action: `Download Resume`,
@@ -23,7 +23,7 @@ export default function FeaturedProjects() {
   };
 
   return (
-    <section className="relative flex flex-col items-center px-20 py-4">
+    <section className="relative flex flex-col items-center px-8 py-4 md:px-20">
       <motion.figure
         className="w-full max-w-[700px]"
         animate={{ opacity: 1, scale: 1 }}
@@ -44,15 +44,16 @@ export default function FeaturedProjects() {
           height={305}
         />
       </motion.figure>
-      <section className="mb-10 grid max-w-7xl grid-cols-1 gap-4 md:grid-cols-3">
+      <section className="mb-10 grid max-w-7xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {featured_projects?.map((x) => (
           <div key={x?.title}>
-            <Link href={x?.link} target={x?.target}>
+            <Link href={x?.link} target={x?.target} className="!no-underline">
               <article
                 key={x?.title}
                 className="overflow-hidden rounded-md border-2 border-eggblue/20 bg-blue hover:border-eggblue hover:bg-blue/60"
               >
                 <Image
+                  className="w-full"
                   alt="Experience"
                   src={x?.thumbnail}
                   placeholder="blur"
@@ -68,7 +69,7 @@ export default function FeaturedProjects() {
                     {x?.title}
                   </h2>
 
-                  <p className="text-[0.8rem] font-light text-softgray">
+                  <p className="mb-2 text-[0.8rem] font-light leading-tight text-softgray">
                     {x?.description}
                   </p>
                   <div className="tags">

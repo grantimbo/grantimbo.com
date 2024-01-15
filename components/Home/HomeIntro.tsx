@@ -1,0 +1,61 @@
+"use client";
+
+import homeBg from "@/public/imgs/home-bg-lg.png";
+import { shimmer, toBase64 } from "@/utils/BlurData";
+import AnimateBlock from "@/utils/animateBlock";
+import { motion } from "framer-motion";
+import Image from "next/image";
+
+export default function HomeIntro() {
+  return (
+    <section className="home mx-auto max-w-7xl items-center md:grid md:grid-cols-[1.2fr_1fr] md:py-20 lg:grid-cols-[1.5fr_1fr]">
+      <motion.figure
+        animate={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0, scale: 0.95 }}
+        transition={{
+          duration: 0.4,
+        }}
+      >
+        <Image
+          alt="Creator Thinker"
+          src={homeBg}
+          sizes="(max-width: 450px) 50vw, (max-width: 768px) 100vw"
+          placeholder={`data:image/svg+xml;base64,${toBase64(
+            shimmer(1104, 930, "#090e20", "#0f1429"),
+          )}`}
+          quality={100}
+          width={1104}
+          height={930}
+        />
+      </motion.figure>
+      <section className="md:flex md:items-center">
+        <article className="m-0 mx-auto max-w-[450px] px-8 text-center text-[0.9rem] md:text-left lg:text-[1rem]  [&_p]:text-softgray">
+          <AnimateBlock delay={0.3}>
+            <h2 className="text-xl font-semibold text-white lg:text-2xl">{`Designer — Developer`}</h2>
+          </AnimateBlock>
+
+          <AnimateBlock delay={0.6}>
+            <p>
+              {`In the course of more than 11 years, I have been active in the Tech Industry,
+            engaging in various projects that span across both creative and
+            technical domains.`}
+            </p>
+          </AnimateBlock>
+          <AnimateBlock delay={0.8}>
+            <p>{`I have experience as a designer, developer, animator, 3D artist,
+            video editor, and other related roles. My skill set is adaptable,
+            and I am capable of adjusting to diverse tasks as needed. `}</p>
+          </AnimateBlock>
+          <AnimateBlock delay={1.0}>
+            <p>{`I am always up for learning new things and never get satisfied with
+            an average output, always striving for something better and fresh.`}</p>
+          </AnimateBlock>
+
+          {/* <Link href="/about" className="button">
+              👇 Read More
+            </Link> */}
+        </article>
+      </section>
+    </section>
+  );
+}

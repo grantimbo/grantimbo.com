@@ -1,4 +1,4 @@
-import AboutContents from "@/components/AboutContents";
+import AboutContents from "@/components/About/AboutContents";
 import Analytics from "@/components/Analytics";
 import Header from "@/components/Header";
 import type { Metadata } from "next";
