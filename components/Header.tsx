@@ -3,15 +3,11 @@
 import HeaderLinks from "@/components/HeaderLinks";
 import { icons } from "@/utils/icons";
 import { ProjectContext } from "@/utils/projectContext";
-import { siteConfig } from "@/utils/siteConfig";
 import { HeaderProps } from "@/utils/types";
 import Link from "next/link";
 import { useContext, useEffect } from "react";
-import ReactGA from "react-ga4";
 
 const Header = ({ hidemenu = false, fixed = false }: HeaderProps) => {
-  siteConfig.enableAnalytics && ReactGA.initialize("G-40N9DDPQQT");
-
   const ctx = useContext(ProjectContext);
 
   const renderIcon = () => {

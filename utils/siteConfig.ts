@@ -1,5 +1,4 @@
 export const siteConfig = {
-  enableAnalytics: true,
   sanityConfig: {
     projectId: "6rf84yzy",
     dataset: "production",

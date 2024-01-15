@@ -1,17 +1,18 @@
+"use client";
+
 import { icons } from "@/utils/icons";
-import { siteConfig } from "@/utils/siteConfig";
 import { useRouter } from "next/navigation";
 import ReactGA from "react-ga4";
 
 export default function ModalClose({ currentSlug }: { currentSlug: string }) {
+  ReactGA.initialize("G-40N9DDPQQT");
   const router = useRouter();
 
   const backToProjectsPage = () => {
-    siteConfig.enableAnalytics &&
-      ReactGA.event({
-        category: `Modal Close`,
-        action: `Close (${currentSlug})`,
-      });
+    ReactGA.event({
+      category: `Modal Close`,
+      action: `Close (${currentSlug})`,
+    });
     router.push(`/projects`);
   };
 

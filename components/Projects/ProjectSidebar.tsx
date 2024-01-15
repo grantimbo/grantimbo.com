@@ -3,12 +3,12 @@
 import ProjectSortButton from "@/components/Projects/ProjectSortButton";
 import { categories } from "@/utils/projectCategories";
 import { ProjectContext } from "@/utils/projectContext";
-import { siteConfig } from "@/utils/siteConfig";
 import { useSearchParams } from "next/navigation";
 import { useContext, useEffect } from "react";
 import ReactGA from "react-ga4";
 
 export default function ProjectSidebar() {
+  ReactGA.initialize("G-40N9DDPQQT");
   const ctx = useContext(ProjectContext);
   const searchParams = useSearchParams();
   const tag: string | null = searchParams.get("tag");
@@ -16,12 +16,11 @@ export default function ProjectSidebar() {
   useEffect(() => {
     if (tag) {
       ctx?.setCat(tag);
-      siteConfig.enableAnalytics &&
-        ReactGA.send({
-          hitType: "pageview",
-          page: `/projects`,
-          title: `Projects`,
-        });
+      ReactGA.send({
+        hitType: "pageview",
+        page: `/projects`,
+        title: `Projects`,
+      });
     }
   }, []);
 

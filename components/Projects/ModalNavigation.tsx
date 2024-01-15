@@ -3,7 +3,6 @@
 import filtereDProjects from "@/utils/filterProjects";
 import { icons } from "@/utils/icons";
 import { ProjectContext } from "@/utils/projectContext";
-import { siteConfig } from "@/utils/siteConfig";
 import { ModalNavType } from "@/utils/types";
 import { useRouter } from "next/navigation";
 import { useContext } from "react";
@@ -16,6 +15,7 @@ export default function ModalNavigation({
   direction: ModalNavType;
   currentSlug: string;
 }) {
+  ReactGA.initialize("G-40N9DDPQQT");
   const ctx = useContext(ProjectContext);
   const router = useRouter();
 
@@ -35,19 +35,17 @@ export default function ModalNavigation({
       ctx?.setLoading(true);
 
       if (direction == "next") {
-        siteConfig.enableAnalytics &&
-          ReactGA.event({
-            category: `Modal Button (${direction})`,
-            action: `Naviate from '/${next?.slug?.current}' to '/${direction}'`,
-          });
+        ReactGA.event({
+          category: `Modal Button (${direction})`,
+          action: `Naviate from '/${next?.slug?.current}' to '/${direction}'`,
+        });
 
         router.push(`/projects/${next?.slug?.current}`);
       } else {
-        siteConfig.enableAnalytics &&
-          ReactGA.event({
-            category: `Modal Button (${direction})`,
-            action: `Naviate from '/${previous?.slug?.current}' to '/${direction}'`,
-          });
+        ReactGA.event({
+          category: `Modal Button (${direction})`,
+          action: `Naviate from '/${previous?.slug?.current}' to '/${direction}'`,
+        });
         router.push(`/projects/${previous?.slug?.current}`);
       }
     }

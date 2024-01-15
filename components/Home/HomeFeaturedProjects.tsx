@@ -3,7 +3,6 @@
 import { featured_projects } from "@/public/_featured_projects";
 import projectsType from "@/public/imgs/projects.png";
 import { shimmer, toBase64 } from "@/utils/BlurData";
-import { siteConfig } from "@/utils/siteConfig";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,16 +10,14 @@ import { useRouter } from "next/navigation";
 import ReactGA from "react-ga4";
 
 export default function HomeFeaturedProjects() {
+  ReactGA.initialize("G-40N9DDPQQT");
   const router = useRouter();
-  const viewProjectArchive = () => {
-    if (siteConfig.enableAnalytics) {
-      ReactGA.initialize("G-40N9DDPQQT");
 
-      ReactGA.event({
-        category: `Button Clicks`,
-        action: `Download Resume`,
-      });
-    }
+  const viewProjectArchive = () => {
+    ReactGA.event({
+      category: `Button Clicks`,
+      action: `Download Resume`,
+    });
 
     router.push("/projects?tag=all");
   };

@@ -1,25 +1,23 @@
 "use client";
 
 import { ProjectContext } from "@/utils/projectContext";
-import { siteConfig } from "@/utils/siteConfig";
 import { SortProjBtnType } from "@/utils/types";
 import { useContext } from "react";
 import ReactGA from "react-ga4";
 
 export default function ProjectSortButton(props: SortProjBtnType) {
+  ReactGA.initialize("G-40N9DDPQQT");
   const ctx = useContext(ProjectContext);
 
   const setProjectCategory = () => {
     if (ctx != null) {
       ctx.setCat(props.name);
       ctx.setProjectLinksMenu(false);
-
-      siteConfig.enableAnalytics &&
-        ReactGA.send({
-          hitType: "pageview",
-          page: `/projects?tag=${props.name}`,
-          title: `Project (${props.name})`,
-        });
+      ReactGA.send({
+        hitType: "pageview",
+        page: `/projects?tag=${props.name}`,
+        title: `Project (${props.name})`,
+      });
     }
   };
 

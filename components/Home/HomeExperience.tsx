@@ -4,21 +4,18 @@ import { experiences } from "@/public/_experience";
 import experienceType from "@/public/imgs/experience.png";
 import { shimmer, toBase64 } from "@/utils/BlurData";
 import ProjectContextProvider from "@/utils/projectContext";
-import { siteConfig } from "@/utils/siteConfig";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import ReactGA from "react-ga4";
 
 export default function HomeExperience() {
-  const downloadResume = () => {
-    if (siteConfig.enableAnalytics) {
-      ReactGA.initialize("G-40N9DDPQQT");
+  ReactGA.initialize("G-40N9DDPQQT");
 
-      ReactGA.event({
-        category: `Button Clicks`,
-        action: `Download Resume`,
-      });
-    }
+  const downloadResume = () => {
+    ReactGA.event({
+      category: `Button Clicks`,
+      action: `Download Resume`,
+    });
 
     window.open("/résumé_2023.pdf", "_ blank");
   };
