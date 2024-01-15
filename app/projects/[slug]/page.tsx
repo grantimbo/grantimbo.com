@@ -16,6 +16,7 @@ async function getData({ params }: ParamsType) {
 
   const data = await client.fetch(
     `*[_type == "project" && slug.current == "${params.slug}"]`,
+    { cache: "no-store" },
   );
 
   if (data.length === 0) {
