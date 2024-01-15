@@ -180,9 +180,8 @@ export default function ServicesContents() {
           <Image
             alt="Services Thinker"
             src={serviceBg}
-            placeholder="blur"
             quality={100}
-            blurDataURL={`data:image/svg+xml;base64,${toBase64(
+            placeholder={`data:image/svg+xml;base64,${toBase64(
               shimmer(1066, 574, "#090e20", "#0f1429"),
             )}`}
             width={1066}
