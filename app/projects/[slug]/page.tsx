@@ -3,10 +3,9 @@ import Header from "@/components/Header";
 import NotFound from "@/components/NotFound";
 import ModalContents from "@/components/Projects/ModalContents";
 import ProjectWrap from "@/components/Projects/ProjectWrap";
-import { projects } from "@/public/_projects";
 import { siteConfig } from "@/utils/siteConfig";
-import { ParamsType, ProjectType } from "@/utils/types";
-import { Metadata, ResolvingMetadata } from "next";
+import { ParamsType } from "@/utils/types";
+import { Metadata } from "next";
 import { createClient } from "next-sanity";
 
 const client = createClient(siteConfig.sanityConfig);
@@ -16,7 +15,7 @@ async function getData({ params }: ParamsType) {
 
   const data = await client.fetch(
     `*[_type == "project" && slug.current == "${params.slug}"]`,
-    { cache: "no-store" },
+    { next: { revalidate: 10 } },
   );
 
   if (data.length === 0) {
