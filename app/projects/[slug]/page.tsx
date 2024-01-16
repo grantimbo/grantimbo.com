@@ -7,15 +7,14 @@ import { siteConfig } from "@/utils/siteConfig";
 import { ParamsType } from "@/utils/types";
 import { Metadata } from "next";
 import { createClient } from "next-sanity";
+import { unstable_noStore as noStore } from "next/cache";
 
 const client = createClient(siteConfig.sanityConfig);
 
 async function getData({ params }: ParamsType) {
-  // const data = projects.filter((e) => e.slug === params.slug);
-
+  noStore();
   const data = await client.fetch(
     `*[_type == "project" && slug.current == "${params.slug}"]`,
-    { next: { revalidate: 10 } },
   );
 
   if (data.length === 0) {
@@ -33,13 +32,20 @@ export async function generateMetadata({
   // optionally access and extend (rather than replace) parent metadata
   // const previousImages = (await parent)?.openGraph?.images || [];
 
-  return {
-    title: `${data?.title}`,
-    description: `${data?.title} — a project by Grant Imbo`,
-    openGraph: {
-      images: [{ url: `${data?.thumbnail}` }],
-    },
-  };
+  if (!data) {
+    return {
+      title: `404 Error`,
+      description: `The page you are looking for might have been moved or no longer exists.`,
+    };
+  } else {
+    return {
+      title: `${data?.title}`,
+      description: `${data?.title} — a project by Grant Imbo`,
+      openGraph: {
+        images: [`${data?.thumbnail}`],
+      },
+    };
+  }
 }
 
 export default async function Projects({ params }: ParamsType) {
@@ -59,6 +65,7 @@ export default async function Projects({ params }: ParamsType) {
       {!data && (
         <>
           <Analytics title={"404 - Error"} />
+          <Header fixed={true} />
           <NotFound />
         </>
       )}
