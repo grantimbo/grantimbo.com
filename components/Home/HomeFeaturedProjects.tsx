@@ -35,9 +35,8 @@ export default function HomeFeaturedProjects() {
         <Image
           alt="Experience"
           src={projectsType}
-          placeholder="blur"
-          blurDataURL={`data:image/svg+xml;base64,${toBase64(
-            shimmer(100, 100),
+          placeholder={`data:image/svg+xml;base64,${toBase64(
+            shimmer(753, 305),
           )}`}
           quality={100}
           width={753}
@@ -56,9 +55,8 @@ export default function HomeFeaturedProjects() {
                   className="w-full"
                   alt="Experience"
                   src={x?.thumbnail}
-                  placeholder="blur"
-                  blurDataURL={`data:image/svg+xml;base64,${toBase64(
-                    shimmer(100, 100),
+                  placeholder={`data:image/svg+xml;base64,${toBase64(
+                    shimmer(500, 298),
                   )}`}
                   quality={100}
                   width={500}
