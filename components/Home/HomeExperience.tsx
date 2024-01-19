@@ -34,9 +34,8 @@ export default function HomeExperience() {
           <Image
             alt="Experience"
             src={experienceType}
-            placeholder="blur"
-            blurDataURL={`data:image/svg+xml;base64,${toBase64(
-              shimmer(100, 100),
+            placeholder={`data:image/svg+xml;base64,${toBase64(
+              shimmer(753, 305),
             )}`}
             quality={100}
             width={753}
@@ -55,13 +54,12 @@ export default function HomeExperience() {
                     <Image
                       alt="Experience"
                       src={x?.thumbnail}
-                      placeholder="blur"
-                      blurDataURL={`data:image/svg+xml;base64,${toBase64(
+                      placeholder={`data:image/svg+xml;base64,${toBase64(
                         shimmer(100, 100),
                       )}`}
                       quality={100}
-                      width={600}
-                      height={358}
+                      width={100}
+                      height={100}
                     />
                   </figure>
                   <p className="text-[0.7rem] text-softgray">{x?.date}</p>

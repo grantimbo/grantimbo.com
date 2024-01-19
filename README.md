@@ -10,12 +10,13 @@ In summary, heres the stack of this project:
 
 #### Check it out here 👉 https://grantimbo.com
 
-##### Here are some screenshots 👇
+##### Here are some screenshots previews 👇
 
 Home page
+![Home page](https://dev.grantimbo.com/public/imgs/site-screenshots/home.png)
 
-Product Page
+Product page
+![Product page](https://dev.grantimbo.com/public/imgs/site-screenshots/projects.png)
 
-Services Page
-
-About Page.
+Services and About page
+![Services and About page](https://dev.grantimbo.com/public/imgs/site-screenshots/services-about.png)
