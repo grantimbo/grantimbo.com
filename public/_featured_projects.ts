@@ -6,7 +6,6 @@ export const featured_projects = [
     thumbnail: "/imgs/featured_projects/expense-tracker.jpg",
     tags: ["Next.js", "Firebase"],
     description: `Sleek and minimal expense tracker tool that enables users to have better control over their finances.`,
-    // description: `Sleek and minimal expense tracker tool.`,
   },
   {
     title: "2014 Personal Website",
@@ -15,7 +14,6 @@ export const featured_projects = [
     thumbnail: "/imgs/featured_projects/slanttex.jpg",
     tags: ["WordPress", "Photoshop"],
     description: `Personally, one of my favorite rebuilds on my site. It incorporates minimal JS and laverages CSS3 transitions.`,
-    // description: `Personally, one of my favorite rebuilds on my site.`,
   },
   {
     title: "Stitch",
