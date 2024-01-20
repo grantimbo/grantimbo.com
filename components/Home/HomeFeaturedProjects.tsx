@@ -45,45 +45,43 @@ export default function HomeFeaturedProjects() {
       </motion.figure>
       <section className="mb-10 grid max-w-7xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {featured_projects?.map((x) => (
-          <div key={x?.title}>
+          <article
+            key={x?.title}
+            className="overflow-hidden rounded-md border-2 border-eggblue/20 bg-blue hover:border-eggblue hover:bg-blue/60"
+          >
             <Link href={x?.link} target={x?.target} className="!no-underline">
-              <article
-                key={x?.title}
-                className="overflow-hidden rounded-md border-2 border-eggblue/20 bg-blue hover:border-eggblue hover:bg-blue/60"
-              >
-                <Image
-                  className="w-full"
-                  alt="Experience"
-                  src={x?.thumbnail}
-                  placeholder={`data:image/svg+xml;base64,${toBase64(
-                    shimmer(500, 298),
-                  )}`}
-                  quality={100}
-                  width={500}
-                  height={298}
-                />
-                <div className="p-4">
-                  <h2 className="mb-[0.3rem] text-[1.2rem] font-medium text-white">
-                    {x?.title}
-                  </h2>
+              <Image
+                className="w-full"
+                alt="Experience"
+                src={x?.thumbnail}
+                placeholder={`data:image/svg+xml;base64,${toBase64(
+                  shimmer(500, 298),
+                )}`}
+                quality={100}
+                width={500}
+                height={298}
+              />
+              <div className="p-4">
+                <h2 className="mb-[0.3rem] text-[1.2rem] font-medium text-white">
+                  {x?.title}
+                </h2>
 
-                  <p className="mb-2 text-[0.8rem] font-light leading-tight text-softgray">
-                    {x?.description}
-                  </p>
-                  <div className="tags">
-                    {x?.tags?.map((tag) => (
-                      <span
-                        key={tag}
-                        className="mb-[0.3rem] mr-[0.3rem] inline-block rounded-full bg-eggblue/20 px-4 py-[0.3rem] text-[0.7rem] text-eggblue"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                <p className="mb-2 text-[0.8rem] font-light leading-tight text-softgray">
+                  {x?.description}
+                </p>
+                <div className="tags">
+                  {x?.tags?.map((tag) => (
+                    <span
+                      key={tag}
+                      className="mb-[0.3rem] mr-[0.3rem] inline-block rounded-full bg-eggblue/20 px-4 py-[0.3rem] text-[0.7rem] text-eggblue"
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
-              </article>
+              </div>
             </Link>
-          </div>
+          </article>
         ))}
       </section>
       <button onClick={viewProjectArchive} className="button">
