@@ -8,7 +8,7 @@ export default function filtereDProjects() {
     if (ctx?.cat === "all") {
       return ctx?.project;
     } else {
-      return ctx?.project?.filter((p) => p.tags.includes(ctx?.cat));
+      return ctx?.project?.filter((p) => p?.tags?.includes(ctx?.cat));
     }
   }
 }
