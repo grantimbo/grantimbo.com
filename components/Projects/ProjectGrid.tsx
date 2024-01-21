@@ -22,9 +22,9 @@ export default function ProjectGrid() {
   return (
     <section className="block w-full pb-[100px] pt-[60px] md:pl-[250px]">
       {ctx?.project.length === 0 && (
-        <div className="inline-flex justify-center gap-2 p-10">
+        <div className="inline-flex h-[70vh] w-full items-center justify-center gap-2 p-10">
           <div className="loader sm" />
-          <div className="text-white">Loading...</div>
+          <div className="text-lg text-[#bbd5ef]">Loading...</div>
         </div>
       )}
 
