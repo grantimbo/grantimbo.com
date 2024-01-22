@@ -1,4 +1,5 @@
 import Analytics from "@/components/Analytics";
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ServicesContents from "@/components/Services/ServicesContents";
 import type { Metadata } from "next";
@@ -13,6 +14,7 @@ export default function Services() {
       <Analytics title="Services" />
       <Header hidemenu={true} />
       <ServicesContents />
+      <Footer />
     </>
   );
 }
