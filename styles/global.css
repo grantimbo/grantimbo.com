@@ -161,7 +161,7 @@ section.experience:after {
 }
 
 .loader.sm {
-  @apply !h-6 !w-6 !border-[0.36rem]
+  @apply !h-10 !w-10 !border-[0.50rem]
 }
 
 .button {

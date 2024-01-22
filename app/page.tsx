@@ -11,8 +11,8 @@ export default function Home() {
       <Analytics title={"Home"} />
       <Header hidemenu={true} />
       <HomeIntro />
-      <HomeExperience />
-      <HomeFeaturedProjects />
+      {/* <HomeExperience />
+      <HomeFeaturedProjects /> */}
       <Footer />
     </>
   );

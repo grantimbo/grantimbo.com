@@ -68,9 +68,9 @@ export default function AboutContents() {
               {`or by clicking the links below.`}
             </p>
           </AnimateBlock>
-          <AnimateBlock delay={1.4}>
+          {/* <AnimateBlock delay={1.4}>
             <SocialIcons />
-          </AnimateBlock>
+          </AnimateBlock> */}
         </article>
       </section>
     </>
