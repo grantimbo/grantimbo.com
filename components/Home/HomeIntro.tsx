@@ -51,14 +51,6 @@ export default function HomeIntro() {
             <p>{`I am always up for learning new things and never get satisfied with
             an average output, always striving for something better and fresh.`}</p>
           </AnimateBlock>
-          <AnimateBlock delay={1.2}>
-            <Link
-              href="/projects"
-              className="inline-flex items-center gap-3 rounded-full border-2 border-eggblue bg-eggblue/30 px-[1.2rem] py-[0.5rem] text-[0.9rem] text-white !no-underline hover:border-eggblue/30 hover:bg-eggblue/10"
-            >
-              Projects 👉
-            </Link>
-          </AnimateBlock>
         </article>
       </section>
     </section>
