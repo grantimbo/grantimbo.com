@@ -36,20 +36,13 @@ export default function HomeIntro() {
           </AnimateBlock>
 
           <AnimateBlock delay={0.6}>
-            <p>
-              {`In the course of more than 11 years, I have been active in the Tech Industry,
-            engaging in various projects that span across both creative and
-            technical domains.`}
-            </p>
+            <p>{`Since 2012, I’ve walked the line between code and creativity, shaping ideas through pixels, motion, and sound.`}</p>
           </AnimateBlock>
           <AnimateBlock delay={0.8}>
-            <p>{`I have experience as a designer, developer, animator, 3D artist,
-            video editor, and other related roles. My skill set is adaptable,
-            and I am capable of adjusting to diverse tasks as needed. `}</p>
+            <p>{`From designing and developing to animating and editing in 3D, I’ve worn many hats — each one a new way to tell a story.`}</p>
           </AnimateBlock>
           <AnimateBlock delay={1.0}>
-            <p>{`I am always up for learning new things and never get satisfied with
-            an average output, always striving for something better and fresh.`}</p>
+            <p>{`I see every project as a chance to grow and explore — constantly reaching, refining, and shaping something better, something fresh.`}</p>
           </AnimateBlock>
           <AnimateBlock delay={1.2}>
             <Link
