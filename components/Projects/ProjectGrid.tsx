@@ -20,7 +20,7 @@ export default function ProjectGrid() {
   };
 
   return (
-    <section className="block w-full pb-[100px] pt-[60px] md:pl-[250px]">
+    <section className="block w-full pb-[100px] pt-[60px] ">
       {ctx?.project.length === 0 && (
         <div className="inline-flex h-[70vh] w-full items-center justify-center gap-2 p-10">
           <div className="loader sm" />
