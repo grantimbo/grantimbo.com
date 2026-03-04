@@ -32,17 +32,14 @@ export default function HomeIntro() {
       <section className="md:flex md:items-center">
         <article className="m-0 mx-auto max-w-[450px] px-8 text-center text-[0.9rem] md:text-left lg:text-[1rem]  [&_p]:text-softgray">
           <AnimateBlock delay={0.3}>
-            <h2 className="text-xl font-semibold text-white lg:text-2xl">{`Designer — Developer`}</h2>
+            <h2 className="text-xl font-semibold text-white lg:text-2xl">{`I Design & Code`}</h2>
           </AnimateBlock>
 
           <AnimateBlock delay={0.6}>
-            <p>{`Since 2012, I’ve walked the line between code and creativity, shaping ideas through pixels, motion, and sound.`}</p>
+            <p>{`With over 15 years of experience in the tech industry, I bridge the gap between functionality and design.`}</p>
           </AnimateBlock>
           <AnimateBlock delay={0.8}>
-            <p>{`From designing and developing to animating and editing in 3D, I’ve worn many hats — each one a new way to tell a story.`}</p>
-          </AnimateBlock>
-          <AnimateBlock delay={1.0}>
-            <p>{`I see every project as a chance to grow and explore — constantly reaching, refining, and shaping something better, something fresh.`}</p>
+            <p>{`I am adaptable, easy to work with, and always focused on attention to detail, ensuring the final output goes beyond the standard.`}</p>
           </AnimateBlock>
         </article>
       </section>
