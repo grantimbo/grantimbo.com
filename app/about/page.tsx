@@ -1,5 +1,5 @@
 import AboutContents from "@/components/About/AboutContents";
-import Analytics from "@/components/Analytics";
+// import Analytics from "@/components/Analytics";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import type { Metadata } from "next";
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <>
-      <Analytics title="About" />
+      {/* <Analytics title="About" /> */}
       <Header hidemenu={true} />
       <AboutContents />
       <Footer />

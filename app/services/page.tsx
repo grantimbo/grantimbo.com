@@ -1,4 +1,4 @@
-import Analytics from "@/components/Analytics";
+// import Analytics from "@/components/Analytics";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ServicesContents from "@/components/Services/ServicesContents";
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function Services() {
   return (
     <>
-      <Analytics title="Services" />
+      {/* <Analytics title="Services" /> */}
       <Header hidemenu={true} />
       <ServicesContents />
       <Footer />

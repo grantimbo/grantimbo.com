@@ -1,6 +1,7 @@
 import "@/styles/global.css";
 import ProjectContextProvider from "@/utils/projectContext";
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
   title: {
@@ -29,6 +30,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ProjectContextProvider>{children}</ProjectContextProvider>
+        <Analytics/>
       </body>
     </html>
   );

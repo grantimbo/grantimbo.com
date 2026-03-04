@@ -1,4 +1,4 @@
-import Analytics from "@/components/Analytics";
+// import Analytics from "@/components/Analytics";
 import Header from "@/components/Header";
 import NotFound from "@/components/NotFound";
 import ModalContents from "@/components/Projects/ModalContents";
@@ -55,7 +55,7 @@ export default async function Projects({ params }: ParamsType) {
     <>
       {data && (
         <>
-          <Analytics title={data.title} />
+          {/* <Analytics title={data.title} /> */}
           <Header fixed={true} />
           <ProjectWrap />
           <ModalContents data={data} />
@@ -64,7 +64,7 @@ export default async function Projects({ params }: ParamsType) {
 
       {!data && (
         <>
-          <Analytics title={"404 - Error"} />
+          {/* <Analytics title={"404 - Error"} /> */}
           <Header fixed={true} />
           <NotFound />
         </>
