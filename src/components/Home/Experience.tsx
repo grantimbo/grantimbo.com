@@ -51,11 +51,11 @@ export default async function Experiences() {
             <li key={x._id} className="relative flex gap-6 pb-14 last:pb-0">
               {/* Date column */}
               <div className="relative flex w-16 shrink-0 flex-col items-end pt-1.5 md:w-20 md:pt-2">
-                <span className="text-softgray text-xs font-medium whitespace-nowrap tabular-nums md:absolute md:top-7 md:-left-20 md:text-sm">
+                <span className="text-softgray text-xs font-medium tabular-nums md:absolute md:top-7 md:-left-20 md:text-sm md:whitespace-nowrap">
                   {x.date}
                 </span>
                 {index === 0 && (
-                  <span className="absolute top-[28] left-15 rounded-full bg-blue-500/20 px-2 py-1 text-[0.55rem] font-medium tracking-wide text-blue-500 uppercase">
+                  <span className="absolute top-[50px] left-[-4px] rounded-full bg-blue-500/20 px-2 py-1 text-[0.55rem] font-medium tracking-wide text-blue-500 uppercase md:top-[28] md:left-15">
                     Latest
                   </span>
                 )}
@@ -63,7 +63,7 @@ export default async function Experiences() {
 
               {/* Node */}
               <div
-                className="absolute top-6 left-[12px] z-10 h-4 w-4 rounded-full border-2 border-blue-500/70 bg-slate-900 shadow-[0_0_0_3px_rgba(8,14,36,1)] md:top-7 md:left-[31px] md:h-5 md:w-5"
+                className="absolute top-12 left-[12px] z-10 h-4 w-4 rounded-full border-2 border-blue-500/70 bg-slate-900 shadow-[0_0_0_3px_rgba(8,14,36,1)] md:top-6 md:top-7 md:left-[31px] md:h-5 md:w-5"
                 aria-hidden
               >
                 <span className="absolute inset-0 rounded-full bg-blue-500/40" />

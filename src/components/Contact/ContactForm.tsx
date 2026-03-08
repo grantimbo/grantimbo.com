@@ -23,7 +23,7 @@ export default function ContactForm() {
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
 
   return (
-    <section className="faded bg-drkblue relative py-40 pb-50">
+    <section className="faded bg-drkblue relative px-4 py-40 pb-50">
       <Suspense fallback={null}>
         <header className="relative z-10 mx-auto mb-2 w-full max-w-[560px] md:mb-6">
           <Image

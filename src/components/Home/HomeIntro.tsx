@@ -17,7 +17,7 @@ export default async function HomeIntro() {
   console.log(data);
 
   return (
-    <section className="home mx-auto max-w-7xl items-center md:grid md:grid-cols-[1.2fr_1fr] md:py-20 lg:grid-cols-[1.5fr_1fr]">
+    <section className="home mx-auto mb-30 max-w-7xl items-center md:grid md:grid-cols-[1.2fr_1fr] md:py-20 lg:grid-cols-[1.5fr_1fr]">
       <figure>
         <Image
           alt="Creator Thinker"
