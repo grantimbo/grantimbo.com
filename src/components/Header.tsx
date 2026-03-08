@@ -9,7 +9,7 @@ const Header = () => {
       <div className="flex items-center gap-1">
         <Link
           href="/"
-          className="pl-2 text-2xl font-semibold text-white no-underline transition-colors hover:text-blue-400/60 hover:text-blue-600 sm:block"
+          className="hover:text-eggblue pl-2 text-2xl font-semibold text-white no-underline transition-colors sm:block"
         >
           Grant Imbo
         </Link>

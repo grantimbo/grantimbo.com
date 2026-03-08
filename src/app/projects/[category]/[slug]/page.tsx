@@ -31,15 +31,11 @@ const getProjectBySlug = cache(async (slug: string) => {
 export async function generateMetadata({
   params,
 }: ParamsType): Promise<Metadata> {
-  const { slug } = params;
+  const { slug } = await params;
   const data = await getProjectBySlug(slug);
 
   if (!data) {
-    return {
-      title: "404 Error",
-      description:
-        "The page you are looking for might have been moved or no longer exists.",
-    };
+    return { title: `Player Not Found - Grant Imbo` };
   }
 
   return {

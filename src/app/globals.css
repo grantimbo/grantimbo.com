@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 :root {
-  --eggblue: #88c0e5;
   --bluetooth: #0064c8;
   --bluetooth2: #0050a0;
   --darkblue: #0f1838;
@@ -18,6 +17,7 @@
   --color-drkblue: #0d1a43;
   --color-drkblue2: #11172e;
   --color-drkblue3: #090e20;
+  --color-eggblue: #88c0e5;
 }
 
 body {
@@ -47,14 +47,9 @@ body {
   height: 8rem;
 }
 
-.footer:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 10rem;
-  background: linear-gradient(180deg, #090e20, transparent);
+.footer.faded:after {
+  content: none;
+  display: none;
 }
 
 /* .loader {

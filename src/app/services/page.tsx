@@ -14,7 +14,7 @@ export default function Services() {
       {/* <Analytics title="Services" /> */}
       <Header />
       <ServicesContents />
-      <Footer />
+      <Footer fade />
     </>
   );
 }

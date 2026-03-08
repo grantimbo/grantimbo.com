@@ -1,25 +1,27 @@
-"use client";
-
 import homeBg from "@/public/imgs/home-bg-lg.png";
 import { shimmer, toBase64 } from "@/src/utils/BlurData";
+import { AnimatedPortableText } from "@/src/utils/PortableText";
 import AnimateBlock from "@/src/utils/animateBlock";
-import { motion } from "framer-motion";
+import { client, urlFor } from "@/src/utils/sanity";
 import Image from "next/image";
-import Link from "next/link";
 
-export default function HomeIntro() {
+export default async function HomeIntro() {
+  const data = await client.fetch(
+    `*[_type == "home" && _id == "home"][0] {
+        title,
+        hero,
+        content
+      }`,
+  );
+
+  console.log(data);
+
   return (
     <section className="home mx-auto max-w-7xl items-center md:grid md:grid-cols-[1.2fr_1fr] md:py-20 lg:grid-cols-[1.5fr_1fr]">
-      <motion.figure
-        animate={{ opacity: 1, scale: 1 }}
-        initial={{ opacity: 0, scale: 0.95 }}
-        transition={{
-          duration: 0.4,
-        }}
-      >
+      <figure>
         <Image
           alt="Creator Thinker"
-          src={homeBg}
+          src={data.hero ? urlFor(data.hero).url() : homeBg}
           sizes="(max-width: 450px) 50vw, (max-width: 768px) 100vw"
           placeholder={`data:image/svg+xml;base64,${toBase64(
             shimmer(1104, 930, "#090e20", "#0f1429"),
@@ -28,22 +30,18 @@ export default function HomeIntro() {
           width={1104}
           height={930}
         />
-      </motion.figure>
+      </figure>
       <section className="md:flex md:items-center">
         <article className="m-0 mx-auto max-w-[450px] px-8 text-center text-[0.9rem] leading-tight md:text-left lg:text-[1rem] [&_h2]:mb-4 [&_p]:mb-2 [&_p]:text-blue-300/40">
           <AnimateBlock delay={0.3}>
-            <h2 className="text-xl font-semibold text-white lg:text-2xl">{`Designer — Developer`}</h2>
+            <h2 className="text-xl font-semibold text-white lg:text-2xl">
+              {data?.title}
+            </h2>
           </AnimateBlock>
 
-          <AnimateBlock delay={0.6}>
-            <p>{`Since 2012, I’ve walked the line between code and creativity, shaping ideas through pixels, motion, and sound.`}</p>
-          </AnimateBlock>
-          <AnimateBlock delay={0.8}>
-            <p>{`From designing and developing to animating and editing in 3D, I’ve worn many hats — each one a new way to tell a story.`}</p>
-          </AnimateBlock>
-          <AnimateBlock delay={1.0}>
-            <p>{`I see every project as a chance to grow and explore — constantly reaching, refining, and shaping something better, something fresh.`}</p>
-          </AnimateBlock>
+          <div className="space-y-4">
+            <AnimatedPortableText value={data?.content} />
+          </div>
         </article>
       </section>
     </section>

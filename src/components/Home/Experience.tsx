@@ -99,7 +99,7 @@ export default async function Experiences() {
                       </div>
                     </div>
                   </div>
-                  <div className="mt-3 text-[0.7rem] leading-tight [&_p]:text-blue-300">
+                  <div className="mt-3 text-[0.7rem] leading-tight [&_p]:text-xs [&_p]:text-blue-300/80">
                     <PortableText
                       value={x?.content ?? []}
                       components={sanityComponents}

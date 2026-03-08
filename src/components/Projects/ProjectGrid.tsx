@@ -8,22 +8,17 @@ import { getImageDimensions } from "@sanity/asset-utils";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 type ProjectGridProps = { projects: Project[] };
 
 export default function ProjectGrid({ projects }: ProjectGridProps) {
-  const router = useRouter();
   const filtered = filterProjects(projects, "all");
 
   return (
-    <section className="block w-full pb-[100px]">
-      <section className="grid grid-cols-2 gap-4 p-5 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+    <section className="mx-auto block w-full max-w-6xl pb-[100px]">
+      <section className="grid grid-cols-2 gap-4 p-5 sm:grid-cols-3 lg:grid-cols-4">
         {filtered.map((prj, i) => (
-          <motion.article
-            animate={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: -20 }}
-            transition={{ delay: i * 0.04 }}
+          <article
             key={prj.slug}
             title={prj.title}
             className="group bg-blue relative cursor-pointer rounded-lg transition-all duration-300"
@@ -55,7 +50,7 @@ export default function ProjectGrid({ projects }: ProjectGridProps) {
                 </div>
               </figure>
             </Link>
-          </motion.article>
+          </article>
         ))}
       </section>
     </section>

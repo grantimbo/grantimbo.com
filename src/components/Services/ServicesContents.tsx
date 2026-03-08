@@ -85,7 +85,7 @@ export default function ServicesContents() {
         <div className="flex items-center">
           <div>
             <motion.h3
-              className="text-base font-medium text-blue-600 md:text-2xl"
+              className="text-eggblue mb-4 text-base font-medium md:text-2xl"
               animate={dropInanimate}
               initial={dropIninitial}
               transition={{
@@ -96,7 +96,7 @@ export default function ServicesContents() {
               {service.title}
             </motion.h3>
             <motion.p
-              className="text-softgray text-[0.8rem] leading-tight sm:text-sm md:text-base md:leading-tight"
+              className="text-[4.8rem] leading-tight text-blue-300/50 sm:text-sm md:text-base md:leading-tight"
               animate={dropInanimate}
               initial={dropIninitial}
               transition={{
@@ -121,7 +121,7 @@ export default function ServicesContents() {
         <div className="flex items-center">
           <div>
             <motion.h3
-              className="text-base font-medium text-blue-600 md:text-2xl"
+              className="text-eggblue mb-4 text-base font-medium md:text-2xl"
               animate={dropInanimate}
               initial={dropIninitial}
               transition={{
@@ -131,7 +131,7 @@ export default function ServicesContents() {
               {service.title}
             </motion.h3>
             <motion.p
-              className="text-softgray text-[0.8rem] sm:text-sm md:text-base md:leading-tight"
+              className="text-[0.8rem] text-blue-300/50 sm:text-sm md:text-base md:leading-tight"
               animate={dropInanimate}
               initial={dropIninitial}
               transition={{

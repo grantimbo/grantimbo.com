@@ -38,13 +38,11 @@ export default async function FeaturedProjects({
           <article
             key={x?.title}
             /* Added 'group' class here to track hover state for children */
-            className="group bg-drkblue3 hover:bg-blue-drkblue2/50 relative rounded-lg border border-blue-600/40 transition-all duration-300 hover:border-blue-200"
+            className="group bg-drkblue3 hover:bg-drkblue relative rounded-lg border-2 border-blue-600/40 transition-all duration-300 hover:border-blue-600"
           >
-            <div className="to-eggblue absolute -inset-1 z-0 rounded-lg bg-gradient-to-r from-blue-600/40 to-blue-600/20 opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-100" />
-
             <Link
               href={`/projects/${x?.slug?.current}`}
-              className="relative overflow-hidden no-underline!"
+              className="relative z-30 overflow-hidden no-underline!"
             >
               <div className="overflow-hidden rounded-t-lg">
                 {x.thumbnail && (

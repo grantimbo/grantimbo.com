@@ -3,12 +3,14 @@
 import SocialIcons from "@/src/components/SocialIcons";
 import Link from "next/link";
 
-const Footer = () => {
+const Footer = ({ fade = false }: { fade?: boolean }) => {
   return (
     <>
-      <div className="footer bg-blue relative flex flex-col items-center px-4 pt-[10rem] pb-[5rem] text-center">
+      <div
+        className={`${fade ? "faded bg-drkblue" : "bg-blue"} footer relative flex flex-col items-center px-4 pt-40 pb-20 text-center`}
+      >
         <SocialIcons />
-        <p className="w-full max-w-[470px] px-4 text-[0.7rem] text-blue-100 md:px-0 md:text-[0.8rem] [&_a]:text-blue-400 [&_a]:hover:text-blue-600">
+        <p className="[&_a]:text-eggblue w-full max-w-[470px] px-4 text-[0.8rem] text-blue-100/40 md:px-0 md:text-[0.8rem] [&_a]:hover:text-blue-100">
           Designed in{" "}
           <Link
             href="https://www.adobe.com/ph_en/products/photoshop.html"

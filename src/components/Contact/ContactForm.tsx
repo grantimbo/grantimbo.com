@@ -1,7 +1,6 @@
 "use client";
 
 import { useActionState, useRef, useState } from "react";
-import { useSearchParams } from "next/navigation";
 import { submitContactForm } from "./actions";
 import ReCAPTCHA from "react-google-recaptcha";
 import { Suspense } from "react";
@@ -82,9 +81,9 @@ export default function ContactForm() {
               Subject
             </label>
             <input
-              type="email"
-              name="email"
-              id="email"
+              type="text"
+              name="subject"
+              id="subject"
               required
               className="mt-1 block w-full rounded-md border border-blue-300/10 bg-blue-900/10 px-3 py-2 shadow-sm focus:border-blue-600 focus:ring-1 focus:ring-blue-600 focus:outline-none sm:text-sm"
             />

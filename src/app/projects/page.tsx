@@ -1,4 +1,5 @@
 import BreadCrumbs from "@/src/components/BreadCrumbs";
+import Footer from "@/src/components/Footer";
 import Header from "@/src/components/Header";
 import FeaturedProjects from "@/src/components/Home/FeaturedProjects";
 import ProjectGrid from "@/src/components/Projects/ProjectGrid";
@@ -37,6 +38,7 @@ export default async function Projects() {
       </ProjectHeader>
       {/* <ProjectGrid projects={projects} /> */}
       <FeaturedProjects hideHeader />
+      <Footer />
     </>
   );
 }

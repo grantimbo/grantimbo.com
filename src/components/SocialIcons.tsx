@@ -54,7 +54,7 @@ export default function SocialIcons() {
               href={link.href}
               target="_blank"
               rel="noreferrer"
-              className="[&_path]:fill-blue-400 [&_path]:hover:fill-white"
+              className="[&_path]:fill-eggblue [&_path]:hover:fill-white"
             >
               {link.icon}
             </Link>

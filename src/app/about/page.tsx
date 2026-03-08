@@ -14,7 +14,7 @@ export default function About() {
     <>
       <Header />
       <AboutContents />
-      <Footer />
+      <Footer fade />
     </>
   );
 }
