@@ -1,16 +1,12 @@
 import Header from "@/src/components/Header";
 import ProjectGrid from "@/src/components/Projects/ProjectGrid";
-import { client } from "@/src/utils/sanity";
-import { ParamsType, Project } from "@/src/utils/types";
+import { client, urlFor } from "@/src/utils/sanity";
+import { Project } from "@/src/utils/types";
 import type { Metadata } from "next";
 import { cache } from "react";
 import NotFoundPage from "../../not-found";
 import BreadCrumbs from "@/src/components/BreadCrumbs";
 import ProjectHeader from "@/src/components/Projects/ProjectHeader";
-
-export const metadata: Metadata = {
-  title: "Projects",
-};
 
 const getProjects = cache(async (category: string) => {
   const data = await client.fetch<Project[]>(
@@ -28,6 +24,29 @@ const getProjects = cache(async (category: string) => {
 
   return data ?? [];
 });
+
+type ParamsType = {
+  params: Promise<{ category: string }>;
+};
+
+export async function generateMetadata({
+  params,
+}: ParamsType): Promise<Metadata> {
+  // Await the params object
+  const { category } = await params;
+  const data = await getProjects(category);
+
+  if (!data) {
+    return { title: `Category Not Found - Grant Imbo` };
+  }
+
+  console.log(data);
+
+  return {
+    title: `${data[0]?.categoryName}`,
+    description: `${data[0]?.categoryName} — a project by Grant Imbo`,
+  };
+}
 
 export default async function ProjectCategory({
   params,

@@ -11,7 +11,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s — Grant Imbo",
+    template: "%s | Grant Imbo",
     default: "Grant Imbo | Code & Design",
   },
   description:

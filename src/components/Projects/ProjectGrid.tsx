@@ -1,32 +1,27 @@
 "use client";
 
 import { shimmer, toBase64 } from "@/src/utils/BlurData";
-import { filterProjects } from "@/src/utils/filterProjects";
 import { urlFor } from "@/src/utils/sanity";
 import { Project } from "@/src/utils/types";
-import { getImageDimensions } from "@sanity/asset-utils";
-import { motion } from "framer-motion";
+// import { getImageDimensions } from "@sanity/asset-utils";
+// import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-type ProjectGridProps = { projects: Project[] };
-
-export default function ProjectGrid({ projects }: ProjectGridProps) {
-  const filtered = filterProjects(projects, "all");
-
+export default function ProjectGrid({ projects }: { projects: Project[] }) {
   return (
     <section className="mx-auto block w-full max-w-6xl pb-[100px]">
       <section className="grid grid-cols-2 gap-4 p-5 sm:grid-cols-3 lg:grid-cols-4">
-        {filtered.map((prj, i) => (
+        {projects.map((prj, i) => (
           <article
-            key={prj.slug}
+            key={`${prj.slug}_${i}`}
             title={prj.title}
             className="group bg-blue relative cursor-pointer rounded-lg transition-all duration-300"
           >
             {/* The Pulse Glow Layer */}
             <div className="to-eggblue group-hover:animate-pulse-glow absolute -inset-1 z-0 rounded-lg bg-gradient-to-r from-blue-600 opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
             <Link
-              href={`/projects/${prj.category}/${prj.slug}`}
+              href={`/projects/${prj.categorySlug}/${prj.slug}`}
               className="bg-blue relative z-10 block overflow-hidden rounded-lg border-2 border-blue-600/10 transition-colors hover:border-blue-600"
             >
               <figure className="relative h-full overflow-hidden rounded-lg">

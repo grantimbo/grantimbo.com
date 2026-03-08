@@ -66,14 +66,16 @@ export default async function FeaturedProjects({
                   {x?.description}
                 </p>
                 <div className="tags">
-                  {x?.tags?.map((tag) => (
-                    <span
-                      key={tag}
-                      className="mr-[0.3rem] mb-[0.3rem] inline-block rounded-full border border-blue-800 bg-blue-800/30 px-4 py-[0.3rem] text-[0.7rem] text-blue-200/60 transition-all duration-300 group-hover:border-blue-300/50 group-hover:bg-blue-600/20 group-hover:text-blue-300"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                  {x?.tags &&
+                    x.tags.length > 0 &&
+                    x.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="mr-[0.3rem] mb-[0.3rem] inline-block rounded-full border border-blue-800 bg-blue-800/30 px-4 py-[0.3rem] text-[0.7rem] text-blue-200/60 transition-all duration-300 group-hover:border-blue-300/50 group-hover:bg-blue-600/20 group-hover:text-blue-300"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                 </div>
               </div>
             </Link>
