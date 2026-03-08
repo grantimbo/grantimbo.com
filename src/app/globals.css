@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+:root {
+  --eggblue: #88c0e5;
+  --bluetooth: #0064c8;
+  --bluetooth2: #0050a0;
+  --darkblue: #0f1838;
+  --darkblue: #11172e;
+  --border: 1px solid #1c264a;
+  --border: 1px solid #1d294a;
+  --corner: 0.5rem;
+  --softgray: #68749c;
+}
+
+@theme {
+  --animate-pulse-glow: pulse-glow 3s ease-in-out infinite;
+
+  --color-drkblue: #0d1a43;
+  --color-drkblue2: #11172e;
+  --color-drkblue3: #090e20;
+}
+
+body {
+  color: #fff;
+  background: #090e20;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+}
+
+.faded:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10rem;
+  background: linear-gradient(180deg, #090e20, transparent);
+}
+
+.faded:after {
+  background: linear-gradient(0deg, #090e20, transparent);
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 8rem;
+}
+
+.footer:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10rem;
+  background: linear-gradient(180deg, #090e20, transparent);
+}
+
+/* .loader {
+  @apply h-14 w-14 animate-spin rounded-full border-[0.6rem] border-[#263253] border-t-[#4e5e88];
+}
+
+.loader.sm {
+  @apply !h-10 !w-10 !border-[0.50rem];
+}
+
+.button {
+  @apply border-blue-600/30 bg-blue-600/10 hover:border-blue-600 hover:bg-blue-600/30 inline-flex items-center gap-3 rounded-full border-2 px-[1.2rem] py-[0.5rem] text-sm text-white md:px-5 md:py-2 md:text-base [&_path]:fill-[#fff];
+} */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background: #090e20;
+  padding: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #204483;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #16305e;
+  border-radius: 6px;
+}
+
+@keyframes pulse-glow {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.2;
+  }
+}
