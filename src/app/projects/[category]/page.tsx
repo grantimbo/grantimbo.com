@@ -7,6 +7,7 @@ import { cache } from "react";
 import NotFoundPage from "../../not-found";
 import BreadCrumbs from "@/src/components/BreadCrumbs";
 import ProjectHeader from "@/src/components/Projects/ProjectHeader";
+import Footer from "@/src/components/Footer";
 
 const getProjects = cache(async (category: string) => {
   const data = await client.fetch<Project[]>(
@@ -67,6 +68,7 @@ export default async function ProjectCategory({
         />
       </ProjectHeader>
       <ProjectGrid projects={data} />
+      <Footer fade />
     </>
   );
 }

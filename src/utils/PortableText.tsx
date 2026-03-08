@@ -122,7 +122,7 @@ export const sanityComponents: PortableTextComponents = {
     link: ({ children, value }) => (
       <a
         href={value.href}
-        className="text-eggblue transition hover:text-blue-600"
+        className="text-eggblue cursor-pointer transition hover:text-blue-600"
       >
         {children}
       </a>
@@ -165,7 +165,7 @@ export const AnimatedPortableText = ({ value }: { value: any }) => {
       link: ({ children, value }) => (
         <a
           href={value.href}
-          className="text-eggblue transition hover:text-blue-600"
+          className="text-eggblue cursor-pointer transition hover:text-blue-600"
         >
           {children}
         </a>

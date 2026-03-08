@@ -8,6 +8,7 @@ import { cache } from "react";
 import NotFoundPage from "../../../not-found";
 import BreadCrumbs from "@/src/components/BreadCrumbs";
 import ProjectHeader from "@/src/components/Projects/ProjectHeader";
+import Footer from "@/src/components/Footer";
 
 const getProjectBySlug = cache(async (slug: string) => {
   if (!slug || typeof slug !== "string") return null;
@@ -66,6 +67,7 @@ export default async function ProjectPage({ params }: ParamsType) {
         />
       </ProjectHeader>
       <ProjectContent data={data} />
+      <Footer fade />
     </>
   );
 }
