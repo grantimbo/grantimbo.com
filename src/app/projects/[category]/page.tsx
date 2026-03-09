@@ -42,7 +42,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${data[0]?.categoryName}`,
+    title: `${data[0]?.categoryName || "Category Not Found"}`,
     description: `${data[0]?.categoryName} — a project by Grant Imbo`,
   };
 }

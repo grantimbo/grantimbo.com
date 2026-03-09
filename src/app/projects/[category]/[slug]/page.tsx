@@ -36,7 +36,7 @@ export async function generateMetadata({
   const data = await getProjectBySlug(slug);
 
   if (!data) {
-    return { title: `Player Not Found - Grant Imbo` };
+    return { title: `Project Not Found` };
   }
 
   return {

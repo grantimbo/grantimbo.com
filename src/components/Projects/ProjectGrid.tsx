@@ -11,6 +11,34 @@ import Link from "next/link";
 export default function ProjectGrid({ projects }: { projects: Project[] }) {
   return (
     <section className="mx-auto block w-full max-w-6xl pb-[100px]">
+      {projects.length === 0 && (
+        <div className="flex flex-col items-center justify-center px-4 py-24 text-center">
+          <p className="mb-4 text-lg font-medium">
+            No projects found in this category
+          </p>
+
+          <Link
+            href="/projects"
+            className="group flex w-fit items-center gap-2 rounded-full bg-blue-600 px-4 py-2 text-sm font-medium text-blue-100 transition-all duration-300 hover:bg-blue-600 hover:text-white active:scale-95"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 19l-7-7m0 0l7-7m-7 7h18"
+              />
+            </svg>
+            Back to Projects
+          </Link>
+        </div>
+      )}
       <section className="grid grid-cols-2 gap-4 p-5 sm:grid-cols-3 lg:grid-cols-4">
         {projects.map((prj, i) => (
           <article
