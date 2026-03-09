@@ -41,8 +41,6 @@ export async function generateMetadata({
     return { title: `Category Not Found - Grant Imbo` };
   }
 
-  console.log(data);
-
   return {
     title: `${data[0]?.categoryName}`,
     description: `${data[0]?.categoryName} — a project by Grant Imbo`,

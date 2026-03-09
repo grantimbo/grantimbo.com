@@ -14,8 +14,6 @@ export default async function HomeIntro() {
       }`,
   );
 
-  console.log(data);
-
   return (
     <section className="home mx-auto my-20 mb-20 max-w-7xl items-center md:mb-0 md:grid md:grid-cols-[1.2fr_1fr] md:py-16 lg:grid-cols-[1.5fr_1fr]">
       <figure>
