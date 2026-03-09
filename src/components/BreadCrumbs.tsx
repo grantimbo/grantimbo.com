@@ -17,7 +17,7 @@ export default function Breadcrumbs({
   currentPage,
 }: BreadcrumbsProps) {
   return (
-    <nav className="md:text-md flex items-center gap-2 text-xs font-medium">
+    <nav className="flex items-center gap-2 text-xs font-medium md:text-[.9rem]">
       {/* Home */}
       <Link
         href="/"

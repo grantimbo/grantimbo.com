@@ -38,7 +38,7 @@ export default async function Experiences() {
       <div className="relative w-full max-w-[650px]">
         {/* Vertical timeline line */}
         <div
-          className="absolute top-0 bottom-6 left-[19px] w-[1px] md:left-[40px]"
+          className="absolute top-0 bottom-6 left-8 w-[1px] md:left-[40px]"
           aria-hidden
           style={{
             background:
@@ -51,11 +51,11 @@ export default async function Experiences() {
             <li key={x._id} className="relative flex gap-6 pb-14 last:pb-0">
               {/* Date column */}
               <div className="relative flex w-16 shrink-0 flex-col items-end pt-1.5 md:w-20 md:pt-2">
-                <span className="text-softgray text-xs font-medium tabular-nums md:absolute md:top-7 md:-left-20 md:text-sm md:whitespace-nowrap">
+                <span className="bg-drkblue3 absolute -left-2 p-2 text-xs font-medium whitespace-nowrap tabular-nums md:top-5 md:-left-18 md:text-sm">
                   {x.date}
                 </span>
                 {index === 0 && (
-                  <span className="absolute top-[50px] left-[-4px] rounded-full bg-blue-500/20 px-2 py-1 text-[0.55rem] font-medium tracking-wide text-blue-500 uppercase md:top-[28] md:left-15">
+                  <span className="absolute -top-7 left-2 rounded-full bg-blue-500/20 px-2 py-1 text-[0.55rem] font-medium tracking-wide text-blue-500 uppercase md:top-[28] md:left-15">
                     Latest
                   </span>
                 )}
@@ -63,7 +63,7 @@ export default async function Experiences() {
 
               {/* Node */}
               <div
-                className="absolute top-12 left-[12px] z-10 h-4 w-4 rounded-full border-2 border-blue-500/70 bg-slate-900 shadow-[0_0_0_3px_rgba(8,14,36,1)] md:top-6 md:top-7 md:left-[31px] md:h-5 md:w-5"
+                className="absolute top-12 left-6 z-10 h-4 w-4 rounded-full border-2 border-blue-500/70 bg-slate-900 shadow-[0_0_0_3px_rgba(8,14,36,1)] md:top-7 md:left-[31px] md:h-5 md:w-5"
                 aria-hidden
               >
                 <span className="absolute inset-0 rounded-full bg-blue-500/40" />
@@ -71,7 +71,7 @@ export default async function Experiences() {
 
               {/* Card */}
               <article className="timeline-card min-w-0 flex-1 pt-0 pl-2 md:pt-0 md:pl-4">
-                <div className="group bg-drkblue rounded-xl border border-blue-500/25 px-5 py-4 shadow-md shadow-black/15 backdrop-blur-sm transition-all duration-200 hover:border-blue-500/45 hover:shadow-lg hover:shadow-black/20 md:px-6 md:py-5">
+                <div className="group bg-drkblue rounded-xl border-2 border-blue-500/50 px-5 py-4 transition-all duration-200 hover:border-blue-600 hover:bg-blue-800/30 md:px-6 md:py-5">
                   <div className="flex gap-4">
                     <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-lg border border-blue-500/25 bg-blue-900 md:h-14 md:w-14">
                       <Image
@@ -99,7 +99,7 @@ export default async function Experiences() {
                       </div>
                     </div>
                   </div>
-                  <div className="mt-3 text-[0.7rem] leading-tight [&_p]:text-xs [&_p]:text-blue-300/80">
+                  <div className="mt-3 text-[0.7rem] leading-tight [&_p]:text-[.75rem] [&_p]:text-blue-100/80">
                     <PortableText
                       value={x?.content ?? []}
                       components={sanityComponents}
