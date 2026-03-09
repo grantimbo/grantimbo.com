@@ -18,7 +18,7 @@ const getProjects = cache(async (category: string) => {
     tags,
     thumbnail,
     "categoryName": category->title,
-    "category":  category->slug.current,
+    "categorySlug":  category->slug.current,
   }`,
     { categorySlug: String(category) },
   );
