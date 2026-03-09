@@ -65,7 +65,7 @@ export default async function FeaturedProjects({
                 <p className="mb-2 text-[0.8rem] leading-tight font-light text-slate-400">
                   {x?.description}
                 </p>
-                <div className="">
+                <div className="tags">
                   {x?.tags &&
                     x.tags.length > 0 &&
                     x.tags.map((tag) => (
