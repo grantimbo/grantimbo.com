@@ -58,23 +58,23 @@ export const sanityComponents: PortableTextComponents = {
   },
   block: {
     h1: ({ children }: { children?: React.ReactNode }) => (
-      <h1 className="mb-6 text-3xl font-bold">{children}</h1>
+      <h1 className="mb-6 text-3xl font-semibold">{children}</h1>
     ),
     h2: ({ children }: { children?: React.ReactNode }) => (
-      <h2 className="mb-4 text-2xl font-bold">{children}</h2>
+      <h2 className="mb-4 text-2xl font-semibold">{children}</h2>
     ),
     h3: ({ children }: { children?: React.ReactNode }) => (
-      <h3 className="mb-2 text-xl font-bold">{children}</h3>
+      <h3 className="mb-2 text-xl font-semibold">{children}</h3>
     ),
     h4: ({ children }: { children?: React.ReactNode }) => (
-      <h4 className="mb-2 text-lg font-bold">{children}</h4>
+      <h4 className="mb-2 text-lg font-semibold">{children}</h4>
     ),
     h5: ({ children }: { children?: React.ReactNode }) => (
-      <h5 className="text-md mb-2 font-bold">{children}</h5>
+      <h5 className="text-md mb-2 font-semibold">{children}</h5>
     ),
     // Note: Use 'normal' instead of 'p' for standard Sanity paragraphs
     normal: ({ children }: { children?: React.ReactNode }) => (
-      <p className="mb-2 text-sm font-light">{children}</p>
+      <p className="mb-2 text-sm leading-tight font-light">{children}</p>
     ),
     blockquote: ({ children }: { children?: React.ReactNode }) => (
       <blockquote className="border-eggblue my-4 border-l-4 pl-4 text-white/80 italic">
@@ -116,7 +116,7 @@ export const sanityComponents: PortableTextComponents = {
       </code>
     ),
     strong: ({ children }: { children?: React.ReactNode }) => (
-      <strong className="font-bold">{children}</strong>
+      <strong className="font-semibold">{children}</strong>
     ),
     em: ({ children }) => <em className="italic-style italic">{children}</em>,
     link: ({ children, value }) => (

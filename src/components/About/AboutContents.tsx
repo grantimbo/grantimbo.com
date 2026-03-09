@@ -5,7 +5,8 @@ import AnimateBlock from "@/src/utils/animateBlock";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { client, urlFor } from "@/src/utils/sanity";
-import { AnimatedPortableText } from "@/src/utils/PortableText";
+import { sanityComponents } from "@/src/utils/PortableText";
+import { PortableText } from "next-sanity";
 
 export default async function AboutContents() {
   const data = await client.fetch(
@@ -35,15 +36,15 @@ export default async function AboutContents() {
       </section>
 
       <section className="mx-auto mt-10 mb-36 max-w-xl">
-        <article className="p-8 text-sm leading-tight lg:text-base lg:leading-tight [&_p]:text-blue-300/50">
-          <AnimateBlock delay={0.3}>
-            <h2 className="text-eggblue mb-2 text-lg font-semibold md:text-2xl">
-              {data?.title}
-            </h2>
-          </AnimateBlock>
+        <article className="p-8">
+          {/* <AnimateBlock delay={0.3}> */}
+          <h2 className="mb-2 text-lg font-bold text-white md:mb-6 md:text-3xl">
+            {data?.title}
+          </h2>
+          {/* </AnimateBlock> */}
 
-          <div className="space-y-4">
-            <AnimatedPortableText value={data?.content} />
+          <div className="text-sm leading-tight lg:text-base lg:leading-tight [&_*]:text-blue-100/60">
+            <PortableText value={data?.content} components={sanityComponents} />
           </div>
         </article>
       </section>
