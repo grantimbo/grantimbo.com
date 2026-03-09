@@ -1,12 +1,12 @@
-import SocialIcons from "@/src/components/SocialIcons";
 import aboutBg from "@/public/imgs/about-head-lg.png";
 import { shimmer, toBase64 } from "@/src/utils/BlurData";
-import AnimateBlock from "@/src/utils/animateBlock";
-import { motion } from "framer-motion";
+// import AnimateBlock from "@/src/utils/animateBlock";
+// import { motion } from "framer-motion";
 import Image from "next/image";
 import { client, urlFor } from "@/src/utils/sanity";
 import { sanityComponents } from "@/src/utils/PortableText";
 import { PortableText } from "next-sanity";
+import ContactForm from "../Contact/ContactForm";
 
 export default async function AboutContents() {
   const data = await client.fetch(
@@ -43,9 +43,10 @@ export default async function AboutContents() {
           </h2>
           {/* </AnimateBlock> */}
 
-          <div className="leading-tight lg:text-base lg:leading-tight [&_*]:text-blue-300/50 [&_p]:text-[.8rem]">
+          <div className="leading-tight lg:text-base lg:leading-tight">
             <PortableText value={data?.content} components={sanityComponents} />
           </div>
+          <ContactForm />
         </article>
       </section>
     </>

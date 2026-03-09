@@ -47,7 +47,7 @@ export default function ProjectContent({ data }: { data: Project }) {
           </div>
         </header> */}
         {data.content && data.content.length > 0 && (
-          <div className="prose prose-invert max-w-none [&_p]:text-blue-100">
+          <div className="prose prose-invert max-w-none">
             <PortableText value={data.content} components={sanityComponents} />
           </div>
         )}

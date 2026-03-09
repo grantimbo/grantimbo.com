@@ -1,9 +1,9 @@
-import ContactForm from "@/src/components/Contact/ContactForm";
 import Footer from "@/src/components/Footer";
 import Header from "@/src/components/Header";
 import Experiences from "@/src/components/Home/Experience";
 import HomeFeaturedProjects from "@/src/components/Home/FeaturedProjects";
 import HomeIntro from "@/src/components/Home/HomeIntro";
+import HomeContactForm from "../components/Home/HomeContact";
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
       <HomeIntro />
       <HomeFeaturedProjects />
       <Experiences />
-      <ContactForm />
+      <HomeContactForm />
       <Footer />
     </>
   );

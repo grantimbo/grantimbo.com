@@ -4,7 +4,6 @@ import { getImageDimensions } from "@sanity/asset-utils";
 import Image from "next/image";
 import ReactPlayer from "react-player";
 import { PortableTextComponents, PortableText } from "@portabletext/react";
-import { ReactNode } from "react";
 import AnimateBlock from "@/src/utils/animateBlock";
 
 export const sanityComponents: PortableTextComponents = {
@@ -58,23 +57,27 @@ export const sanityComponents: PortableTextComponents = {
   },
   block: {
     h1: ({ children }: { children?: React.ReactNode }) => (
-      <h1 className="mb-6 text-3xl font-semibold">{children}</h1>
+      <h1 className="mt-8 mb-6 text-4xl font-extrabold tracking-tight">
+        {children}
+      </h1>
     ),
     h2: ({ children }: { children?: React.ReactNode }) => (
-      <h2 className="mb-4 text-2xl font-semibold">{children}</h2>
+      <h2 className="mt-8 mb-3 text-2xl font-bold tracking-tight">
+        {children}
+      </h2>
     ),
     h3: ({ children }: { children?: React.ReactNode }) => (
-      <h3 className="mb-2 text-xl font-semibold">{children}</h3>
+      <h3 className="mt-6 mb-2 text-xl font-semibold">{children}</h3>
     ),
     h4: ({ children }: { children?: React.ReactNode }) => (
-      <h4 className="mb-2 text-lg font-semibold">{children}</h4>
+      <h4 className="mt-4 mb-2 text-lg font-semibold">{children}</h4>
     ),
     h5: ({ children }: { children?: React.ReactNode }) => (
-      <h5 className="text-md mb-2 font-semibold">{children}</h5>
+      <h5 className="mt-3 mb-2 text-base font-normal">{children}</h5>
     ),
     // Note: Use 'normal' instead of 'p' for standard Sanity paragraphs
     normal: ({ children }: { children?: React.ReactNode }) => (
-      <p className="mb-2 text-sm leading-tight font-light">{children}</p>
+      <p className="mb-4 text-sm leading-tight font-light">{children}</p>
     ),
     blockquote: ({ children }: { children?: React.ReactNode }) => (
       <blockquote className="border-eggblue my-4 border-l-4 pl-4 text-white/80 italic">
