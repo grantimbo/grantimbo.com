@@ -25,8 +25,8 @@ const titleCase = (str: string): string => {
 
 export default function ProjectContent({ data }: { data: Project }) {
   return (
-    <main className="mx-auto min-h-[60vh] max-w-250 px-4 py-8 md:px-6">
-      <article className="bg-darkblue rounded-lg border-2 border-solid border-blue-600/10 p-6 md:p-8">
+    <main className="mx-auto min-h-[60vh] max-w-250 px-2 py-8 md:px-6">
+      <article className="bg-drkblue/30 rounded-lg border-2 border-solid border-blue-600/10 p-3 md:p-8">
         <div className="mb-4">
           <ProjectDate date={data.releaseDate} />
         </div>

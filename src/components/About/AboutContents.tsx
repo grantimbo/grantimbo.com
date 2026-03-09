@@ -38,12 +38,12 @@ export default async function AboutContents() {
       <section className="mx-auto mt-10 mb-36 max-w-xl">
         <article className="p-8">
           {/* <AnimateBlock delay={0.3}> */}
-          <h2 className="mb-2 text-lg font-bold text-white md:mb-6 md:text-3xl">
+          <h2 className="mb-2 text-2xl font-bold text-white md:mb-6 md:text-3xl">
             {data?.title}
           </h2>
           {/* </AnimateBlock> */}
 
-          <div className="text-sm leading-tight lg:text-base lg:leading-tight [&_*]:text-blue-100/60">
+          <div className="leading-tight lg:text-base lg:leading-tight [&_*]:text-blue-300/50 [&_p]:text-[.8rem]">
             <PortableText value={data?.content} components={sanityComponents} />
           </div>
         </article>

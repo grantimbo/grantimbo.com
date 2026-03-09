@@ -72,7 +72,7 @@ export default function Gallery({ images: inputImages }: GalleryProps) {
   return (
     <>
       {/* Grid Layout */}
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-4 lg:grid-cols-4">
         {images.map((img, idx) => (
           <div
             key={idx}

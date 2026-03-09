@@ -38,7 +38,7 @@ export default async function Experiences() {
       <div className="relative w-full max-w-[650px]">
         {/* Vertical timeline line */}
         <div
-          className="absolute top-0 bottom-6 left-8 w-[1px] md:left-[40px]"
+          className="absolute top-12 bottom-6 left-8 w-[1px] md:left-[40px]"
           aria-hidden
           style={{
             background:
@@ -46,9 +46,9 @@ export default async function Experiences() {
           }}
         />
 
-        {experiences.length !== 0 && (
+        {experiences?.length !== 0 && (
           <ul className="relative space-y-0">
-            {experiences.map((x, index) => (
+            {experiences?.map((x, index) => (
               <li key={x._id} className="relative flex gap-6 pb-14 last:pb-0">
                 {/* Date column */}
                 <div className="relative flex w-16 shrink-0 flex-col items-end pt-1.5 md:w-20 md:pt-2">
@@ -56,7 +56,7 @@ export default async function Experiences() {
                     {x.date}
                   </span>
                   {index === 0 && (
-                    <span className="absolute -top-7 left-2 rounded-full bg-blue-500/20 px-2 py-1 text-[0.55rem] font-medium tracking-wide text-blue-500 uppercase md:top-[28] md:left-15">
+                    <span className="absolute -top-5 left-2 rounded-full bg-blue-500/20 px-2 py-1 text-[0.55rem] font-medium tracking-wide text-blue-500 uppercase md:top-[28] md:left-15">
                       Latest
                     </span>
                   )}
@@ -100,7 +100,7 @@ export default async function Experiences() {
                         </div>
                       </div>
                     </div>
-                    <div className="mt-3 text-[0.7rem] leading-tight [&_p]:text-[.75rem] [&_p]:text-blue-100/80">
+                    <div className="mt-3 leading-tight [&_p]:text-[0.65rem] [&_p]:text-blue-100/80 [&_p]:md:text-[.75rem]">
                       <PortableText
                         value={x?.content ?? []}
                         components={sanityComponents}

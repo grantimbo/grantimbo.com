@@ -39,7 +39,7 @@ export default function ContactForm() {
         <form
           ref={formRef}
           action={formAction}
-          className="bg-drkblue3 relative z-10 mx-auto max-w-140 space-y-6 rounded-2xl border border-blue-600/40 p-10"
+          className="bg-drkblue3 relative z-10 mx-auto max-w-140 space-y-6 rounded-2xl border border-blue-600/40 p-8 md:p-10"
         >
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div>
@@ -132,12 +132,12 @@ export default function ContactForm() {
 
           {state.message && (
             <div
-              className={`rounded-md p-4 ${state.success ? "bg-green-50" : "bg-red-50"}`}
+              className={`rounded-md p-4 ${state.success ? "border-green-400/30 bg-green-400/40" : "border-red-400/30 bg-red-400/40"}`}
             >
               <div className="flex">
                 <div className="ml-3">
                   <h3
-                    className={`text-sm font-medium ${state.success ? "text-green-800" : "text-red-800"}`}
+                    className={`text-sm font-medium ${state.success ? "text-green-300" : "text-red-300"}`}
                   >
                     {state.message}
                   </h3>
