@@ -22,7 +22,7 @@ export default async function Experiences() {
   }
 
   return (
-    <section className="relative flex flex-col items-center px-4 py-16 md:py-24">
+    <section className="relative flex flex-col items-center px-4 md:py-24">
       <header className="z-10 mb-8 w-full max-w-[700px]">
         <Image
           alt="Experience"
@@ -85,16 +85,16 @@ export default async function Experiences() {
                         />
                       </div>
                       <div className="min-w-0 flex-1">
-                        <h2 className="text-base leading-tight font-semibold text-white md:text-lg">
+                        <h2 className="text-[.8rem] leading-tight font-semibold text-white md:text-lg">
                           {x.title}
                         </h2>
                         <div className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-0.5">
                           {x.companyName && (
-                            <span className="text-sm font-medium text-blue-500">
+                            <span className="text-xs font-medium text-blue-500 md:text-sm">
                               {x.companyName}
                             </span>
                           )}
-                          <span className="text-softgray text-[.7rem] text-blue-300">
+                          <span className="text-softgray text-[.5rem] text-blue-300 md:text-[.7rem]">
                             ({x.isFulltime ? "Full-time" : "Part-time"})
                           </span>
                         </div>

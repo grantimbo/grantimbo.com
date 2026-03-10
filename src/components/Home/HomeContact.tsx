@@ -6,8 +6,8 @@ import ContactForm from "../Contact/ContactForm";
 
 export default async function HomeContactForm() {
   return (
-    <section className="faded bg-drkblue relative px-4 py-40 pb-50">
-      <header className="relative z-10 mx-auto mb-2 w-full max-w-[560px] md:mb-6">
+    <section className="faded bg-drkblue relative px-4 py-20 pb-10 md:py-40 md:pb-50">
+      <header className="relative z-10 mx-auto mb-2 w-full max-w-[300px] md:mb-6 md:max-w-[560px]">
         <Image
           alt="Experience"
           src={contactImage}
