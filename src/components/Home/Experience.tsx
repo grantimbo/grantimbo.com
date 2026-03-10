@@ -47,9 +47,9 @@ export default async function Experiences() {
         />
 
         {experiences?.length !== 0 && (
-          <ul className="relative space-y-0">
+          <div className="relative flex flex-col gap-8 md:gap-12">
             {experiences?.map((x, index) => (
-              <li key={x._id} className="relative flex gap-6 pb-14 last:pb-0">
+              <div key={x._id} className="relative flex gap-6">
                 {/* Date column */}
                 <div className="relative flex w-16 shrink-0 flex-col items-end pt-1.5 md:w-20 md:pt-2">
                   <span className="bg-drkblue3 absolute -left-2 p-2 text-xs font-medium whitespace-nowrap tabular-nums md:top-5 md:-left-18 md:text-sm">
@@ -100,7 +100,7 @@ export default async function Experiences() {
                         </div>
                       </div>
                     </div>
-                    <div className="mt-3 leading-tight [&_p]:text-[0.65rem] [&_p]:text-blue-100/80 [&_p]:md:text-[.75rem]">
+                    <div className="mt-3 leading-tight [&_p]:mb-2 [&_p]:text-[0.65rem] [&_p]:text-blue-100/80 [&_p]:md:text-[.75rem]">
                       <PortableText
                         value={x?.content ?? []}
                         components={sanityComponents}
@@ -120,9 +120,9 @@ export default async function Experiences() {
                     )}
                   </div>
                 </article>
-              </li>
+              </div>
             ))}
-          </ul>
+          </div>
         )}
       </div>
     </section>

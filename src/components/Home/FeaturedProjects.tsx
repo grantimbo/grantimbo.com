@@ -70,12 +70,10 @@ export default async function FeaturedProjects({
                     {x.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="mr-[0.1rem] mb-[.16rem] inline-block rounded-full border border-blue-800 bg-blue-800/30 px-[.3rem] text-[.43rem] text-blue-200/60 transition-all duration-300 group-hover:border-blue-300/50 group-hover:bg-blue-600/20 group-hover:text-blue-300 sm:text-[.7rem] md:mr-[0.3rem] md:mb-[0.3rem] md:px-[.5rem] md:py-[0.2rem] md:text-[0.65rem]"
+                        className="mr-[0.1rem] mb-[.16rem] inline-block rounded-full border border-blue-800 bg-blue-800/30 px-[.3rem] text-[.52rem] text-blue-200/60 transition-all duration-300 group-hover:border-blue-300/50 group-hover:bg-blue-600/20 group-hover:text-blue-300 sm:text-[.7rem] md:mr-[0.3rem] md:mb-[0.3rem] md:px-[.5rem] md:py-[0.2rem] md:text-[0.65rem]"
                       >
                         {tag}
                       </span>
-
-                      // px-4 py-[0.1rem] text-[.3rem]
                     ))}
                   </div>
                 )}

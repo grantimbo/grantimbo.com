@@ -30,9 +30,9 @@ export default async function HomeIntro() {
         />
       </figure>
       <section className="md:flex md:items-center">
-        <article className="m-0 mx-auto max-w-[450px] px-8 text-center text-[0.9rem] leading-tight md:text-left lg:text-[1rem] [&_h2]:mb-4 [&_p]:mb-2 [&_p]:text-blue-300/40">
+        <article className="m-0 mx-auto max-w-[450px] px-8 text-center text-[0.9rem] leading-tight md:max-w-[490px] md:text-left lg:text-[1rem] [&_*]:text-blue-300/40 [&_h2]:mb-4 [&_p]:mb-2">
           <AnimateBlock delay={0.3}>
-            <h2 className="text-xl font-semibold text-white lg:text-2xl">
+            <h2 className="mx-auto max-w-[220px] text-xl font-semibold text-white! md:mx-0 md:max-w-[270px] lg:text-2xl">
               {data?.title}
             </h2>
           </AnimateBlock>
