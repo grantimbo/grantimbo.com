@@ -77,7 +77,9 @@ export const sanityComponents: PortableTextComponents = {
     ),
     // Note: Use 'normal' instead of 'p' for standard Sanity paragraphs
     normal: ({ children }: { children?: React.ReactNode }) => (
-      <p className="mb-4 text-sm leading-tight font-light">{children}</p>
+      <p className="mb-4 min-h-px text-sm leading-tight font-light">
+        {children}
+      </p>
     ),
     blockquote: ({ children }: { children?: React.ReactNode }) => (
       <blockquote className="border-eggblue my-4 border-l-4 pl-4 text-white/80 italic">
