@@ -20,6 +20,10 @@
   --color-eggblue: #88c0e5;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: #fff;
   background: #090e20;

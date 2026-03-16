@@ -22,7 +22,10 @@ export default async function Experiences() {
   }
 
   return (
-    <section className="relative flex flex-col items-center px-4 md:py-24">
+    <section
+      id="experience"
+      className="relative flex flex-col items-center px-4 md:py-24"
+    >
       <header className="z-10 mb-8 w-full max-w-[700px]">
         <Image
           alt="Experience"

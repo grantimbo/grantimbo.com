@@ -17,6 +17,7 @@ export default async function FeaturedProjects({
 
   return (
     <section
+      id="homeProjects"
       className={`faded bg-drkblue relative flex flex-col items-center px-4 py-4 md:px-20 ${!hideHeader ? "md:py-40" : "md:py-5"}`}
     >
       {!hideHeader && (
