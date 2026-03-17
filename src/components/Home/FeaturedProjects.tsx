@@ -80,6 +80,7 @@ export default async function FeaturedProjects({
                 )}
               </div>
             </Link>
+            <div className="group-hover:animate-pulse-glow absolute -inset-1 z-0 rounded-lg bg-gradient-to-r from-blue-600 to-[#098095] opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
           </article>
         ))}
       </section>
