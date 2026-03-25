@@ -12,8 +12,6 @@
 }
 
 @theme {
-  --animate-pulse-glow: pulse-glow 3s ease-in-out infinite;
-
   --color-drkblue: #0d1a43;
   --color-drkblue2: #11172e;
   --color-drkblue3: #090e20;
@@ -83,19 +81,4 @@ body {
 ::-webkit-scrollbar-thumb:window-inactive {
   background: #16305e;
   border-radius: 6px;
-}
-
-@keyframes pulse-glow {
-  0% {
-    transform: scale(0.95);
-    opacity: 0.2;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.5;
-  }
-  100% {
-    transform: scale(0.95);
-    opacity: 0.2;
-  }
 }

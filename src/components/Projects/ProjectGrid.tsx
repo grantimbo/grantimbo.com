@@ -47,7 +47,7 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
             className="group bg-blue relative cursor-pointer rounded-lg transition-all duration-300"
           >
             {/* The Pulse Glow Layer */}
-            <div className="to-eggblue group-hover:animate-pulse-glow absolute -inset-1 z-0 rounded-lg bg-gradient-to-r from-blue-600 opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
+            <div className="absolute -inset-1 z-0 rounded-lg bg-gradient-to-r from-blue-600/30 to-blue-400/30 opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-100" />
             <Link
               href={`/projects/${prj.categorySlug}/${prj.slug}`}
               className="bg-blue relative z-10 block overflow-hidden rounded-lg border-2 border-blue-600/10 transition-colors hover:border-blue-600"

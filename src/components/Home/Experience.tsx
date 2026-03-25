@@ -5,11 +5,39 @@ import { Experience } from "@/src/utils/types";
 import { client, urlFor } from "@/src/utils/sanity";
 import { PortableText } from "@portabletext/react";
 import { sanityComponents } from "@/src/utils/PortableText";
+import TitleParalax from "./TitleParalax";
 
 export default async function Experiences() {
   const experiences = await client.fetch<Experience[]>(
     `*[_type == "experience"] | order(publishedDate desc, date desc)`,
   );
+
+  const layers = [
+    {
+      src: "/imgs/paralax-title/balls-sm.png",
+      alt: "Balls background",
+      depth: 0.2,
+      zIndex: 1,
+    },
+    {
+      src: "/imgs/paralax-title/balls-md.png",
+      alt: "Balls mid",
+      depth: 0.25,
+      zIndex: 2,
+    },
+    {
+      src: "/imgs/paralax-title/balls-lg.png",
+      alt: "Balls foreground",
+      depth: 0.4,
+      zIndex: 3,
+    },
+    {
+      src: "/imgs/paralax-title/experience.png",
+      alt: "Creator Thinker",
+      depth: 0.6,
+      zIndex: 4,
+    },
+  ];
 
   if (!experiences?.length) {
     return (
@@ -27,15 +55,7 @@ export default async function Experiences() {
       className="relative flex flex-col items-center px-4 md:py-24"
     >
       <header className="z-10 mb-8 w-full max-w-[700px]">
-        <Image
-          alt="Experience"
-          src={experienceType}
-          placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(753, 305))}`}
-          quality={100}
-          width={753}
-          height={305}
-          className="w-full object-contain"
-        />
+        <TitleParalax LAYERS={layers} />
       </header>
 
       <div className="relative w-full max-w-[650px]">

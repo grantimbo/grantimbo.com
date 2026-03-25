@@ -7,7 +7,7 @@ const Footer = ({ fade = false }: { fade?: boolean }) => {
   return (
     <>
       <div
-        className={`${fade ? "faded bg-drkblue" : "bg-blue"} footer relative flex flex-col items-center px-4 pt-40 pb-20 text-center`}
+        className={`${fade ? "faded bg-drkblue/50" : "bg-blue"} footer relative flex flex-col items-center px-4 pt-40 pb-20 text-center`}
       >
         <SocialIcons />
         <p className="[&_a]:text-eggblue mb-3 w-full max-w-[470px] px-4 text-[0.8rem] text-blue-100/80 md:px-0 md:text-[0.9rem] [&_a]:hover:text-blue-100">

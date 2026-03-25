@@ -4,6 +4,7 @@ import Experiences from "@/src/components/Home/Experience";
 import HomeFeaturedProjects from "@/src/components/Home/FeaturedProjects";
 import HomeIntro from "@/src/components/Home/HomeIntro";
 import HomeContactForm from "../components/Home/HomeContact";
+import HomeServices from "../components/Home/HomeServices";
 
 export default function Home() {
   return (
@@ -12,8 +13,9 @@ export default function Home() {
       <HomeIntro />
       <HomeFeaturedProjects />
       <Experiences />
+      <HomeServices />
       <HomeContactForm />
-      <Footer />
+      <Footer fade />
     </>
   );
 }
