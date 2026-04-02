@@ -5,6 +5,7 @@ import { Project } from "@/src/utils/types";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import TitleParalax from "./TitleParalax";
 
 export default async function FeaturedProjects({
   hideHeader = false,
@@ -15,30 +16,37 @@ export default async function FeaturedProjects({
     `*[_type == "category"] | order(date desc)`,
   );
 
+  const layers = [
+    {
+      src: "/imgs/paralax-title/balls-sm.png",
+      alt: "Balls background",
+      depth: 0.2,
+      zIndex: 1,
+    },
+
+    {
+      src: "/imgs/paralax-title/projects.png",
+      alt: "Grant Imbo Projects",
+      depth: 0.6,
+      zIndex: 4,
+    },
+  ];
+
   return (
     <section
-      id="homeProjects"
-      className={`faded bg-drkblue relative flex flex-col items-center px-4 py-4 md:px-20 ${!hideHeader ? "md:py-40" : "md:py-5"}`}
+      id="projects"
+      className={`faded bg-drkblue/50 relative flex flex-col items-center px-4 py-4 md:px-20 ${!hideHeader ? "md:py-40" : "md:py-5"}`}
     >
       {!hideHeader && (
         <figure className="relative z-10 w-full max-w-[700px]">
-          <Image
-            alt="Experience"
-            src={projectsType}
-            placeholder={`data:image/svg+xml;base64,${toBase64(
-              shimmer(753, 305),
-            )}`}
-            quality={100}
-            width={753}
-            height={305}
-          />
+          <TitleParalax LAYERS={layers} />
         </figure>
       )}
       <section className="relative z-10 mb-10 grid max-w-6xl grid-cols-2 gap-2 sm:grid-cols-2 md:gap-5 lg:grid-cols-3">
         {projectCats?.map((x) => (
           <article
             key={x?.title}
-            /* Added 'group' class here to track hover state for children */
+            /* Added 'group' clasxxxs here to track hover state for children */
             className="group bg-drkblue3 hover:bg-drkblue relative rounded-lg border-2 border-blue-600/40 transition-all duration-300 hover:border-blue-600"
           >
             <Link
@@ -80,13 +88,10 @@ export default async function FeaturedProjects({
                 )}
               </div>
             </Link>
-            <div className="group-hover:animate-pulse-glow absolute -inset-1 z-0 rounded-lg bg-gradient-to-r from-blue-600 to-[#098095] opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
+            <div className="absolute -inset-1 z-0 rounded-lg bg-gradient-to-r from-blue-600/30 to-blue-400/20 opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-80" />
           </article>
         ))}
       </section>
-      {/* <button onClick= className="button">
-        👉 Project Archive
-      </button> */}
     </section>
   );
 }

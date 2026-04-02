@@ -12,7 +12,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: {
     template: "%s | Grant Imbo",
-    default: "Grant Imbo | Code & Design",
+    default: "Grant Imbo | Senior Creative & Full-Stack Developer",
   },
   description:
     "Crafting web and beyond experiences, I engineer products with pixel-perfect precision and accessibility in mind.",

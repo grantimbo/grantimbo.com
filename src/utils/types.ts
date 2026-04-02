@@ -1,3 +1,4 @@
+import type { StaticImageData } from "next/image";
 import { PortableTextBlock } from "next-sanity";
 
 export interface Experience {
@@ -70,10 +71,11 @@ export type AnalyticsType = {
 };
 
 export type ServiceType = {
-  image: any;
-  delay: number;
+  image: StaticImageData;
+  delay?: number;
   title: string;
   description: string;
+  slug?: string;
 };
 
 export type HeaderProps = {

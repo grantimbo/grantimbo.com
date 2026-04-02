@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
+    deviceSizes: [640, 1080, 1920],
+    formats: ["image/webp"],
     qualities: [75, 100],
     remotePatterns: [
       {

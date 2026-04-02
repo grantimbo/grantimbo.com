@@ -12,8 +12,6 @@
 }
 
 @theme {
-  --animate-pulse-glow: pulse-glow 3s ease-in-out infinite;
-
   --color-drkblue: #0d1a43;
   --color-drkblue2: #11172e;
   --color-drkblue3: #090e20;
@@ -56,6 +54,12 @@ body {
   display: none;
 }
 
+.button {
+  @apply cursor-pointer rounded-full bg-linear-to-b from-[#1d3c9a] to-[#172365] px-6 py-2 text-xs font-medium text-white shadow-sm transition hover:from-[#325ad4] hover:to-[#4477b2] hover:shadow-md;
+}
+.button.btn-border {
+  @apply border-2 border-blue-600/30 bg-none hover:border-blue-400/30;
+}
 /* .loader {
   @apply h-14 w-14 animate-spin rounded-full border-[0.6rem] border-[#263253] border-t-[#4e5e88];
 }
@@ -83,19 +87,4 @@ body {
 ::-webkit-scrollbar-thumb:window-inactive {
   background: #16305e;
   border-radius: 6px;
-}
-
-@keyframes pulse-glow {
-  0% {
-    transform: scale(0.95);
-    opacity: 0.2;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.5;
-  }
-  100% {
-    transform: scale(0.95);
-    opacity: 0.2;
-  }
 }

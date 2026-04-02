@@ -7,17 +7,17 @@ const Footer = ({ fade = false }: { fade?: boolean }) => {
   return (
     <>
       <div
-        className={`${fade ? "faded bg-drkblue" : "bg-blue"} footer relative flex flex-col items-center px-4 pt-40 pb-20 text-center`}
+        className={`${fade ? "faded bg-drkblue/50" : "bg-blue"} footer relative flex flex-col items-center px-6 pt-20 pb-20 text-center md:pt-40`}
       >
         <SocialIcons />
         <p className="[&_a]:text-eggblue mb-3 w-full max-w-[470px] px-4 text-[0.8rem] text-blue-100/80 md:px-0 md:text-[0.9rem] [&_a]:hover:text-blue-100">
           {`2026 © Grant Imbo`}
         </p>
 
-        <p className="[&_a]:text-eggblue mb-3 w-full max-w-[470px] px-4 text-[0.8rem] text-blue-100/40 md:px-0 md:text-[0.8rem] [&_a]:hover:text-blue-100">
+        <p className="[&_a]:text-eggblue mb-3 w-full max-w-[470px] px-4 text-[0.7rem] text-blue-100/40 md:px-0 md:text-[0.8rem] [&_a]:hover:text-blue-100">
           {`A fusion of design and code crafted from scratch by yours truly.`}
         </p>
-        <p className="[&_a]:text-eggblue mb-3 w-full max-w-[470px] px-4 text-[0.8rem] text-blue-100/40 md:px-0 md:text-[0.8rem] [&_a]:hover:text-blue-100">
+        <p className="[&_a]:text-eggblue mb-3 w-full max-w-[470px] px-4 text-[0.7rem] text-blue-100/40 md:px-0 md:text-[0.8rem] [&_a]:hover:text-blue-100">
           {`Crafted through a pipeline of `}
           <Link
             href="https://www.adobe.com/ph_en/products/photoshop.html"
