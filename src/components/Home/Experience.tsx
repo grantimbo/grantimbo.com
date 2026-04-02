@@ -95,7 +95,7 @@ export default async function Experiences() {
 
                 {/* Card */}
                 <article className="timeline-card min-w-0 flex-1 pt-0 pl-2 md:pt-0 md:pl-4">
-                  <div className="group bg-drkblue rounded-xl border-2 border-blue-500/50 px-5 py-4 transition-all duration-200 hover:border-blue-600 hover:bg-blue-800/30 md:px-6 md:py-5">
+                  <div className="group bg-drkblue relative rounded-xl border-2 border-blue-500/50 px-5 py-4 transition-all duration-200 hover:border-blue-600 hover:bg-blue-800/30 md:px-6 md:py-5">
                     <div className="flex gap-4">
                       <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-lg border border-blue-500/25 bg-blue-900 md:h-14 md:w-14">
                         <Image

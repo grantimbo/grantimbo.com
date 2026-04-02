@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`bg-drkblue/30 fixed top-0 z-20 flex h-15 w-full justify-between border-b-2 border-blue-600/10 pr-4 pl-2 backdrop-blur-md`}
+        className={`bg-drkblue/30 fixed top-0 z-20 flex h-15 w-full justify-between border-b-2 border-blue-600/10 pr-4 pl-2 backdrop-blur-md lg:pr-10`}
       >
         <div className="flex items-center gap-1">
           <Link
@@ -37,11 +37,11 @@ const Header = () => {
             isMobileOpen={isMobileMenuOpen}
             onMobileLinkClick={() => setIsMobileMenuOpen(false)}
           />
-          <button className="flex items-center gap-2 rounded-full border border-[#49d600]/50 bg-[#49d600]/10 px-3 py-1.5 text-xs text-[#49d600] transition-colors hover:bg-[#49d600]/20">
-            <span className="inline-block h-2 w-2 rounded-full bg-[#49d600]"></span>
+          {/* <button className="flex items-center gap-2 rounded-full bg-linear-to-r from-green-400/50 to-green-400/40 px-3 py-1.5 text-xs text-green-500 transition-colors hover:bg-green-500/20">
+            <span className="inline-block h-2 w-2 rounded-full bg-green-500"></span>
             <span>Available:</span>
             <span className="text-white">Part-Time</span>
-          </button>
+          </button> */}
 
           <button
             className="z-50 text-white md:hidden"

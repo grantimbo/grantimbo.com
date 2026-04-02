@@ -88,7 +88,7 @@ export default async function FeaturedProjects({
                 )}
               </div>
             </Link>
-            <div className="absolute -inset-1 z-0 rounded-lg bg-gradient-to-r from-blue-600/30 to-blue-400/20 opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-100" />
+            <div className="absolute -inset-1 z-0 rounded-lg bg-gradient-to-r from-blue-600/30 to-blue-400/20 opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-80" />
           </article>
         ))}
       </section>

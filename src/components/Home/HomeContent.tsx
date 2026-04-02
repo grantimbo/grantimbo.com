@@ -27,18 +27,12 @@ export default function HomeContent({ data }: HomeContentProps) {
 
           <div className="mt-10 flex justify-center space-x-2 md:justify-start">
             <AnimateBlock delay={0.6}>
-              <a
-                href="#projects"
-                className="cursor-pointer rounded-full bg-[#0a2d74] px-6 py-2 text-sm font-medium text-white transition-all duration-300 hover:bg-[#0869ac]"
-              >
+              <a href="#projects" className="button text-sm!">
                 Projects
               </a>
             </AnimateBlock>
             <AnimateBlock delay={0.8}>
-              <a
-                href="#experience"
-                className="cursor-pointer rounded-full border-2 border-[#0a2d74] px-6 py-2 text-sm font-medium text-white transition-all duration-300 hover:border-[#0869ac]"
-              >
+              <a href="#experience" className="button btn-border text-sm!">
                 Resume
               </a>
             </AnimateBlock>

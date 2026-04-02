@@ -54,6 +54,12 @@ body {
   display: none;
 }
 
+.button {
+  @apply cursor-pointer rounded-full bg-linear-to-r from-blue-600/30 to-blue-400/30 px-6 py-2 text-xs font-medium text-white shadow-sm transition hover:from-blue-500/50 hover:to-blue-300/50 hover:shadow-md;
+}
+.button.btn-border {
+  @apply border-2 border-blue-600/30 bg-none hover:border-blue-400/30;
+}
 /* .loader {
   @apply h-14 w-14 animate-spin rounded-full border-[0.6rem] border-[#263253] border-t-[#4e5e88];
 }
