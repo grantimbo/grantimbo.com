@@ -22,7 +22,7 @@ export default function ContactForm() {
     <form
       ref={formRef}
       action={formAction}
-      className="bg-drkblue2/50 relative z-10 mx-auto max-w-140 space-y-6 rounded-2xl border border-blue-600/20 p-8 md:p-10"
+      className="bg-drkblue2/50 relative z-10 mx-auto max-w-140 space-y-6 rounded-2xl border border-blue-600/20 p-5 md:p-10"
     >
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         <div>

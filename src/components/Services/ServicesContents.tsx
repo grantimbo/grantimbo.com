@@ -100,7 +100,7 @@ export default function ServicesContents() {
               animate={dropInanimate}
               initial={dropIninitial}
               transition={{
-                delay: service.delay + 0.1,
+                delay: service?.delay || 0 + 0.1,
                 duration: 0.4,
               }}
             >
@@ -135,7 +135,7 @@ export default function ServicesContents() {
               animate={dropInanimate}
               initial={dropIninitial}
               transition={{
-                delay: service.delay + 0.1,
+                delay: service?.delay || 0 + 0.1,
               }}
             >
               {service.description}

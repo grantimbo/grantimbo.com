@@ -35,7 +35,7 @@ export default async function HomeContactForm() {
 
   return (
     <section
-      className="relative px-4 py-20 pb-10 md:py-40 md:pb-50"
+      className="relative px-8 py-20 pb-10 md:py-40 md:pb-50"
       id="contact"
     >
       <header className="z-10 mx-auto mb-2 w-full max-w-[700px] md:mb-6">
