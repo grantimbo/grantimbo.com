@@ -37,6 +37,7 @@ body {
   right: 0;
   height: 10rem;
   background: linear-gradient(180deg, #090e20, transparent);
+  pointer-events: none;
 }
 
 .faded:after {
@@ -47,6 +48,7 @@ body {
   left: 0;
   right: 0;
   height: 8rem;
+  pointer-events: none;
 }
 
 .footer.faded:after {
